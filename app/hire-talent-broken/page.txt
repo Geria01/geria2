@@ -1,0 +1,147 @@
+import { useState } from "react";
+import useMultiPartForm from "../_hooks/useMultiPartForm";
+import React from 'react';
+import { ToastContainer } from "react-toastify";
+import SecondaryNav from "../_components/SecondaryNav";
+import Success from "../_components/Success";
+import CandidateOptions from "../_components/CandidateOptions";
+import SetupCalendarlyMeeting from "../_components/SetupCalendarlyMeeting";
+import RecruiterDetails from "../_components/RecruiterDetails";
+
+export default async function HireTalentPage() {
+    const [step, setStep] = useState(1);
+    const [loading, setLoading] = useState(false);
+    const [scheduled, setScheduled] = useState(false);
+    //const { push } = useRouter();
+  
+    const saveRecruiterInfo = async () => {
+      setLoading(true);
+      const data = {
+        hiringCompany: values['hiringCompany'],
+        contactName: values['contactName'],
+        emailAddress: values['email'],
+        phoneNumber: values['phoneNumber'],
+        roleOptions: values['roleOptions']?.join(', '),
+        experienceOptions: values['experienceOptions']?.join(', '),
+      };
+  
+      //const resp = await nextApi.post('/api/email/send-email', data);
+      console.log('form sent');
+  
+      setLoading(false);
+    }
+  
+    const {
+      values,
+      setValues,
+      errors,
+      handleSubmit,
+      handleChange
+    } = useMultiPartForm(saveRecruiterInfo);
+  
+    const { hiringCompany, contactName, email, phoneNumber } = values;
+  
+    const hasErrors = Object.keys(errors).length !== 0;
+    const hasEmptyField = !hiringCompany || !email || !phoneNumber;
+  
+    // go back to previous step
+    const prevStep = (event: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      setStep(step - 1);
+    }
+  
+    // proceed to the next step
+    const nextStep = (event: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>) => {
+      event.preventDefault();
+      setStep(step + 1);
+    }
+  
+    if (step === 4) {
+      return <Success />;
+    }
+  
+    return (
+      <>
+        <ToastContainer autoClose={3000} />
+  
+        <SecondaryNav backLink={'/'} />
+  
+        <div className='mx-auto max-w-[620px] pt-20 pb-3 px-6'>
+          <h1 className='text-fluid-4xl'>Hire Talent</h1>
+          <div className='grid grid-cols-3 gap-2 my-6'>
+            {(() => {
+              let indicators = [];
+              for (let i = 0; i <= 2; i++) {
+                indicators.push(
+                  <span
+                    key={i}
+                    className={`${step > i ? 'bg-[#1C1B17]' : 'bg-[#D6DDEB]'} rounded h-2`}>
+                  </span>
+                );
+              }
+              return indicators;
+            })()}
+          </div>
+  
+          {(() => {
+            switch (step) {
+  
+              case 1:
+                return <CandidateOptions
+                  values={values}
+                  handleChange={handleChange}
+                  setValues={setValues}
+                  errors={errors}
+                />;
+  
+              case 2:
+                return <RecruiterDetails
+                  values={values}
+                  handleChange={handleChange}
+                  setValues={setValues}
+                  errors={errors}
+                />;
+  
+              case 3:
+                return <SetupCalendarlyMeeting
+                  setScheduled={setScheduled}
+                />;
+  
+              default:
+                break;
+            }
+          })()}
+  
+        </div>
+  
+        <div className='flex justify-between items-center px-1 py-3 lg:py-6 lg:px-20'>
+          {
+            step > 1 &&
+            <button
+              className='inline-block font-bold rounded-lg border border-[#FECC00] bg-[#FFFFFF] text-[#1C1B17] py-3 px-16'
+              onClick={prevStep}
+            >
+              Back
+            </button>
+          }
+          {
+            step <= 2 ?
+              (<button
+                className='ml-auto inline-block font-bold rounded-lg bg-[#1C1B17] text-[#FFFFFF] py-3 px-16 disabled:opacity-80'
+                onClick={nextStep}
+                disabled={step > 1 && (hasEmptyField || hasErrors)}
+              >
+                Proceed
+              </button>) :
+              (<button
+                className='ml-auto inline-block font-bold rounded-lg bg-[#1C1B17] text-[#FFFFFF] py-3 px-16 disabled:opacity-80'
+                onClick={handleSubmit}
+                disabled={loading || !scheduled}
+              >
+                {loading ? 'Loading...' : 'Save'}
+              </button>)
+          }
+        </div>
+      </>
+    )
+  }

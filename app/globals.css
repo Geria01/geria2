@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700;900&family=Montserrat:wght@500;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply text-fluid-sm inline-block font-semibold whitespace-nowrap bg-[#FECC00] text-[#1C1B17] rounded-2xl py-fluid-1 px-fluid-3;
+  }
+
+  .btn-secondary {
+    @apply text-fluid-sm inline-block whitespace-nowrap text-white font-semibold border border-[#1C1B17] bg-[#1C1B17] rounded-2xl py-fluid-1 px-fluid-3;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+    flex-direction: column;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  height: 100%;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  flex-direction: column;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  height: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Jost', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #333333;
+  opacity: 1;
+}

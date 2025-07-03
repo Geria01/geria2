@@ -1,0 +1,82 @@
+
+import {
+    ROLE_OPTIONS as roleOptions,
+    EXPERIENCE_OPTIONS as experienceOptions
+  } from '../_constants';
+  import SelectButton from '../_components/SelectButton';
+import { MultipartForm } from '../_models/multipartForm.model';
+
+  interface CandidateOptionsProps {
+    values: MultipartForm;
+    setValues: (values: MultipartForm) => void;
+    errors: RecruiterFormErrors;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    setScheduled: (scheduled: boolean) => void;
+  }
+
+  const CandidateOptions = (
+    {
+      values,
+      setValues,
+      errors,
+      handleChange,
+      setScheduled,
+    } : CandidateOptionsProps) => {
+  
+    return (
+      <>
+        <div className='mb-6'>
+  
+          <label
+            htmlFor='experience'
+            className='mb-2 inline-block font-semibold text-[#515B6F]'>
+            What role are you hiring for?
+          </label>
+  
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
+            {
+              roleOptions?.map((option, idx) => (
+                <SelectButton
+                  key={idx}
+                  label={option}
+                  values={values}
+                  setValues={setValues}
+                  type={'role'}
+                />
+              ))
+            }
+          </div>
+  
+          {errors.roleOptions && <span className='text-xs text-red-600'>{errors.roleOptions}</span>}
+        </div>
+  
+        <div className=''>
+  
+          <label
+            htmlFor='role'
+            className='mb-2 inline-block	font-semibold text-[#515B6F]'>
+            Preferred years of experience
+          </label>
+  
+          <div className='grid grid-cols-2 md:grid-cols-3 gap-4'>
+            {
+              experienceOptions?.map((option, idx) => (
+                <SelectButton
+                  key={idx}
+                  label={option}
+                  values={values}
+                  setValues={setValues}
+                  type={'experience'}
+                />
+              ))
+            }
+          </div>
+  
+          {errors.experienceOptions && <span className='text-xs text-red-600'>{errors.experienceOptions}</span>}
+        </div>
+      </>
+    )
+  }
+  
+  export default CandidateOptions;
+  

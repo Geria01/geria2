@@ -1,0 +1,217 @@
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { omit } from 'lodash';
+import { ExperienceField } from '../_models/experienceField.model';
+import { EducationField } from '../_models/educationField.model';
+import { MultipartForm } from '../_models/multipartForm.model';
+
+const useMultiPartForm = (callback: () => void ) => {
+
+  const [errors, setErrors] = useState({} as MultipartFormErrors);
+  const [values, setValues] = useState(
+    {
+      experience: [
+        {
+          employer: '',
+          jobTitle: '',
+          startDate: '',
+          endDate: '',
+          currentlyWorkHere: false,
+          description: '',
+        } as ExperienceField
+      ],
+      education: [
+        {
+          institution: '',
+          degree: '',
+          startDate: '',
+          endDate: '',
+        } as EducationField
+      ],
+      roleOptions: [],
+      experienceOptions: [],
+      hiringCompany: '',
+      contactName: '',
+      emailAddress: '',
+      email: '',
+      phoneNumber: ''
+
+    } as MultipartForm
+  );
+
+  const validate = (event: unknown, name: string, value: string) => {
+    //A function to validate each input values
+    switch (name) {
+
+      case 'email':
+        if (!value) {
+          setErrors({
+            ...errors,
+            email: 'Email is required'
+          });
+        } else if (
+          !new RegExp(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(value)
+        ) {
+          setErrors({
+            ...errors,
+            email: 'Enter a valid email address'
+          });
+        } else {
+        //   let newObj = omit(errors, "email");
+        //   setErrors(newObj);
+        }
+        break;
+
+      case 'hiringCompany':
+        if (!value) {
+          setErrors({
+            ...errors,
+            hiringCompany: 'Company name is required'
+          });
+        } else if (value && value.length <= 2) {
+          setErrors({
+            ...errors,
+            hiringCompany: 'Company name should atleast have 3 letters'
+          });
+        } else {
+          let newObj = omit(errors, "hiringCompany");
+          setErrors(newObj);
+        }
+        break;
+
+      case 'contactName':
+        if (!value) {
+          setErrors({
+            ...errors,
+            contactName: 'Contact name is required'
+          });
+        } else if (value && value.length <= 2) {
+          setErrors({
+            ...errors,
+            contactName: 'Contact name should atleast have 3 letters'
+          });
+        } else {
+          let newObj = omit(errors, "contactName");
+          setErrors(newObj);
+        }
+        break;
+
+      case 'phoneNumber':
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    if (event) event.preventDefault();
+
+    console.log(values);
+
+    if (Object.keys(errors).length === 0 && (Object.keys(values).length > 4)) {
+      callback();
+    }
+  }
+
+  const addExperienceFields = (event : FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const newfield : ExperienceField = {
+      employer: '',
+      jobTitle: '',
+      startDate: '',
+      endDate: '',
+      currentlyWorkHere: false,
+      description: '',
+    };
+
+    setValues({
+      ...values,
+      experience: [...values.experience, newfield]
+    })
+  }
+
+  const addEducationFields = (event : FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const newfield = {
+      institution: '',
+      degree: '',
+      startDate: '',
+      endDate: '',
+    } as EducationField;
+
+    setValues({
+      ...values,
+      education: [...values.education, newfield]
+    })
+  }
+
+  const removeExperienceFields = (idx: number, event : FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const data = [...values.experience];
+    data.splice(idx, 1);
+
+    setValues({
+      ...values,
+      experience: [...data]
+    });
+  }
+
+  const removeEducationFields = (idx: number, event : FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const data = [...values.education];
+    data.splice(idx, 1);
+
+    setValues({
+      ...values,
+      education: [...data]
+    });
+  }
+
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement>, 
+    idx: number | null = null, 
+    type: 'education' | 'experience' | null = null) => {
+
+    const { name, value } = event.target;
+
+    // if (idx != null && type != null) {
+    //   const data = [...values[type]];
+
+    //   data[idx][name] = value;
+
+    //   if (type === 'education') {
+    //     setValues({
+    //       ...values,
+    //       education: [...data]
+    //     });
+    //   }
+    //   if (type === 'experience') {
+    //     setValues({
+    //       ...values,
+    //       experience: [...data]
+    //     });
+    //   }
+    // } else {
+    //   validate(event, name, value);
+    //   setValues({ ...values, [name]: value });
+    // }
+  }
+
+  return {
+    values,
+    setValues,
+    errors,
+    handleSubmit,
+    handleChange,
+    addExperienceFields,
+    addEducationFields,
+    removeExperienceFields,
+    removeEducationFields,
+  }
+}
+
+export default useMultiPartForm;

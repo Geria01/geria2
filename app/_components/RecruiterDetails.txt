@@ -1,0 +1,117 @@
+import React from 'react';
+import PhoneInput from 'react-phone-input-2';
+
+import 'react-phone-input-2/lib/style.css';
+import { MultipartForm } from '../_models/multipartForm.model';
+
+// interface RecruiterFormValues {
+//     hiringCompany: string;
+//     contactName: string;
+//     email: string;
+//     phoneNumber: string;
+// }
+
+
+interface RecruiterDetailsProps {
+    values: MultipartForm;
+    //setValues: (values: Values) => void;
+    setValues: (values: MultipartForm) => React.Dispatch<React.SetStateAction<MultipartForm>>
+    errors: RecruiterFormErrors;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const RecruiterDetails: React.FC<RecruiterDetailsProps> = (
+  {
+    values,
+    setValues,
+    errors,
+    handleChange,
+  }) => {
+
+  const {
+    hiringCompany,
+    contactName,
+    email,
+    phoneNumber
+  } = values;
+
+  return (
+    <div className='text-[#515B6F]'>
+      <div className='mb-3'>
+        <label
+          htmlFor='hiringCompany'
+          className='inline-block	mb-[5px] font-semibold text-[#515B6F]'
+        >
+          Hiring Company
+          <span className='text-[#ff0000]'>*</span>
+        </label>
+        <input
+          type='text'
+          className='w-full rounded-lg border border-[#D6DDEB] px-[16px] py-[12px]'
+          name='hiringCompany'
+          placeholder='Hiring Company'
+          // value={hiringCompany}
+          onChange={handleChange}
+        />
+        {errors.hiringCompany && <span className='text-xs text-red-600'>{errors.hiringCompany}</span>}
+      </div>
+      <div className='mb-3'>
+        <label
+          htmlFor='contactName'
+          className='inline-block	mb-[5px] font-semibold text-[#515B6F]'
+        >
+          Contact Name
+          <span className='text-[#ff0000]'>*</span>
+        </label>
+        <input
+          type='text'
+          className='w-full rounded-lg border border-[#D6DDEB] px-[16px] py-[12px]'
+          name='contactName'
+          placeholder='Contact Name'
+          // value={contactName}
+          onChange={handleChange}
+        />
+        {errors.contactName && <span className='text-xs text-red-600'>{errors.contactName}</span>}
+      </div>
+      <div className='mb-3'>
+        <label
+          htmlFor='email'
+          className='inline-block	mb-[5px] font-semibold text-[#515B6F]'
+        >
+          Email Address
+          <span className='text-[#ff0000]'>*</span>
+        </label>
+        <input
+          type='text'
+          className='w-full rounded-lg border border-[#D6DDEB] px-[16px] py-[12px]'
+          name='email'
+          placeholder='Email Address'
+          // value={email}
+          onChange={handleChange}
+        />
+        {errors.email && <span className='text-xs text-red-600'>{errors.email}</span>}
+      </div>
+      <div className='mb-3'>
+        <label
+          htmlFor='phoneNumber'
+          className='inline-block	mb-[5px] font-semibold text-[#515B6F]'
+        >
+          Phone Number
+        </label>
+        <PhoneInput
+          inputProps={{
+            name: 'phoneNumber'
+          }}
+          inputClass='!w-full !h-auto !leading-inherit !rounded-lg !border !border-[#D6DDEB] px-[16px] py-[12px]'
+          buttonClass='!border !border-[#D6DDEB] !border-r-0 !rounded-lg !bg-white'
+          country={'us'}
+          value={phoneNumber}
+          onChange={phoneNumber => setValues({ ...values, 'phoneNumber': `+${phoneNumber}` })}
+        />
+        {<span className='text-xs text-red-600'>{errors.phoneNumber && errors.phoneNumber}</span>}
+      </div>
+    </div>
+  )
+}
+
+export default RecruiterDetails;
