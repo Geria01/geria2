@@ -68,20 +68,7 @@ export default function HowItWorksPage() {
                 </div>
               </div>
 
-              <div className="mt-8 text-center">
-                <Link href="/hire-talent" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                  Hire Developers
-                </Link>
-              </div>
-            </div>
-
-            {/* Build With Our Team Flow */}
-            <div className="bg-green-50 p-8 rounded-lg">
-              <h2 className="text-3xl font-bold text-green-900 mb-8 text-center">
-                Build With Our Team
-              </h2>
-
-              <div className="space-y-6">
+              <div className="space-y-6 mb-8">
                 <div className="flex items-start">
                   <div className="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="font-bold">1</span>
@@ -122,13 +109,17 @@ export default function HowItWorksPage() {
                   </div>
                 </div>
               </div>
-
-              <div className="mt-8 text-center">
-                <Link href="/web-development" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors">
-                  Start Your Project
-                </Link>
-              </div>
             </div>
+          </div>
+
+          {/* Aligned CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+            <Link href="/hire-talent" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center">
+              Hire Developers
+            </Link>
+            <Link href="/web-development" className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center">
+              Start Your Project
+            </Link>
           </div>
         </div>
       </section>
