@@ -2,7 +2,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useAuth } from '../_context/AuthContext';
-import CandidateLogin from '../_components/CandidateLogin';
 import CandidateDashboard from '../_components/CandidateDashboard';
 import { useSearchParams } from 'next/navigation';
 

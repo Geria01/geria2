@@ -1,4 +1,3 @@
-
 'use client';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
@@ -40,11 +39,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
       });
-      
+
       if (response.ok) {
         const userData = await response.json();
         setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData));
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('user', JSON.stringify(userData));
+        }
         return true;
       }
       return false;
@@ -61,11 +62,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, name }),
       });
-      
+
       if (response.ok) {
         const userData = await response.json();
         setUser(userData);
-        localStorage.setItem('user', JSON.stringify(userData));
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('user', JSON.stringify(userData));
+        }
         return true;
       }
       return false;
