@@ -23,8 +23,8 @@ const WebDevView = () => {
             <div className="flex flex-col items-stretch w-[54%] max-md:w-full max-md:ml-0">
               <div className="relative flex flex-col my-auto max-md:max-w-full max-md:mt-4">
                 <div className="text-red-600 text-5xl font-semibold leading-[53px] self-stretch max-md:max-w-full max-md:text-4xl max-md:leading-[49px]">
-                  <span className="text-zinc-800">Web and Application </span>
-                  <span className="text-red-600">Development.</span>
+                  <span className="text-zinc-800">Bringing Ideas to </span>
+                  <span className="text-red-600">Life</span>
                 </div>
                 <div className="self-stretch text-slate-600 text-xl leading-8 opacity-80 mt-2.5 max-md:max-w-full">
                   At Geria, great digital products start with strong foundations.
