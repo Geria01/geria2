@@ -17,7 +17,7 @@ export default function HomePage() {
           {/* Dual CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link href="/hire-talent" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
-              Hire Developers
+              Request Talent Now
             </Link>
             <Link href="/web-development" className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors">
               Build My Website
