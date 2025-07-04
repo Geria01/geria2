@@ -30,6 +30,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 <img
                   loading="lazy"
                   src={post.authorAvatarUrl}
+                  alt={`${post.authorName} avatar`}
                   className="aspect-square object-contain object-center w-[50px] overflow-hidden self-center max-w-full my-auto rounded-[50%]"
                 />
                 <div className="items-start self-stretch flex flex-col">
@@ -49,6 +50,7 @@ export default function Page({ params }: { params: { id: string } }) {
           <img
             loading="lazy"
             src={post.image}
+            alt={post.title}
             className="aspect-[1.5] object-center w-[401px] overflow-hidden self-center max-w-full mt-10 rounded-[5%]"
           />
           <div className="text-slate-500 text-lg leading-7 self-stretch -mr-5 mt-10 max-md:max-w-full">
@@ -65,6 +67,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/685054ac-1864-49a2-9d19-d6b6cbcd7121?apiKey=994d997208b34a26ad9d13da5074bcdd&"
+                    alt="Like icon"
                     className="aspect-square object-contain object-center w-full overflow-hidden flex-1"
                   />
                 </div>
@@ -75,6 +78,7 @@ export default function Page({ params }: { params: { id: string } }) {
                   <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5320814-571a-445c-bdec-dd1724eebe90?apiKey=994d997208b34a26ad9d13da5074bcdd&"
+                    alt="Share icon"
                     className="aspect-square object-contain object-center w-full overflow-hidden flex-1"
                   />
                 </div>
@@ -112,6 +116,7 @@ export default function Page({ params }: { params: { id: string } }) {
   <img
     loading="lazy"
     src={post.image}
+    alt={post.title}
     className="aspect-[1.18] object-center w-full overflow-hidden self-stretch rounded-[10%]"
   />
   <div className="items-start self-stretch flex grow flex-col mt-5">
