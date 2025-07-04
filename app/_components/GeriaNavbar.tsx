@@ -135,10 +135,10 @@ export default function GeriaNavbar() {
 
             {/* CTA Button */}
             <Link
-              href="/hire-talent"
+              href="/request-talent"
               className="bg-red-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200"
             >
-              Hire Talent
+              Request Talent
             </Link>
           </div>
 
