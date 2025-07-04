@@ -2,7 +2,20 @@
 const nextConfig = {
     //output: 'export',
     images: {
-        domains: ['localhost', 'geriasa.blob.core.windows.net', 'cdn.builder.io'],
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'geriasa.blob.core.windows.net',
+          },
+          {
+            protocol: 'https',
+            hostname: 'cdn.builder.io',
+          },
+          {
+            protocol: 'http',
+            hostname: 'localhost',
+          },
+        ],
       },
       webpack: (
           config,
