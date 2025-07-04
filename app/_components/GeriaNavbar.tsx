@@ -13,7 +13,7 @@ export default function GeriaNavbar() {
     { name: "How It Works", href: "/how-it-works" },
     { name: "For Engineers", href: "/for-engineers" },
     { name: "About Us", href: "/about-us" },
-    { name: "Contact", href: "/contact" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (
