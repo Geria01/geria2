@@ -1,11 +1,11 @@
 
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useAuth } from '../_context/AuthContext';
 import CandidateDashboard from '../_components/CandidateDashboard';
 import { useSearchParams } from 'next/navigation';
 
-export default function CandidatePortalPage() {
+function CandidatePortalContent() {
   const { user, isLoading } = useAuth();
   const searchParams = useSearchParams();
   const tabParam = searchParams.get('tab');
@@ -86,6 +86,18 @@ export default function CandidatePortalPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CandidatePortalPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-red-600"></div>
+      </div>
+    }>
+      <CandidatePortalContent />
+    </Suspense>
   );
 }
 
