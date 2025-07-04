@@ -27,19 +27,13 @@ const WebDevView = () => {
                   <span className="text-red-600">Development.</span>
                 </div>
                 <div className="self-stretch text-slate-600 text-xl leading-8 opacity-80 mt-2.5 max-md:max-w-full">
-                  At Geria, we understand that every groundbreaking digital
-                  solution begins with a solid foundation. We explore the realm
-                  of unparalleled design and development excellence together, by
-                  leveraging the expertise of our extraordinary team of tech
-                  talents. Our commitment is to craft a harmonious blend of
-                  creativity and functionality that goes beyond meeting your
-                  project expectations, promising both usability and prompt
-                  delivery.
+                  At Geria, great digital products start with strong foundations.
+                  We combine smart design and expert development to build solutions that work beautifully and deliver fast. Backed by a team of top tech talent, we bring creativity, functionality, and reliability together — so your project not only meets expectations, but exceeds them.
                 </div>
-                 
-                 
 
-      
+
+
+
                 <button
             className='text-white text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch bg-stone-900 w-[105px] max-w-full mt-2.5 px-5 py-2.5 rounded-lg max-md:px-px'
             onClick={() => setOpen(true)}
@@ -52,14 +46,14 @@ const WebDevView = () => {
           />
 
 
-            
-            
+
+
 
 
 
               </div>
             </div>
-      
+
             <div className="flex flex-col items-stretch w-[46%] ml-5 max-md:w-full max-md:ml-0 transition-transform transform hover:scale-105">
   <img
     loading="lazy"
@@ -201,7 +195,7 @@ const WebDevView = () => {
         </div>
       </div>
       <div className="flex flex-col items-stretch w-1/5 ml-5 max-md:w-full max-md:ml-0">
-        
+
       </div>
     </div>
   </div>
@@ -229,7 +223,7 @@ const WebDevView = () => {
 </div>
 
 
-          
+
           <div className="flex flex-col w-[33%] ml-5 max-md:w-full max-md:ml-0 transform transition-transform hover:scale-105">
           <div className="justify-center items-stretch bg-slate-50 flex grow flex-col w-full mx-auto pl-5 pr-5 py-7 rounded-3xl max-md:mt-5 shadow-lg hover:shadow-2xl">
     <img
@@ -245,7 +239,7 @@ const WebDevView = () => {
     </div>
   </div>
 </div>
- 
+
 <div className="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0 transform transition-transform hover:scale-105">
   <div className="justify-center items-stretch bg-slate-50 flex grow flex-col w-full mx-auto pl-5 pr-5 py-7 rounded-3xl max-md:mt-5 shadow-lg hover:shadow-2xl">
     <img
@@ -304,7 +298,7 @@ const WebDevView = () => {
   <div className="justify-center items-stretch bg-slate-50 flex grow flex-col w-full mx-auto pl-5 pr-5 py-12 rounded-3xl max-md:mt-5 shadow-lg hover:shadow-2xl">
     <img
       loading="lazy"
-      srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&"
+      srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/fd9e982a-dd48-464a-a45a-f4703e20bca2?apiKey=994d997208b34a26ad9d13da5074bcdd&"
       className="aspect-square object-contain object-center w-[70px] overflow-hidden self-center max-w-full mt-1"
     />
     <div className="text-stone-900 text-xl font-semibold leading-6 self-center mt-5 transition-colors hover:text-red-500">
@@ -325,8 +319,7 @@ const WebDevView = () => {
               loading="lazy"
               src="https://geriasa.blob.core.windows.net/assets/angular_ac442b71e8.png"
               className="aspect-[1.09] object-contain object-center w-[72px] overflow-hidden"
-            />{" "}
-            <div className="text-white text-xl font-semibold leading-7 self-stretch whitespace-nowrap mt-2.5 text-center">
+            />{" "}            <div className="text-white text-xl font-semibold leading-7 self-stretch whitespace-nowrap mt-2.5 text-center">
               Angular
             </div>
           </div>{" "}
@@ -382,40 +375,10 @@ const WebDevView = () => {
           </div>
         </div>
       </div>{" "}
-     
+
 
 
   </div> 
-
-
-
-  {/* <div className="bg-blue-50 self-center flex w-full flex-col justify-center mt-0 px-5 py-12 items-start max-md:max-w-full max-md:mt-0">
-  <div className="flex-col overflow-hidden relative flex min-h-[593px] w-[1092px] justify-center mx-auto mb-1 px-5 py-12 items-end max-md:max-w-full">
-    <img
-      loading="lazy"
-      src="https://geriasa.blob.core.windows.net/assets/582385c3_6189_4626_aee6_c41b3d566d7d_1_dadf440a16.png"
-      className="absolute h-full w-full object-cover object-center inset-0"
-    />
-    <div className="relative justify-center ml-60 left-0 bg-white bg-opacity-80 flex w-[630px] max-w-full flex-col ml-auto mt-14 mb-9 p-12 rounded-xl items-start max-md:mt-10 max-md:px-5">
-      <div
-        className="foryougpt relative -right-10% self-stretch text-neutral-800 text-3xl font-semibold leading-10 mt-2.5 max-md:max-w-full"
-      >
-        Build a formidable and verified tech team
-      </div>
-      <div className="text-slate-500 text-base leading-7 self-stretch mt-5 max-md:max-w-full">
-        Explore our extensive talent network where you'll discover
-        exceptional tech professionals ready to elevate your projects and
-        initiatives. Find the perfect match for your technological needs and
-        drive innovation with our curated pool of talent.
-      </div>
-      <div className="text-white text-center text-sm font-bold leading-6 justify-center items-stretch bg-stone-900 w-[131px] max-w-full mt-5 px-5 py-2.5 rounded-lg">
-        <Link href={'/hire-talent'}>
-          Build a Team
-        </Link>
-      </div>
-    </div>
-  </div>
-</div> */}
 
 </>
 
