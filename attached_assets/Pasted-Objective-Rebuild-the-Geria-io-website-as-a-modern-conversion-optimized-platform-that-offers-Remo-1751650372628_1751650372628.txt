@@ -1,0 +1,160 @@
+Objective
+Rebuild the Geria.io website as a modern, conversion-optimized platform that offers:
+
+Remote developer hiring (vetted global talent)
+
+Web development services (in-house team)
+
+Take inspiration from Andela.com and Proxify.io in layout, UX, messaging, and trust signals — but maintain Geria’s own voice and brand.
+
+🎯 Key Goals
+Position Geria as a trusted platform to:
+
+Hire top global remote software talent
+
+Engage a full-stack web development team for end-to-end product builds
+
+Deliver a high-performance, SEO-ready, mobile-first website
+
+🧱 Website Requirements
+🧭 Site Navigation
+scss
+Copy
+Edit
+[Home]  
+[Hire Talent]  
+[Web Development]  
+[How It Works]  
+[For Engineers]  
+[About Us]  
+[Contact]
+[Blog] (optional)
+📄 Page Details
+1. Homepage
+Headline: “Top Remote Talent. One Global Team.”
+
+Subheadline: “Whether you’re hiring elite remote developers or need a full product team — Geria delivers.”
+
+Dual CTA: [Hire Developers] [Build My Website]
+
+Section: Why Choose Geria (Speed, Quality, Trust, Flexibility)
+
+Visual: Map of where Geria talent works globally
+
+Client logos, testimonials, case studies
+
+Developer spotlight carousel (optional)
+
+Final CTA: [Book a Call]
+
+2. Hire Talent Page
+Describe the sourcing, vetting, and matching process
+
+Supported roles: Frontend, Backend, Full-stack, DevOps, Mobile, AI
+
+Talent from all over the world
+
+Contract types: full-time, part-time, project-based
+
+AI-assisted matching (if applicable)
+
+CTA: [Request Talent Now]
+
+3. Web Development Services Page
+Describe what Geria builds: MVPs, SaaS, websites, APIs, dashboards
+
+Development stack: React, Next.js, Node.js, Django, Strapi, etc.
+
+Delivery process: Discovery → Design → Build → Launch
+
+Sample timelines: 2–12 weeks
+
+Pricing models: fixed, hourly, retainer
+
+CTA: [Book a Discovery Call]
+
+4. How It Works
+Dual funnel: “Hire Developers” and “Build With Our Team”
+
+Visual step-by-step flows
+
+FAQ and delivery guarantees
+
+5. For Engineers
+How to join the talent network
+
+Vetting process, remote-first culture
+
+Benefits: global clients, reliable payments, growth opportunities
+
+CTA: [Apply Now]
+
+6. About Us
+Company mission: democratize global tech opportunities
+
+Core values
+
+Team bios or photos (optional)
+
+Mention of diversity, equity, and inclusion
+
+7. Contact
+Contact form
+
+Embedded calendar for booking calls
+
+Social media links
+
+Location/time zone details
+
+🎨 Design System
+Style: Professional, modern, global tech branding
+
+Colors: Clean neutrals + accent (blue, green, or purple)
+
+Fonts: Inter, IBM Plex, or Plus Jakarta Sans
+
+Responsive: Fully mobile-friendly
+
+Motion: Subtle scroll animations, hover states, fade-ins
+
+Accessibility: WCAG 2.1 AA
+
+⚙️ Tech Stack (Recommended)
+Frontend: Next.js, React, Tailwind CSS, TypeScript
+
+CMS (optional): Sanity or Strapi (for blog/case studies)
+
+Deployment: Vercel or Netlify
+
+SEO & Analytics: OpenGraph, schema.org, Plausible or GA
+
+Integrations:
+
+Calendly for bookings
+
+HubSpot or Mailchimp (for leads)
+
+Crisp or Tawk.to (for live chat)
+
+🧠 Sample Task Flow for Agent
+Set up Next.js + Tailwind project scaffold
+
+Create routes/pages based on structure above
+
+Build homepage with dual CTA split
+
+Add animations and testimonials
+
+Populate services pages with provided content
+
+Ensure SEO, responsive design, accessibility, and fast load speed
+
+Connect forms to backend or CRM (e.g., Formspree or HubSpot)
+
+💡 Inspiration References
+https://www.andela.com — For layout, testimonials, positioning
+
+https://proxify.io — For simplicity, vetting flow, dev showcase
+
+https://turing.com — For tone, job marketplace layout
