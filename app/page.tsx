@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 
@@ -14,7 +13,7 @@ export default function HomePage() {
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Whether you're hiring elite remote developers or need a full product team — Geria delivers.
           </p>
-          
+
           {/* Dual CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link href="/hire-talent" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
@@ -42,7 +41,7 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Why Choose Geria
           </h2>
-          
+
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -53,7 +52,7 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold mb-2">Speed</h3>
               <p className="text-gray-600">Get matched with top talent in 48 hours or start your project within a week.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -63,7 +62,7 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold mb-2">Quality</h3>
               <p className="text-gray-600">Every developer is vetted through our rigorous 5-step screening process.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +72,7 @@ export default function HomePage() {
               <h3 className="text-xl font-semibold mb-2">Trust</h3>
               <p className="text-gray-600">Trusted by 100+ companies worldwide with a 98% client satisfaction rate.</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,7 +106,7 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             What Our Clients Say
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg">
               <div className="flex items-center mb-4">
@@ -119,7 +118,7 @@ export default function HomePage() {
               </div>
               <p className="text-gray-700">"Geria helped us scale our development team quickly with top-tier talent. The developers they provided were exceptional and integrated seamlessly with our existing team."</p>
             </div>
-            
+
             <div className="bg-gray-50 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <img src="/images/placholder_avatar2.jpg" alt="Client" className="w-12 h-12 rounded-full mr-4" />
@@ -130,7 +129,7 @@ export default function HomePage() {
               </div>
               <p className="text-gray-700">"We needed a complete web development overhaul. Geria's team delivered a stunning, high-performance website that increased our conversions by 40%."</p>
             </div>
-            
+
             <div className="bg-gray-50 p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <img src="/images/placholder_avatar3.jpg" alt="Client" className="w-12 h-12 rounded-full mr-4" />
@@ -151,7 +150,7 @@ export default function HomePage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Meet Our Top Developers
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img src="/images/avatar4.png" alt="Developer" className="w-16 h-16 rounded-full mx-auto mb-4" />
@@ -164,7 +163,7 @@ export default function HomePage() {
               </div>
               <p className="text-gray-700 text-sm text-center">5+ years building scalable web applications for fintech and e-commerce companies.</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img src="/images/avatar5.png" alt="Developer" className="w-16 h-16 rounded-full mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-center mb-2">Maria Santos</h3>
@@ -176,7 +175,7 @@ export default function HomePage() {
               </div>
               <p className="text-gray-700 text-sm text-center">Expert in cross-platform mobile development with 50+ apps published to app stores.</p>
             </div>
-            
+
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img src="/images/avatar6.png" alt="Developer" className="w-16 h-16 rounded-full mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-center mb-2">David Kim</h3>
