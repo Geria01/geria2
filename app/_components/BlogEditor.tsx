@@ -1,6 +1,6 @@
 
 'use client';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 interface BlogPost {
   id: number;
@@ -14,6 +14,7 @@ interface BlogPost {
   authorAvatarUrl: string;
   published: boolean;
   scheduledDate?: string;
+  tags?: string[];
 }
 
 interface BlogEditorProps {
@@ -23,298 +24,393 @@ interface BlogEditorProps {
 }
 
 export default function BlogEditor({ post, onSave, onCancel }: BlogEditorProps) {
-  const [title, setTitle] = useState(post?.title || '');
-  const [category, setCategory] = useState(post?.category || '');
-  const [image, setImage] = useState(post?.image || '');
-  const [previewText, setPreviewText] = useState(post?.previewText || '');
-  const [longText, setLongText] = useState(post?.longText || '');
-  const [published, setPublished] = useState(post?.published || false);
-  const [scheduledDate, setScheduledDate] = useState(post?.scheduledDate || '');
-  const [isDraft, setIsDraft] = useState(false);
-  
-  const editorRef = useRef<HTMLDivElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [formData, setFormData] = useState<BlogPost>({
+    id: post?.id || 0,
+    title: post?.title || '',
+    category: post?.category || '',
+    image: post?.image || '',
+    previewText: post?.previewText || '',
+    longText: post?.longText || '',
+    date: post?.date || new Date().toLocaleDateString(),
+    authorName: post?.authorName || 'Sophie Wood',
+    authorAvatarUrl: post?.authorAvatarUrl || 'https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp',
+    published: post?.published || false,
+    scheduledDate: post?.scheduledDate || '',
+    tags: post?.tags || []
+  });
 
-  const formatText = (command: string, value?: string) => {
-    document.execCommand(command, false, value);
-    if (editorRef.current) {
-      setLongText(editorRef.current.innerHTML);
+  const [imagePreview, setImagePreview] = useState(formData.image);
+  const [tagInput, setTagInput] = useState('');
+  const [isUploading, setIsUploading] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  const categories = ['Technology', 'Remote Work', 'Hiring', 'Build', 'Engineering'];
+
+  useEffect(() => {
+    if (contentRef.current) {
+      contentRef.current.innerHTML = formData.longText;
     }
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const insertImage = () => {
-    const url = prompt('Enter image URL:');
-    if (url) {
-      formatText('insertImage', url);
+  const handleContentChange = () => {
+    if (contentRef.current) {
+      setFormData(prev => ({
+        ...prev,
+        longText: contentRef.current!.innerHTML
+      }));
     }
   };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      // In a real app, you'd upload to a service like Cloudinary
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setImage(e.target?.result as string);
-      };
-      reader.readAsDataURL(file);
+      setIsUploading(true);
+      
+      // Create a preview URL
+      const previewUrl = URL.createObjectURL(file);
+      setImagePreview(previewUrl);
+      
+      // In a real app, you would upload to a cloud service here
+      // For now, we'll just use the preview URL
+      setTimeout(() => {
+        setFormData(prev => ({
+          ...prev,
+          image: previewUrl
+        }));
+        setIsUploading(false);
+      }, 1000);
     }
   };
 
-  const handleSave = () => {
-    const newPost: BlogPost = {
-      id: post?.id || Date.now(),
-      title,
-      category,
-      image,
-      previewText,
-      longText,
-      date: new Date().toLocaleDateString('en-GB', {
-        weekday: 'short',
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric'
-      }),
-      authorName: 'Admin User',
-      authorAvatarUrl: 'https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp',
-      published: !isDraft && published,
-      scheduledDate: scheduledDate || undefined
-    };
-    onSave(newPost);
+  const handleAddTag = () => {
+    if (tagInput.trim() && !formData.tags?.includes(tagInput.trim())) {
+      setFormData(prev => ({
+        ...prev,
+        tags: [...(prev.tags || []), tagInput.trim()]
+      }));
+      setTagInput('');
+    }
   };
 
-  const saveDraft = () => {
-    setIsDraft(true);
-    handleSave();
+  const handleRemoveTag = (tagToRemove: string) => {
+    setFormData(prev => ({
+      ...prev,
+      tags: prev.tags?.filter(tag => tag !== tagToRemove) || []
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (contentRef.current) {
+      const updatedPost = {
+        ...formData,
+        longText: contentRef.current.innerHTML,
+        date: post ? formData.date : new Date().toLocaleDateString()
+      };
+      
+      onSave(updatedPost);
+    }
+  };
+
+  const insertFormatting = (command: string, value?: string) => {
+    document.execCommand(command, false, value);
+    handleContentChange();
+  };
+
+  const estimateReadTime = (text: string) => {
+    const wordsPerMinute = 200;
+    const words = text.replace(/<[^>]*>/g, '').split(' ').length;
+    return Math.ceil(words / wordsPerMinute);
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-6">
-            <h1 className="text-3xl font-bold text-gray-900">
-              {post ? 'Edit Post' : 'New Post'}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Header */}
+        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-gray-900">
+              {post ? 'Edit Post' : 'Create New Post'}
             </h1>
-            <div className="flex space-x-4">
+            <div className="flex items-center gap-4">
               <button
-                onClick={saveDraft}
-                className="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors"
-              >
-                Save Draft
-              </button>
-              <button
-                onClick={handleSave}
-                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
-              >
-                {published ? 'Update' : 'Publish'}
-              </button>
-              <button
+                type="button"
                 onClick={onCancel}
-                className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                className="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
               >
                 Cancel
               </button>
+              <button
+                type="button"
+                onClick={() => setFormData(prev => ({ ...prev, published: !prev.published }))}
+                className={`px-4 py-2 rounded-lg transition-colors ${
+                  formData.published 
+                    ? 'bg-green-100 text-green-700 hover:bg-green-200' 
+                    : 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200'
+                }`}
+              >
+                {formData.published ? 'Published' : 'Draft'}
+              </button>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Editor */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow p-6 space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Basic Info */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Basic Information</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Title
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Title</label>
                 <input
                   type="text"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Enter post title..."
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
-
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Preview Text
-                </label>
-                <textarea
-                  value={previewText}
-                  onChange={(e) => setPreviewText(e.target.value)}
-                  rows={3}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Brief description for post preview..."
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Content
-                </label>
-                
-                {/* Toolbar */}
-                <div className="border border-gray-300 rounded-t-md p-2 bg-gray-50 flex flex-wrap gap-2">
-                  <button
-                    onClick={() => formatText('bold')}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Bold"
-                  >
-                    <strong>B</strong>
-                  </button>
-                  <button
-                    onClick={() => formatText('italic')}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Italic"
-                  >
-                    <em>I</em>
-                  </button>
-                  <button
-                    onClick={() => formatText('underline')}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Underline"
-                  >
-                    <u>U</u>
-                  </button>
-                  <div className="border-l border-gray-300 mx-1"></div>
-                  <button
-                    onClick={() => formatText('formatBlock', 'h3')}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Heading"
-                  >
-                    H3
-                  </button>
-                  <button
-                    onClick={() => formatText('formatBlock', 'h5')}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Subheading"
-                  >
-                    H5
-                  </button>
-                  <div className="border-l border-gray-300 mx-1"></div>
-                  <button
-                    onClick={() => formatText('insertUnorderedList')}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Bullet List"
-                  >
-                    •
-                  </button>
-                  <button
-                    onClick={() => formatText('insertOrderedList')}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Numbered List"
-                  >
-                    1.
-                  </button>
-                  <div className="border-l border-gray-300 mx-1"></div>
-                  <button
-                    onClick={() => {
-                      const url = prompt('Enter link URL:');
-                      if (url) formatText('createLink', url);
-                    }}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Insert Link"
-                  >
-                    🔗
-                  </button>
-                  <button
-                    onClick={insertImage}
-                    className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-100"
-                    title="Insert Image"
-                  >
-                    🖼️
-                  </button>
-                </div>
-
-                {/* Editor */}
-                <div
-                  ref={editorRef}
-                  contentEditable
-                  dangerouslySetInnerHTML={{ __html: longText }}
-                  onInput={(e) => setLongText(e.currentTarget.innerHTML)}
-                  className="min-h-[400px] p-4 border border-t-0 border-gray-300 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                  style={{ whiteSpace: 'pre-wrap' }}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow p-6 space-y-6">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Category
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
                 <select
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 >
-                  <option value="">Select category</option>
-                  <option value="Technology">Technology</option>
-                  <option value="Remote Work">Remote Work</option>
-                  <option value="Hiring">Hiring</option>
-                  <option value="Build">Build</option>
+                  <option value="">Select a category</option>
+                  {categories.map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                  ))}
                 </select>
               </div>
+            </div>
+            
+            <div className="mt-6">
+              <label className="block text-sm font-medium text-gray-700 mb-2">Preview Text</label>
+              <textarea
+                name="previewText"
+                value={formData.previewText}
+                onChange={handleInputChange}
+                rows={3}
+                required
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Brief description of the post..."
+              />
+            </div>
+          </div>
 
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Featured Image
-                </label>
+          {/* Featured Image */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Featured Image</h2>
+            <div className="flex items-center gap-6">
+              <div className="flex-1">
                 <input
-                  ref={fileInputRef}
                   type="file"
-                  accept="image/*"
+                  ref={fileInputRef}
                   onChange={handleImageUpload}
+                  accept="image/*"
                   className="hidden"
                 />
-                <div
+                <button
+                  type="button"
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center cursor-pointer hover:border-gray-400"
+                  disabled={isUploading}
+                  className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50"
                 >
-                  {image ? (
-                    <img src={image} alt="Preview" className="w-full h-32 object-cover rounded" />
-                  ) : (
-                    <div className="text-gray-500">
-                      <div className="text-2xl mb-2">📷</div>
-                      <p>Click to upload image</p>
-                    </div>
-                  )}
-                </div>
+                  {isUploading ? 'Uploading...' : 'Upload Image'}
+                </button>
               </div>
-
-              <div>
-                <label className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={published}
-                    onChange={(e) => setPublished(e.target.checked)}
-                    className="mr-2"
+              {imagePreview && (
+                <div className="flex-shrink-0">
+                  <img
+                    src={imagePreview}
+                    alt="Preview"
+                    className="w-32 h-20 object-cover rounded-lg"
                   />
-                  Publish immediately
-                </label>
-              </div>
+                </div>
+              )}
+            </div>
+          </div>
 
+          {/* Tags */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Tags</h2>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {formData.tags?.map(tag => (
+                <span
+                  key={tag}
+                  className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm flex items-center gap-2"
+                >
+                  {tag}
+                  <button
+                    type="button"
+                    onClick={() => handleRemoveTag(tag)}
+                    className="text-blue-600 hover:text-blue-800"
+                  >
+                    ×
+                  </button>
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={tagInput}
+                onChange={(e) => setTagInput(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddTag())}
+                placeholder="Add a tag..."
+                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              <button
+                type="button"
+                onClick={handleAddTag}
+                className="px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                Add Tag
+              </button>
+            </div>
+          </div>
+
+          {/* Content Editor */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Content</h2>
+            
+            {/* Toolbar */}
+            <div className="flex flex-wrap gap-2 mb-4 p-4 bg-gray-50 rounded-lg">
+              <button
+                type="button"
+                onClick={() => insertFormatting('bold')}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                <strong>B</strong>
+              </button>
+              <button
+                type="button"
+                onClick={() => insertFormatting('italic')}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                <em>I</em>
+              </button>
+              <button
+                type="button"
+                onClick={() => insertFormatting('underline')}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                <u>U</u>
+              </button>
+              <button
+                type="button"
+                onClick={() => insertFormatting('formatBlock', 'h3')}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                H3
+              </button>
+              <button
+                type="button"
+                onClick={() => insertFormatting('formatBlock', 'h5')}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                H5
+              </button>
+              <button
+                type="button"
+                onClick={() => insertFormatting('insertUnorderedList')}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                • List
+              </button>
+              <button
+                type="button"
+                onClick={() => insertFormatting('insertOrderedList')}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                1. List
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const url = prompt('Enter URL:');
+                  if (url) insertFormatting('createLink', url);
+                }}
+                className="px-3 py-1 bg-white border border-gray-300 rounded hover:bg-gray-50 transition-colors"
+              >
+                🔗 Link
+              </button>
+            </div>
+
+            {/* Editor */}
+            <div
+              ref={contentRef}
+              contentEditable
+              onInput={handleContentChange}
+              className="min-h-[400px] w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 prose max-w-none"
+              style={{ outline: 'none' }}
+            />
+            
+            <div className="mt-4 text-sm text-gray-500">
+              Estimated read time: {estimateReadTime(formData.longText)} minutes
+            </div>
+          </div>
+
+          {/* Author Info */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">Author Information</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Schedule for later
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Author Name</label>
                 <input
-                  type="datetime-local"
-                  value={scheduledDate}
-                  onChange={(e) => setScheduledDate(e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  type="text"
+                  name="authorName"
+                  value={formData.authorName}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Author Avatar URL</label>
+                <input
+                  type="url"
+                  name="authorAvatarUrl"
+                  value={formData.authorAvatarUrl}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
             </div>
           </div>
-        </div>
+
+          {/* Submit */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-600">
+                  Status: <span className={`font-semibold ${formData.published ? 'text-green-600' : 'text-yellow-600'}`}>
+                    {formData.published ? 'Published' : 'Draft'}
+                  </span>
+                </p>
+              </div>
+              <button
+                type="submit"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+              >
+                {post ? 'Update Post' : 'Create Post'}
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   );

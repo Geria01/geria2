@@ -1,193 +1,277 @@
+
 import Link from 'next/link';
-import postsJson from "../posts.json"; 
- 
-export default function Page({ params }: { params: { id: string } }) {
+import Image from 'next/image';
+import postsJson from "../posts.json";
+import { Metadata } from 'next';
 
-  var { posts } = postsJson;
+interface BlogPost {
+  id: number;
+  category: string;
+  title: string;
+  image: string;
+  previewText: string;
+  longText: string;
+  date: string;
+  authorName: string;
+  authorAvatarUrl: string;
+}
 
-  // Find the post with the matching id
-  const post = posts.find((p: { id: number; }) => p.id === Number(params.id));
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const { post1, posts } = postsJson;
+  const allPosts = [post1, ...posts];
+  const post = allPosts.find((p: BlogPost) => p.id === Number(params.id));
 
   if (!post) {
-    return <p>Post not found</p>;
+    return {
+      title: 'Post Not Found - Geria Blog',
+      description: 'The requested blog post could not be found.'
+    };
   }
+
+  return {
+    title: `${post.title} | Geria Blog`,
+    description: post.previewText,
+    openGraph: {
+      title: post.title,
+      description: post.previewText,
+      images: [post.image],
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.authorName],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.previewText,
+      images: [post.image],
+    },
+  };
+}
+
+function ShareButton({ platform, url, title }: { platform: string; url: string; title: string }) {
+  const shareUrls = {
+    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`,
+    email: `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(url)}`
+  };
+
+  const handleShare = () => {
+    window.open(shareUrls[platform as keyof typeof shareUrls], '_blank', 'width=600,height=400');
+  };
+
+  const icons = {
+    twitter: '𝕏',
+    facebook: '📘',
+    linkedin: '💼',
+    whatsapp: '📱',
+    email: '✉️'
+  };
+
+  return (
+    <button
+      onClick={handleShare}
+      className="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+    >
+      <span>{icons[platform as keyof typeof icons]}</span>
+      <span className="capitalize">{platform}</span>
+    </button>
+  );
+}
+
+function ReadingProgressBar() {
+  return (
+    <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-50">
+      <div 
+        className="h-full bg-blue-600 transition-all duration-150"
+        style={{ width: '0%' }}
+        id="reading-progress"
+      ></div>
+    </div>
+  );
+}
+
+export default function BlogPost({ params }: { params: { id: string } }) {
+  const { post1, posts } = postsJson;
+  const allPosts = [post1, ...posts];
+  const post = allPosts.find((p: BlogPost) => p.id === Number(params.id));
+
+  if (!post) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Post Not Found</h1>
+          <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
+          <Link href="/blog" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            Back to Blog
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const relatedPosts = allPosts
+    .filter(p => p.id !== post.id && p.category === post.category)
+    .slice(0, 3);
+
+  const estimateReadTime = (text: string) => {
+    const wordsPerMinute = 200;
+    const words = text.replace(/<[^>]*>/g, '').split(' ').length;
+    return Math.ceil(words / wordsPerMinute);
+  };
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
 
   return (
     <>
-
-    <div className="bg-white flex flex-col pt-20">
-      <div className="bg-white self-stretch flex w-full flex-col px-20 py-3.5 border-b-white border-b-opacity-30 border-b border-solid max-md:max-w-full max-md:px-5" />
-      <div className="self-center flex w-full max-w-[1263px] flex-col mt-9 max-md:max-w-full">
-        <div className="items-start flex w-16 max-w-full gap-1.5 px-5 self-start">
-        </div>
-        <div className="justify-center items-center self-center flex w-full flex-col mt-8 px-5 max-md:max-w-full">
-          <div className="items-start self-stretch flex flex-col -mr-5 max-md:max-w-full">
-            <div className="text-stone-900 text-3xl font-semibold leading-10 self-start max-md:max-w-full">
-            {post.title}
+      <ReadingProgressBar />
+      
+      <article className="min-h-screen bg-white">
+        {/* Header */}
+        <header className="bg-gray-50 border-b border-gray-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <Link href="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
+              <span className="mr-2">←</span>
+              Back to Blog
+            </Link>
+            
+            <div className="flex items-center gap-4 mb-6">
+              <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
+                {post.category}
+              </span>
+              <span className="text-gray-500 text-sm">
+                {estimateReadTime(post.longText)} min read
+              </span>
             </div>
-            <div className="items-start flex w-[184px] max-w-full grow flex-col mt-2.5 self-start">
-              <div className="items-start self-stretch flex justify-between gap-2.5 pr-px">
-                <img
-                  loading="lazy"
-                  src={post.authorAvatarUrl}
-                  alt={`${post.authorName} avatar`}
-                  className="aspect-square object-contain object-center w-[50px] overflow-hidden self-center max-w-full my-auto rounded-[50%]"
-                />
-                <div className="items-start self-stretch flex flex-col">
-                  <div className="text-sky-700 text-xl font-semibold leading-6 self-stretch whitespace-nowrap">
-                 {post.authorName}
-                  </div>
-                  <div className="text-neutral-600 text-base font-medium leading-6 self-stretch whitespace-nowrap mt-1">
-                  {post.date}
-                  </div>
-                </div>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              {post.title}
+            </h1>
+
+            <div className="flex items-center gap-4 mb-8">
+              <Image
+                src={post.authorAvatarUrl}
+                alt={post.authorName}
+                width={56}
+                height={56}
+                className="rounded-full"
+              />
+              <div>
+                <p className="font-semibold text-gray-900 text-lg">{post.authorName}</p>
+                <p className="text-gray-500">{formatDate(post.date)}</p>
               </div>
-              <div className="text-zinc-100 text-sm font-semibold self-stretch whitespace-nowrap items-start bg-rose-500 w-[130px] grow mt-2.5 px-2 py-1 rounded-[99px]">
-              {post.category}
-              </div>
+            </div>
+
+            {/* Share Buttons */}
+            <div className="flex flex-wrap gap-3">
+              <ShareButton platform="twitter" url={currentUrl} title={post.title} />
+              <ShareButton platform="facebook" url={currentUrl} title={post.title} />
+              <ShareButton platform="linkedin" url={currentUrl} title={post.title} />
+              <ShareButton platform="whatsapp" url={currentUrl} title={post.title} />
+              <ShareButton platform="email" url={currentUrl} title={post.title} />
             </div>
           </div>
-          <img
-            loading="lazy"
+        </header>
+
+        {/* Featured Image */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <Image
             src={post.image}
             alt={post.title}
-            className="aspect-[1.5] object-center w-[401px] overflow-hidden self-center max-w-full mt-10 rounded-[5%]"
+            width={1200}
+            height={600}
+            className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
           />
-          <div className="text-slate-500 text-lg leading-7 self-stretch -mr-5 mt-10 max-md:max-w-full">
-          <div dangerouslySetInnerHTML={{ __html: post.longText }} />
-       
-          </div>
-          <div className="items-start self-stretch flex grow flex-col -mr-5 mt-10 pr-20 max-md:max-w-full max-md:pr-5">
-            <div className="items-start flex w-[868px] max-w-full flex-col self-start">
-              <div className="items-start flex w-[148px] max-w-full justify-between gap-5 self-start">
-                <div className="items-start self-stretch flex justify-between gap-1.5">
-                  <div className="text-rose-500 text-xl font-semibold leading-6 self-stretch">
-                    23
-                  </div>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/685054ac-1864-49a2-9d19-d6b6cbcd7121?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-                    alt="Like icon"
-                    className="aspect-square object-contain object-center w-full overflow-hidden flex-1"
-                  />
-                </div>
-                <div className="items-start self-stretch flex justify-between gap-1.5">
-                  <div className="text-sky-700 text-xl font-semibold leading-6 self-stretch">
-                    10
-                  </div>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/f5320814-571a-445c-bdec-dd1724eebe90?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-                    alt="Share icon"
-                    className="aspect-square object-contain object-center w-full overflow-hidden flex-1"
-                  />
-                </div>
-              </div>
-              <div className="text-neutral-700 text-xl font-semibold leading-8 whitespace-nowrap mt-2.5 self-start max-md:max-w-full">
-                Leave a reply
-              </div>
-              <div className="text-zinc-500 text-lg font-medium whitespace-nowrap items-start border w-full grow mt-2.5 pl-2.5 pr-20 pt-2.5 pb-24 rounded-lg border-solid border-stone-300 self-start max-md:max-w-full max-md:pr-5">
-                Type your reply
-              </div>
-            </div>
-            <div className="text-white text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-center bg-stone-900 w-[122px] max-w-full grow mt-5 px-5 py-2.5 rounded-lg self-start max-md:px-5">
-              Send Reply
+        </div>
+
+        {/* Content */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div 
+            className="prose prose-lg max-w-none prose-blue prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-relaxed prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
+            dangerouslySetInnerHTML={{ __html: post.longText }}
+          />
+        </div>
+
+        {/* Share Again */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-gray-200">
+          <div className="bg-gray-50 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">Share this article</h3>
+            <div className="flex flex-wrap gap-3">
+              <ShareButton platform="twitter" url={currentUrl} title={post.title} />
+              <ShareButton platform="facebook" url={currentUrl} title={post.title} />
+              <ShareButton platform="linkedin" url={currentUrl} title={post.title} />
+              <ShareButton platform="whatsapp" url={currentUrl} title={post.title} />
+              <ShareButton platform="email" url={currentUrl} title={post.title} />
             </div>
           </div>
         </div>
-        <div className="items-start self-center flex w-full grow flex-col mt-40 px-5 max-md:max-w-full max-md:mt-10">
-        <div className="text-stone-900 text-5xl font-semibold leading-[52.8px] sm: px-5 self-stretch whitespace-nowrap -mr-5 max-md:max-w-full max-md:text-4xl">
-        Related News
-        </div>
 
+        {/* Related Posts */}
+        {relatedPosts.length > 0 && (
+          <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {relatedPosts.map((relatedPost) => (
+                <article key={relatedPost.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <Link href={`/blog/${relatedPost.id}`}>
+                    <Image
+                      src={relatedPost.image}
+                      alt={relatedPost.title}
+                      width={400}
+                      height={250}
+                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </Link>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">
+                        {relatedPost.category}
+                      </span>
+                      <span className="text-gray-500 text-xs">
+                        {estimateReadTime(relatedPost.longText)} min read
+                      </span>
+                    </div>
+                    <Link href={`/blog/${relatedPost.id}`}>
+                      <h4 className="text-lg font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2">
+                        {relatedPost.title}
+                      </h4>
+                    </Link>
+                    <p className="text-gray-600 text-sm line-clamp-3">
+                      {relatedPost.previewText}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+      </article>
 
-
-
-
-          <div className="container mx-auto">
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-
-    
-      {posts.map((post) => (
-       <div className="m-3" key={post.id}>
-       <Link as={`/blog/${post.id}`} href="/blog/[id]">
-      
-       <div className="items-start flex grow flex-col max-md:mt-5 transform transition duration-300 ease-in-out hover:scale-105">
-  <img
-    loading="lazy"
-    src={post.image}
-    alt={post.title}
-    className="aspect-[1.18] object-center w-full overflow-hidden self-stretch rounded-[10%]"
-  />
-  <div className="items-start self-stretch flex grow flex-col mt-5">
-    <div className="self-stretch text-violet-500 text-sm font-semibold leading-6">
-      {post.category}
-    </div>
-    <div className="self-stretch text-stone-900 text-2xl font-semibold leading-7 mt-2.5">
-      {post.title}
-    </div>
-    <div className="self-stretch text-slate-500 text-base font-medium leading-6 mt-2.5">
-      {post.previewText}
-    </div>
-    <div className="items-start content-start flex-wrap self-stretch flex justify-between gap-5 mt-2.5">
-      <div className="flex flex-col grow shrink-0 basis-auto w-[282px] self-end">
-        <div className="text-neutral-600 text-xs font-semibold leading-4 self-stretch whitespace-nowrap items-start bg-zinc-300 w-full px-1.5 py-0.5 rounded-xl">
-          3 min read
-        </div>
-        <div className="text-slate-500 text-sm font-semibold leading-6 self-stretch whitespace-nowrap mt-2.5">
-          {post.date}
-        </div>
-      </div>
-      <div className="text-slate-500 text-sm font-semibold leading-6 whitespace-nowrap mt-8 self-end">
-        9:30am
-      </div>
-    </div>
-  </div>
-</div>
-
-        
-       </Link>
-       </div>
-
-   ))}
-
-      </div>
-    </div>
-   
-
-
-
-
-
-
-
-
-
-
-      
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
+      {/* Reading Progress Script */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.addEventListener('scroll', function() {
+              const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+              const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+              const scrolled = (winScroll / height) * 100;
+              const progressBar = document.getElementById('reading-progress');
+              if (progressBar) {
+                progressBar.style.width = scrolled + '%';
+              }
+            });
+          `
+        }}
+      />
     </>
-
-
-
-
-
-
-
-
-
-
   );
-  }
+}

@@ -6,322 +6,260 @@ import postsJson from './posts.json';
 import Image from 'next/image';
 import SearchIcon from '../../public/icons/search_icon.svg';
 
+interface BlogPost {
+  id: number;
+  category: string;
+  title: string;
+  image: string;
+  previewText: string;
+  longText: string;
+  date: string;
+  authorName: string;
+  authorAvatarUrl: string;
+}
+
 export default function BlogPage() {
+  const { post1, posts } = postsJson;
+  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
 
-   var { post1, posts } = postsJson;
+  const allPosts = [post1, ...posts];
+  const categories = ['all', ...Array.from(new Set(allPosts.map(post => post.category)))];
 
-    const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  useEffect(() => {
+    let filtered = allPosts;
 
-    const handleCategoryClick = (divName: string) => {
-      setActiveCategory(divName);
-    };
-  
-    useEffect(() => {
-      setActiveCategory('all');
-    }, []);
-  
-  
-  
-  
-      return (
-   
-  
-      <>
-  
-  
-  
-  <div className="flex-col justify-end items-center overflow-hidden self-center relative flex w-full mt-20 px-4 lg:pl-10 rounded-3xl max-md:max-w-full max-md:mt-10 max-md:px-5">
-  <Image
-    alt="black background"
-    loading="lazy"
-    width={400}
-    height={400}
-    src="https://geriasa.blob.core.windows.net/assets/1c85d6f9_95e0_4a18_ba35_f7b2dc660237_2_modified_1_22d50dbe82.png"
-    className="hidden lg:block absolute z-[-1] h-full w-full object-center inset-0 rounded-lg lg:p-10 sm:rounded-none"
-  />
-    <div className="relative self-center flex w-full max-w-full grow flex-col lg:pt-10">
-      <div className="text-white text-4xl md:text-7xl font-semibold lg:pt-20 leading-[55.2px] self-center whitespace-nowrapmax-md:text-4xl">
-        Our Blog
-      </div>
-      <div className="text-stone-900 text-4xl md:text-7xl font-semibold lg:pt-20 leading-[55.2px] self-center whitespace-nowrap max-md:text-4xl sm:block md:hidden lg:hidden xl:hidden 2xl:hidden">
-    Our Blog
-  </div>
-  
-  
-      <div className="items-start border-[color:var(--neutrals-20,#D6DDEB)] bg-gray-200 self-stretch flex justify-between gap-2 md:gap-5 mt-2 md:mt-10 pl-2 md:pl-5 pr-2 md:pr-[270px] py-2 md:py-4 rounded-[20px] md:rounded-[40px] border-[1px] md:border-[3px] border-solid max-md:max-w-full max-md:flex-wrap max-md:pr-5 sm:w-90 sm:mx-auto">
-  
-        {/* <Image
-          alt="search icon"
-          loading="lazy"
-          width={200}
-          height={200}
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/15ad2fcf-d861-44b5-8ad4-686925f8f452?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-          className="aspect-square object-contain object-center w-4 md:w-8 justify-center items-center overflow-hidden self-stretch max-w-full"
-        /> */}
-        <div className="aspect-square object-contain object-center w-4 md:w-8 justify-center items-center overflow-hidden self-stretch max-w-full">
-        <SearchIcon
-          width={200}
-          height={200}
-        />
-        </div>
-        
-        <div className="flex items-center space-x-1 md:space-x-2">
-     
-          <input type="text" placeholder="Search" className="text-sm md:text-base font-semibold leading-4 md:leading-6 self-center whitespace-nowrap my-auto bg-transparent outline-none border-none focus:ring-0" />
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-  
-  
-  
-      <div className="mx-auto lg:w-1/2">
-  
-  
-  
-  
-      <div className="bg-white flex justify-center flex-col">
-    <div className="overflow-x-auto items-start whitespace-nowrap max-w-screen gap-2.5 mt-5 px-5 max-md:flex-wrap max-md:justify-center max-md:mt-5">
-    <div
-    className={`${
-      activeCategory === 'all'
-        ? 'text-white lg:ml-20 mr-4 text-center text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center bg-stone-900 inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for active state
-        : 'text-stone-900  lg:ml-20 text-center mr-4 text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center border border-[color:var(--brands-tertiary,#FECC00)] inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for inactive state
-    } transform transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer`}
-    onClick={() => handleCategoryClick('all')}
-  >
-        All
-      </div>
-  
-   
-      <div
-    className={`${
-      activeCategory === 'Remote Work'
-        ? 'text-white mr-4 text-center text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center bg-stone-900 inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for active state
-        : 'text-stone-900 text-center mr-4 text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center border border-[color:var(--brands-tertiary,#FECC00)] inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for inactive state
-    } transform transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer`}
-    onClick={() => handleCategoryClick('Remote Work')}
-  >
-       Remote Work
-    </div>
-    
-    <div
-    className={`${
-      activeCategory === 'Technology'
-        ? 'text-white mr-4 text-center text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center bg-stone-900 inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for active state
-        : 'text-stone-900 text-center mr-4 text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center border border-[color:var(--brands-tertiary,#FECC00)] inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for inactive state
-    } transform transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer`}
-    onClick={() => handleCategoryClick('Technology')}
-  >
-    Technology
-  </div>
-  
-  
-  
-  <div
-    className={`${
-      activeCategory === 'Hiring'
-        ? 'text-white mr-4 text-center text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center bg-stone-900 inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for active state
-        : 'text-stone-900 text-center mr-4 text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center border border-[color:var(--brands-tertiary,#FECC00)] inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for inactive state
-    } transform transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer`}
-    onClick={() => handleCategoryClick('Hiring')}
-  >
-    Hiring
-    </div>
-  
-   
-    <div
-    className={`${
-      activeCategory === 'Build'
-        ? 'text-white mr-4 text-center text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center bg-stone-900 inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for active state
-        : 'text-stone-900 text-center mr-4 text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center border border-[color:var(--brands-tertiary,#FECC00)] inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for inactive state
-    } transform transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer`}
-    onClick={() => handleCategoryClick('Build')}
-  >
-    Build 
-    </div>
-  
-    <div
-    className={`${
-      activeCategory === 'eng'
-        ? 'text-white mr-4 text-center text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center bg-stone-900 inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for active state
-        : 'text-stone-900 text-center mr-4 text-xs sm:text-sm font-bold leading-6 self-stretch whitespace-nowrap justify-center items-center border border-[color:var(--brands-tertiary,#FECC00)] inline-block max-w-full px-3 py-2 rounded-lg sm:px-5 sm:py-2.5 max-md:px-5 max-sm:text-xs' // Responsive styles for inactive state
-    } transform transition-transform duration-300 ease-in-out hover:scale-105 hover:cursor-pointer`}
-    onClick={() => handleCategoryClick('eng')}
-  >
-    Engineering
-    </div>
-      
-    </div>
-  </div>
-  
-  
-  
-  
-  </div>
-  
-  
-  
-  
-  
-  
-      <div className="bg-white flex flex-col sm:pt-5 lg:pt-20">
-  
-  
-        
-        <div className="self-center w-full max-w-[1364px] px-2 max-md:max-w-full max-md:mt-0">
-          <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-            <div className="flex flex-col items-stretch w-6/12 max-md:w-full max-md:ml-0">
-  
-  
-            <Link as={`/blog/${post1.id}`} href="/blog/[id]">
-               
-         
-       
-               
-            <Image
-                alt="none"
-                loading="lazy"
-                width={400}
-                height={400}
-                src= {post1.image}
-                className="aspect-[1.15] object-center w-full self-stretch overflow-hidden grow max-md:max-w-full max-md:mt-5 w-full max-w-full rounded-[10%]"
-             />
-         
-         
-         </Link>
-    
-  
+    // Filter by category
+    if (activeCategory !== 'all') {
+      filtered = filtered.filter(post => post.category === activeCategory);
+    }
+
+    // Filter by search term
+    if (searchTerm) {
+      filtered = filtered.filter(post => 
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.previewText.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.category.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    setFilteredPosts(filtered);
+  }, [activeCategory, searchTerm]);
+
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const estimateReadTime = (text: string) => {
+    const wordsPerMinute = 200;
+    const words = text.replace(/<[^>]*>/g, '').split(' ').length;
+    return Math.ceil(words / wordsPerMinute);
+  };
+
+  const formatDate = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+              Geria Blog
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              Insights, trends, and expert perspectives on remote work, technology, and building distributed teams.
+            </p>
+
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center">
+                  <SearchIcon className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Search articles..."
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                  className="w-full pl-12 pr-4 py-4 text-gray-900 bg-white rounded-xl border-0 focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-lg text-lg"
+                />
+              </div>
             </div>
-            <div className="flex flex-col items-stretch w-6/12 ml-5 max-md:w-full max-md:ml-0">
-              <div className="items-start flex flex-col my-auto max-md:max-w-full max-md:mt-10">
-              <Link as={`/blog/${post1.id}`} href="/blog/[id]">
-                <div className="text-red-600 text-sm font-semibold leading-6 self-start max-md:max-w-full">
-  
-                {post1.category}
+          </div>
+        </div>
+      </section>
+
+      {/* Category Filter */}
+      <section className="bg-white border-b border-gray-200 sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => handleCategoryClick(category)}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 ${
+                  activeCategory === category
+                    ? 'bg-blue-600 text-white shadow-lg transform scale-105'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:scale-105'
+                }`}
+              >
+                {category === 'all' ? 'All Articles' : category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Featured Post */}
+        {filteredPosts.length > 0 && (
+          <section className="mb-16">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="lg:flex">
+                <div className="lg:w-1/2">
+                  <Link href={`/blog/${filteredPosts[0].id}`}>
+                    <Image
+                      src={filteredPosts[0].image}
+                      alt={filteredPosts[0].title}
+                      width={800}
+                      height={500}
+                      className="w-full h-64 lg:h-full object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </Link>
                 </div>
-                <div  className=" cursor-pointer text-stone-900 text-3xl font-semibold leading-10 self-start max-md:max-w-full">
-                {post1.title}
-                </div>
-                <div className="text-slate-500 text-base font-medium leading-6 mt-5 self-start max-md:max-w-full">
-                {post1.previewText}
-                </div>
-             </Link>
-                <div className="items-start flex w-[268px] max-w-full gap-2.5 mt-5 self-start">
-                  <Image
-                    alt="generic person"
-                    loading="lazy"
-                    width={400}
-                    height={400}
-                    src={post1.authorAvatarUrl}
-                    className="aspect-square object-contain object-center w-[50px] overflow-hidden self-center max-w-full my-auto rounded-[50%]"
-                  />
-                  <div className="items-start content-start flex-wrap self-stretch flex flex-col">
-                    <div className="text-stone-900 text-xl font-semibold leading-6 self-stretch whitespace-nowrap">
-                    {post1.authorName}
-                    </div>
-                    <div className="self-stretch flex items-start justify-between gap-5 mt-2.5">
-                      <div className="text-slate-500 text-sm font-semibold leading-6">
-                       {post1.date} 10:30am
-                      </div>
-                     
+                <div className="lg:w-1/2 p-8 lg:p-12">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
+                      {filteredPosts[0].category}
+                    </span>
+                    <span className="text-gray-500 text-sm">
+                      {estimateReadTime(filteredPosts[0].longText)} min read
+                    </span>
+                  </div>
+                  <Link href={`/blog/${filteredPosts[0].id}`}>
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4 hover:text-blue-600 transition-colors">
+                      {filteredPosts[0].title}
+                    </h2>
+                  </Link>
+                  <p className="text-gray-600 text-lg mb-6 leading-relaxed">
+                    {filteredPosts[0].previewText}
+                  </p>
+                  <div className="flex items-center gap-4">
+                    <Image
+                      src={filteredPosts[0].authorAvatarUrl}
+                      alt={filteredPosts[0].authorName}
+                      width={48}
+                      height={48}
+                      className="rounded-full"
+                    />
+                    <div>
+                      <p className="font-semibold text-gray-900">{filteredPosts[0].authorName}</p>
+                      <p className="text-gray-500 text-sm">{formatDate(filteredPosts[0].date)}</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-  
-   
-        <div className="items-start self-center flex w-full max-w-[1361px] flex-col mt-20  max-md:max-w-full max-md:mt-10">
-          <div className="text-stone-900 text-5xl font-semibold leading-[52.8px] sm: px-5 self-stretch whitespace-nowrap -mr-5 max-md:max-w-full max-md:text-4xl">
-            Other Articles
-          </div>
-  
-  
-  
-        <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-  
-  
-        {
-        
-        
-        posts
-    .filter((post) => post.category === activeCategory || activeCategory === 'all' )
-    .map((post) => (
-         <div className="m-3" key={post.id}>
-         <Link as={`/blog/${post.id}`} href="/blog/[id]">
-        
-         <div className="items-start flex grow flex-col max-md:mt-5 transform transition-transform duration-300 hover:scale-105">
-    <Image
-      alt=""
-      loading="lazy"
-      src={post.image}
-      width={400}
-      height={400}
-      className="aspect-[1.18] w-full overflow-hidden self-stretch rounded-[10%]"
-    />
-    <div className="items-start self-stretch flex grow flex-col mt-5">
-      <div className="self-stretch text-violet-500 text-sm font-semibold leading-6">
-        {post.category}
-      </div>
-      <div className="self-stretch text-stone-900 text-2xl font-semibold leading-7 mt-2.5">
-        {post.title}
-      </div>
-      <div className="self-stretch text-slate-500 text-base font-medium leading-6 mt-2.5">
-        {post.previewText}
-      </div>
-      <div className="items-start self-stretch flex justify-between gap-2.5 mt-2.5 pr-36 max-md:pr-5">
-        <Image
-          alt="generic person"
-          loading="lazy"
-          width={400}
-          height={400}
-          src={post1.authorAvatarUrl}
-          className="aspect-square object-contain object-center w-[50px] overflow-hidden self-center max-w-full my-auto rounded-[50%]"
-        />
-        <div className="items-start content-start flex-wrap self-stretch flex flex-col">
-          <div className="text-stone-900 text-xl font-semibold leading-6 self-stretch whitespace-nowrap">
-            {post.authorName}
-          </div>
-          <div className="self-stretch flex items-start justify-between gap-5 mt-2.5">
-            <div className="text-slate-500 text-sm font-semibold leading-6">
-              {post.date} 10:30am
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-       
-         </Link>
-  </div>
-     ))}
-  
-        </div>
-      </div>
-     
-        </div>
-       
-         
-       
-      </div>
-   
-  
-  
-  
-      </>
-   
-  
-  
-  
-  
-      )
+          </section>
+        )}
 
-  }
+        {/* Articles Grid */}
+        <section>
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-3xl font-bold text-gray-900">
+              {activeCategory === 'all' ? 'All Articles' : `${activeCategory} Articles`}
+            </h2>
+            <p className="text-gray-600">
+              {filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'} found
+            </p>
+          </div>
+
+          {filteredPosts.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">No articles found matching your search.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredPosts.slice(1).map((post) => (
+                <article key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <Link href={`/blog/${post.id}`}>
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      width={400}
+                      height={250}
+                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </Link>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">
+                        {post.category}
+                      </span>
+                      <span className="text-gray-500 text-xs">
+                        {estimateReadTime(post.longText)} min read
+                      </span>
+                    </div>
+                    <Link href={`/blog/${post.id}`}>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-600 mb-4 line-clamp-3">
+                      {post.previewText}
+                    </p>
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src={post.authorAvatarUrl}
+                        alt={post.authorName}
+                        width={32}
+                        height={32}
+                        className="rounded-full"
+                      />
+                      <div>
+                        <p className="font-semibold text-gray-900 text-sm">{post.authorName}</p>
+                        <p className="text-gray-500 text-xs">{formatDate(post.date)}</p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
+
+        {/* Newsletter Signup */}
+        <section className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white text-center">
+          <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
+          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+            Get the latest insights on remote work, technology trends, and team building delivered to your inbox.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Subscribe
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+  );
+}
