@@ -20,14 +20,14 @@ export default function HowItWorksPage() {
       {/* Dual Funnel */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-12 md:items-stretch">
             {/* Hire Developers Flow */}
-            <div className="bg-blue-50 p-8 rounded-lg">
+            <div className="bg-blue-50 p-8 rounded-lg flex flex-col">
               <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
                 Hire Developers
               </h2>
               
-              <div className="space-y-6">
+              <div className="space-y-6 flex-grow">
                 <div className="flex items-start">
                   <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="font-bold">1</span>
@@ -77,12 +77,12 @@ export default function HowItWorksPage() {
             </div>
 
             {/* Build With Our Team Flow */}
-            <div className="bg-green-50 p-8 rounded-lg">
+            <div className="bg-green-50 p-8 rounded-lg flex flex-col">
               <h2 className="text-3xl font-bold text-green-900 mb-8 text-center">
                 Build With Our Team
               </h2>
               
-              <div className="space-y-6">
+              <div className="space-y-6 flex-grow">
                 <div className="flex items-start">
                   <div className="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="font-bold">1</span>
