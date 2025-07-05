@@ -1,0 +1,80 @@
+Goal
+
+Rebuild the Geria Blog Page using a modern, responsive, and user-friendly and appropriate tech stack. The blog must be visually aligned with Geria’s branding, easy to manage by non-technical users, and support full content editing, sharing, and media uploads.
+
+⸻
+
+✅ Core Features & Requirements
+
+1. Branding
+	•	Use Geria’s design system (colors, fonts, logos, and spacing) for consistency.
+	•	Match visual styling to existing Geria website.
+
+2. Responsive Design
+	•	Fully responsive across devices (mobile-first approach).
+	•	Use CSS Grid/Flexbox with media queries or a utility-first framework like Tailwind CSS.
+
+3. Blog Post Functionality
+
+Each blog post should support:
+	•	Title
+	•	Author
+	•	Publish date
+	•	Thumbnail image
+	•	Body content (text, images, embedded media)
+	•	Tags / Categories
+	•	Estimated read time
+
+4. Social Media Sharing
+	•	Add share icons (Facebook, Twitter/X, LinkedIn, WhatsApp, Email).
+	•	Share includes post link, title, and preview image.
+
+5. Admin Management (No-Code UI)
+	•	Build a simple CMS dashboard for internal team to:
+	•	Create/edit/delete posts
+	•	Upload and manage images (thumbnail + inline)
+	•	Assign categories or tags
+	•	Use a WYSIWYG (What You See Is What You Get) editor like:
+	•	Editor.js
+	•	TipTap
+	•	Or integrate Sanity.io, Strapi, or Contentful as a headless CMS
+	•	Login authentication for admin (email/password or Google login)
+
+6. Image Upload Support
+	•	Upload images via dashboard (drag-and-drop)
+	•	Image compression and optimization before upload
+	•	Store via:
+	•	Local storage (for dev)
+	•	Cloud storage like Cloudinary, Firebase, or S3 in production
+
+7. Search & Filter
+	•	Add a simple search bar to filter blog posts by keyword
+	•	Filter by category or tag
+
+8. SEO-Friendly
+	•	Each post should:
+	•	Have a clean URL slug (e.g., /blog/how-to-launch-a-startup)
+	•	Include meta title, description, and image for sharing
+	•	Structured data / OpenGraph tags for rich snippets
+
+⸻
+
+Tech Stack - choose appropriate tech stack base on the existing website
+
+
+
+Image Hosting
+	•	Use Cloudinary or Firebase Storage for easy uploads, CDN, and auto image optimization
+
+Authentication (for Admin)
+	•	Firebase Auth (email login) or any recommended one
+	
+
+⸻
+
+🧪 Optional Enhancements
+	•	Show related posts under each article
+	•	Include newsletter signup (Mailchimp or ConvertKit integration)
+	•	Enable comments using a plug-in (like Disqus or custom comment system)
+	•	Add reading progress bar at the top
+	•	Dark/light mode toggle
