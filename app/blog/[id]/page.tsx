@@ -1,4 +1,5 @@
-'use client'
+
+'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -27,7 +28,10 @@ function ShareButton({ platform, url, title }: { platform: string; url: string; 
   };
 
   const handleShare = () => {
-    window.open(shareUrls[platform as keyof typeof shareUrls], '_blank', 'width=600,height=400');
+    const shareUrl = shareUrls[platform as keyof typeof shareUrls];
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
   };
 
   const icons = {
@@ -69,17 +73,27 @@ function ReadingProgressBar() {
       <div 
         className="h-full bg-[#FFD700] transition-all duration-150"
         style={{ width: `${progress}%` }}
-      ></div>
+      />
     </div>
   );
 }
 
-export default function BlogPost({ params }: { params: { id: string } }) {
+interface BlogPostPageProps {
+  params: { id: string };
+}
+
+export default function BlogPost({ params }: BlogPostPageProps) {
   const [currentUrl, setCurrentUrl] = useState('');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     setCurrentUrl(window.location.href);
   }, []);
+
+  if (!mounted) {
+    return <div>Loading...</div>;
+  }
 
   const { post1, posts } = postsJson;
   const allPosts = [post1, ...posts];
