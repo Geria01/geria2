@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -219,9 +218,10 @@ export default function BlogPost({ params }: BlogPostPageProps) {
         {relatedPosts.length > 0 && (
           <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-[#4B4B4B]/20">
             <h3 className="text-2xl font-bold text-[#1B1B1B] mb-8">Related Articles</h3>
+            {/* the key prop was incorrect and producing duplicate keys. Added index as a value in the key */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedPosts.map((relatedPost) => (
-                <article key={relatedPost.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-[#4B4B4B]/10">
+              {relatedPosts.map((relatedPost, index) => (
+                <article key={`related-post-${relatedPost.id}-${index}`} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-[#4B4B4B]/10">
                   <Link href={`/blog/${relatedPost.id}`}>
                     <Image
                       src={relatedPost.image}
