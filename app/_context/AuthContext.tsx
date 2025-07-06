@@ -16,6 +16,7 @@ interface User {
 interface AuthContextType {
   user: User | null;
   login: (email: string, password: string) => Promise<boolean>;
+  signup: (email: string, password: string, name: string) => Promise<boolean>;
   logout: () => void;
   isLoading: boolean;
 }
@@ -81,6 +82,37 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const signup = async (email: string, password: string, name: string): Promise<boolean> => {
+    try {
+      const response = await fetch('/api/auth/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          email, 
+          password, 
+          firstName: name.split(' ')[0] || name,
+          lastName: name.split(' ')[1] || '',
+          userType: 'candidate'
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setUser(data.user);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('user', JSON.stringify(data.user));
+        }
+        return true;
+      }
+      return false;
+    } catch (error) {
+      console.error('Signup error:', error);
+      return false;
+    }
+  };
+
   const logout = () => {
     setUser(null);
     if (typeof window !== 'undefined') {
@@ -89,7 +121,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, isLoading }}>
+    <AuthContext.Provider value={{ user, login, signup, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );
