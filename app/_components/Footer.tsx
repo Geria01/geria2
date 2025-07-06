@@ -26,7 +26,7 @@ const Footer = () => {
                 src="https://geriasa.blob.core.windows.net/assets/69bf00ea_4ffb_4ed1_8405_ed28f2daef2f_956adcf9bf.png"
                 className="aspect-[2.35] object-contain object-center w-20 overflow-hidden max-w-full self-start"
               />
-             <div className="text-white text-justify text-base font-semibold leading-7 self-stretch mt-2.5 tracking-tighter">
+             <div className="text-white text-justify text-base leading-7 self-stretch mt-2.5 tracking-tighter">
   Build great products with top-vetted remote developer teams
   faster and cost-effectively.
 </div>
@@ -42,7 +42,7 @@ const Footer = () => {
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/26ec2fda-89ce-4b27-a164-82399d481280?apiKey=994d997208b34a26ad9d13da5074bcdd&"
                   className="aspect-square object-contain object-center w-[30px] overflow-hidden shrink-0 max-w-full my-auto"
                 />
-                <div className="text-white text-base font-semibold leading-7 opacity-80 self-stretch whitespace-nowrap">
+                <div className="text-white text-base leading-7 opacity-80 self-stretch whitespace-nowrap">
                   hello@geria.com
                 </div>
               </div>
@@ -57,7 +57,7 @@ const Footer = () => {
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/624f4f73-0ec2-444d-865c-134b447de03b?apiKey=994d997208b34a26ad9d13da5074bcdd&"
                   className="aspect-square object-contain object-center w-[30px] overflow-hidden shrink-0 max-w-full my-auto"
                 />
-                <div className="text-white text-base font-semibold leading-7 opacity-80 self-stretch whitespace-nowrap">
+                <div className="text-white text-base leading-7 opacity-80 self-stretch whitespace-nowrap">
                   +44 115 822 8222
                 </div>
               </div>
@@ -86,7 +86,7 @@ const Footer = () => {
                   className="aspect-square object-contain object-center w-[45px] overflow-hidden shrink-0 max-w-full"
                 />
                 </Link>
-      
+
                <Link href='https://www.linkedin.com/company/geria-io/' target='_blank' className='mr-5'>
                 <Image
                   alt='linked in logo'
@@ -122,7 +122,7 @@ const Footer = () => {
                     <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
                       <div className="flex flex-col items-stretch w-[29%] max-md:w-full max-md:ml-0">
                         <div className="items-stretch flex grow flex-col max-md:mt-10">
-                 
+
                           <div className="text-white text-2xl font-semibold leading-7 whitespace-nowrap">
                             Site Map
                           </div>
@@ -200,7 +200,7 @@ const Footer = () => {
                       Contacts
                     </div>
                     <div className="items-stretch flex flex-col mt-5">
-                      <div className="text-slate-50 text-base font-semibold leading-7 opacity-80">
+                      <div className="text-slate-50  text-base leading-7 opacity-80">
                         United Kingdom
                       </div>
                       <div className="text-slate-50 text-base font-medium leading-7 mt-1">
@@ -212,7 +212,7 @@ const Footer = () => {
                       </div>
                     </div>
                     <div className="items-stretch flex flex-col mt-5">
-                      <div className="text-slate-50  font-semibold text-base leading-7 opacity-80">
+                      <div className="text-slate-50  text-base leading-7 opacity-80">
                         Nigeria
                       </div>
                       <div className="text-slate-50 text-base font-medium leading-7 mt-1">
