@@ -10,11 +10,11 @@ export default function GeriaNavbar() {
 
   const navItems = [
     { name: "Home", href: "/" },
+    { name: "About Us", href: "/about-us" },
     { name: "Hire Talent", href: "/hire-talent" },
     { name: "Web Development", href: "/web-development" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "For Engineers", href: "/for-engineers" },
-    { name: "About Us", href: "/about-us" },
     { name: "Blog", href: "/blog" },
   ];
 
