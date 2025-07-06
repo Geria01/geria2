@@ -88,24 +88,7 @@ export default function RequestTalentPage() {
               </div>
             </div>
 
-            {/* Leader Badges */}
-            <div className="flex space-x-4">
-              <div className="bg-red-100 px-3 py-1 rounded">
-                <div className="text-xs font-bold text-red-800">G2 Leader</div>
-                <div className="text-xs text-red-600">ENTERPRISE</div>
-                <div className="text-xs text-red-600">FALL 2024</div>
-              </div>
-              <div className="bg-purple-100 px-3 py-1 rounded">
-                <div className="text-xs font-bold text-purple-800">G2 Leader</div>
-                <div className="text-xs text-purple-600">IDEA</div>
-                <div className="text-xs text-purple-600">FALL 2024</div>
-              </div>
-              <div className="bg-red-100 px-3 py-1 rounded">
-                <div className="text-xs font-bold text-red-800">G2 Leader</div>
-                <div className="text-xs text-red-600">SKILL</div>
-                <div className="text-xs text-red-600">2024</div>
-              </div>
-            </div>
+            
           </div>
 
           {/* Right Side - Form Card */}
