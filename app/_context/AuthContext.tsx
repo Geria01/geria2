@@ -5,14 +5,18 @@ interface User {
   id: string;
   email: string;
   name: string;
-  role: 'candidate' | 'admin';
+  role: 'candidate' | 'client' | 'admin';
+  userType?: string;
+  firstName?: string;
+  lastName?: string;
+  company?: string;
+  phoneNumber?: string;
 }
 
 interface AuthContextType {
   user: User | null;
-  login: (email: string, password: string) => Promise<boolean>;
+  login: (userData: User) => void;
   logout: () => void;
-  signup: (email: string, password: string, name: string) => Promise<boolean>;
   isLoading: boolean;
 }
 
@@ -26,65 +30,32 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Check for existing session
     const savedUser = localStorage.getItem('user');
     if (savedUser) {
-      setUser(JSON.parse(savedUser));
+      try {
+        setUser(JSON.parse(savedUser));
+      } catch (error) {
+        console.error('Error parsing saved user:', error);
+        localStorage.removeItem('user');
+      }
     }
     setIsLoading(false);
   }, []);
 
-  const login = async (email: string, password: string): Promise<boolean> => {
-    try {
-      // Simulate API call - replace with actual authentication
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('user', JSON.stringify(userData));
-        }
-        return true;
-      }
-      return false;
-    } catch (error) {
-      console.error('Login error:', error);
-      return false;
-    }
-  };
-
-  const signup = async (email: string, password: string, name: string): Promise<boolean> => {
-    try {
-      const response = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password, name }),
-      });
-
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('user', JSON.stringify(userData));
-        }
-        return true;
-      }
-      return false;
-    } catch (error) {
-      console.error('Signup error:', error);
-      return false;
+  const login = (userData: User) => {
+    setUser(userData);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('user', JSON.stringify(userData));
     }
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('user');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('user');
+    }
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, signup, isLoading }}>
+    <AuthContext.Provider value={{ user, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

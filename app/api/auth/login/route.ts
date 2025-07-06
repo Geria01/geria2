@@ -1,29 +1,30 @@
+
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { email, password } = await request.json();
+    const { email, password, userType } = await request.json();
 
     // Validate input
     if (!email || !password) {
-      return NextResponse.json({ error: 'Email and password required' }, { status: 400 });
+      return NextResponse.json({ message: 'Email and password required' }, { status: 400 });
     }
 
-    // Mock authentication - replace with actual auth logic
-    if (email === 'test@example.com' && password === 'password') {
-      const user = {
-        id: '1',
-        email: email,
-        name: 'Test User',
-        role: 'candidate' as const
-      };
+    // Mock authentication - replace with actual database logic
+    const user = {
+      id: Date.now().toString(),
+      email: email,
+      name: email.split('@')[0], // Simple name from email
+      role: userType === 'client' ? 'client' : 'candidate',
+      userType: userType || 'candidate'
+    };
 
-      return NextResponse.json(user);
-    }
-
-    return NextResponse.json({ error: 'Invalid credentials' }, { status: 401 });
+    return NextResponse.json({ 
+      user,
+      message: 'Login successful' 
+    });
   } catch (error) {
     console.error('Login error:', error);
-    return NextResponse.json({ error: 'Server error' }, { status: 500 });
+    return NextResponse.json({ message: 'Server error' }, { status: 500 });
   }
 }
