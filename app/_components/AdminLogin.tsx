@@ -16,7 +16,7 @@ export default function AdminLogin() {
     setError('');
 
     try {
-      const success = await login(email, password);
+      const success: boolean = await login(email, password);
       if (!success) {
         setError('Invalid admin credentials');
       }
