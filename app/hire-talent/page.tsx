@@ -28,8 +28,8 @@ export default function HireTalentPage() {
                 Hire Top Remote <span className="text-blue-600">Developers</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Access vetted global talent through our rigorous 5-step screening process. 
-                Get matched with elite developers in 48 hours.
+                Global Talent. Handpicked. Delivered Fast.
+                We rigorously screen every developer so you don't have to. Get matched with proven pros in 48 hours.
               </p>
               <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
                 Request Talent Now
