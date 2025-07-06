@@ -11,16 +11,16 @@ export default function HomePage() {
             Top Remote Talent. <span className="text-blue-600">One Global Team.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Whether you're hiring elite remote developers or need a full product team — Geria delivers.
+            Building the future? Get elite remote engineers or an end-to-end team — all with Geria
           </p>
 
           {/* Dual CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Link href="/hire-talent" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
-              Request Talent Now
+              Hire Talent Now
             </Link>
             <Link href="/web-development" className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors">
-              Build My Website
+              Let's build it
             </Link>
           </div>
 
@@ -70,7 +70,7 @@ export default function HomePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-2">Trust</h3>
-              <p className="text-gray-600">Trusted by 100+ companies worldwide with a 98% client satisfaction rate.</p>
+              <p className="text-gray-600">Trusted by high-growth companies with a 98% client satisfaction rate.</p>
             </div>
 
             <div className="text-center">
@@ -148,13 +148,13 @@ export default function HomePage() {
       <section className="py-20 px-4 bg-blue-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
-            Meet Our Top Developers
+            Behind the Build: Our Developers
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img src="/images/avatar4.png" alt="Developer" className="w-16 h-16 rounded-full mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-center mb-2">Alex Kumar</h3>
+              <h3 className="text-xl font-semibold text-center mb-2">Maria Santos</h3>
               <p className="text-gray-600 text-center mb-4">Full-Stack Developer</p>
               <div className="flex justify-center gap-2 mb-4">
                 <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">React</span>
@@ -166,7 +166,7 @@ export default function HomePage() {
 
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <img src="/images/avatar5.png" alt="Developer" className="w-16 h-16 rounded-full mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-center mb-2">Maria Santos</h3>
+              <h3 className="text-xl font-semibold text-center mb-2">Michael Eze</h3>
               <p className="text-gray-600 text-center mb-4">Mobile Developer</p>
               <div className="flex justify-center gap-2 mb-4">
                 <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">React Native</span>
@@ -194,7 +194,7 @@ export default function HomePage() {
       {/* Final CTA */}
       <section className="py-20 px-4 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Build Your Dream Team?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Ready to Build Your Dream Team?</h2>
           <p className="text-xl text-gray-300 mb-8">
             Let's discuss your project and find the perfect developers for your needs.
           </p>
