@@ -11,7 +11,9 @@ export default function HireTalentPage() {
     'Full-stack Developer',
     'DevOps Engineer',
     'Mobile Developer',
-    'AI/ML Engineer'
+    'SEO Expert',
+    'UI/UX Designer',
+    'QA Engineer'
   ];
 
   return (
@@ -146,12 +148,28 @@ export default function HireTalentPage() {
                       <li>• Cross-platform expertise</li>
                     </>
                   )}
-                  {role === 'AI/ML Engineer' && (
+                  {role === 'SEO Expert' && (
                     <>
-                      <li>• Python, TensorFlow</li>
-                      <li>• Machine learning models</li>
-                      <li>• Data processing</li>
-                      <li>• AI integration</li>
+                      <li>• On-page & off-page optimization</li>
+                      <li>• Keyword research & strategy</li>
+                      <li>• Technical SEO audits</li>
+                      <li>• Google Analytics & Search Console</li>
+                    </>
+                  )}
+                  {role === 'UI/UX Designer' && (
+                    <>
+                      <li>• Wireframing & prototyping</li>
+                      <li>• Figma, Sketch, Adobe XD</li>
+                      <li>• User research & testing</li>
+                      <li>• Design systems & accessibility</li>
+                    </>
+                  )}
+                  {role === 'QA Engineer' && (
+                    <>
+                      <li>• Manual & automated testing</li>
+                      <li>• Selenium, Cypress, Playwright</li>
+                      <li>• Test case management</li>
+                      <li>• CI/CD test integration</li>
                     </>
                   )}
                 </ul>

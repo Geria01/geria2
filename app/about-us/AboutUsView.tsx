@@ -31,7 +31,7 @@ import { DeveloperAvatar } from '../_models/developerAvatar.model';
 //     dynamicHeight={true}
 //     renderThumbs={() =>
 //       members.map((member) => (
-       
+
 //         <div key={member.id} className=" thumb-container mx-2">
 //           <img
 //               src={member.image}
@@ -39,10 +39,10 @@ import { DeveloperAvatar } from '../_models/developerAvatar.model';
 //               className="w-90 h-90 border-none cursor-pointer"// Apply Tailwind CSS classes
 //             />
 //         </div>
-       
+
 //       ))
 //     }
-   
+
 //   >
 //     {members.map((member) => (
 //   <div key={member.id} className='grid grid-cols-1 md:grid-cols-2 gap-4'>
@@ -186,7 +186,7 @@ const DevCard = (avatar: DeveloperAvatar) => (
   </div>
 </div>
 
-  
+
   );
   return (
         <div className="bg-white flex-col justify-end items-center overflow-hidden self-center relative flex min-h-[246px] w-full rounded-3xl max-md:max-w-full max-md:mt-10 max-md:px-5">
@@ -211,12 +211,12 @@ const DevCard = (avatar: DeveloperAvatar) => (
                   <div className="text-white text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch bg-stone-900 w-[106px] max-w-full mt-6 px-5 py-2.5 rounded-lg max-md:px-px transform transition-transform duration-300 ease-in-out hover:scale-105">
                     <Link
                                      href={'/hire-talent'}
-                                     
+
                                    >
                                    Hire Now
                                    </Link>
-                           
-                   
+
+
                   </div>
                 </div>
               </div>
@@ -230,31 +230,31 @@ const DevCard = (avatar: DeveloperAvatar) => (
 
             </div>
           </div>
-        
-       
-      
+
+
+
     <div className="flex flex-col items-center bg-blue-50 self-stretch flex w-full flex-col items-center mt-10 pb-9 px-5 max-md:max-w-full max-md:mt-10">
-      <h1 className="text-5xl font-semibold text-stone-900 mb-4 md:text-4xl pt-8">
-        Hire vetted tech talents in days
-      </h1>
-      <p className="text-base text-slate-500 mb-8 md:w-[600px] md:text-center">
-        Explore our talent network and find your best match talent.
-      </p>
-    
+      <div className="text-black text-5xl font-semibold leading-[52.8px] self-stretch -mr-5 max-md:max-w-full max-md:text-4xl">
+                    Hire Vetted Tech Talent in Just Days
+                  </div>
+                  <div className="self-stretch text-black text-xl leading-8 opacity-80 -mr-5 mt-6 max-md:max-w-full">
+                    Discover top-tier professionals from our curated network — find the perfect fit for your team, fast.
+                  </div>
+
 
 
 
 
     <div className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
     {DUMMY_DEVS.map((dev) => (
-      
+
       <DevCard key={dev.id} {...dev} />
     ))}
   </div>
 
-  
 
-  
+
+
 
 
 
@@ -263,7 +263,7 @@ const DevCard = (avatar: DeveloperAvatar) => (
 
 
 
-          
+
           <div className="justify-center items-center bg-slate-50 self-stretch flex w-full flex-col mt-10 pb-10 px-5 max-md:max-w-full max-md:mt-10">
             <div className="w-full max-w-[1034px] max-md:max-w-full">
               <div className="gap-5 flex max-md:flex-row max-md:items-stretch max-md:gap-0">
@@ -280,11 +280,11 @@ const DevCard = (avatar: DeveloperAvatar) => (
                 </div>
                 <div className="flex flex-col items-stretch w-[43%] mx-auto px-2 max-md:w-full max-md:ml-0">
                   <div className="justify-center items-stretch flex grow flex-col max-md:mt-10">
-                  <div className="text-amber-400 text-center text-7xl font-semibold tracking-tighter whitespace-nowrap max-md:text-4xl max-sm:text-sm">
-                      2000+
-                    </div>
-                    <div className="text-slate-600 text-center text-xl font-semibold leading-8 opacity-80 self-center  max-md:text-base sm:text-xs max-sm:text-sm sm:text-xs max-md:text-xs max-sm:text-xxs">
-                      Tech talents
+                  <div className="text-amber-400 text-center text-7xl font-semibold leading-[52.8px] max-md:text-4xl">
+                        500+
+                      </div>
+                      <div className="text-slate-600 text-center text-xl font-semibold leading-8 opacity-80 self-center  max-md:text-base sm:text-xs max-sm:text-sm sm:text-xs max-md:text-xs max-sm:text-xxs">
+                      Tech talent
                     </div>
                   </div>
                 </div>
@@ -313,7 +313,7 @@ src="https://geriasa.blob.core.windows.net/assets/5c77bfcd_0629_43ac_8cfd_0e79bd
   />
 </div>
 
-          
+
                 <div className="flex flex-col items-stretch w-[57%] ml-5 max-md:w-full max-md:ml-0">
                   <div className="items-stretch flex grow flex-col mt-9 max-md:max-w-full max-md:mt-10">
                     <div className="text-white text-5xl font-semibold leading-[52.8px] max-md:max-w-full max-md:text-4xl">
@@ -391,19 +391,19 @@ src="https://geriasa.blob.core.windows.net/assets/5c77bfcd_0629_43ac_8cfd_0e79bd
                     </div>{" "}
                     <div className="items-stretch flex w-[321px] max-w-full gap-2.5 mt-5">
                       <div className="text-white text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch bg-stone-900 grow px-5 py-2.5 rounded-lg max-md:px-px">
-               
-                     
+
+
           <Link
             href={'/hire-talent'}
-            
+
           >
-          Hire Talents
+          Hire Talent
           </Link>
                       </div>{" "}
                       {/* <div className="text-stone-900 text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch border border-[color:var(--brands-tertiary,#FECC00)] grow px-5 py-2.5 rounded-lg border-solid max-md:px-px">
                       <Link
             href={'/signup'}
-            
+
           >
           Register as a Talent
           </Link>
@@ -415,10 +415,10 @@ src="https://geriasa.blob.core.windows.net/assets/5c77bfcd_0629_43ac_8cfd_0e79bd
             </div>
           </div>{" "}
         </div>
-            
-       
-       
-   
+
+
+
+
       )
 }
 

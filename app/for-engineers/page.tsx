@@ -16,9 +16,9 @@ export default function ForEngineersPage() {
                 Work with world-class companies, earn competitive rates, and grow your career 
                 in our remote-first talent network.
               </p>
-              <button className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors">
+              <a href="https://geria-2-hello3273.replit.app/candidate-portal?tab=signup" className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors inline-block">
                 Apply Now
-              </button>
+              </a>
             </div>
             <div>
               <img 
@@ -195,7 +195,7 @@ export default function ForEngineersPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <div className="flex items-center mb-4">
-                <img src="/images/avatar4.png" alt="Engineer" className="w-12 h-12 rounded-full mr-4" />
+                <img src="/images/avatar6.png" alt="Engineer" className="w-12 h-12 rounded-full mr-4" />
                 <div>
                   <h4 className="font-semibold">Alex Chen</h4>
                   <p className="text-gray-600 text-sm">Full-Stack Developer</p>
@@ -212,7 +212,7 @@ export default function ForEngineersPage() {
             
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <div className="flex items-center mb-4">
-                <img src="/images/avatar5.png" alt="Engineer" className="w-12 h-12 rounded-full mr-4" />
+                <img src="/images/placholder_avatar1.jpg" alt="Engineer" className="w-12 h-12 rounded-full mr-4" />
                 <div>
                   <h4 className="font-semibold">Maria Rodriguez</h4>
                   <p className="text-gray-600 text-sm">DevOps Engineer</p>
@@ -237,9 +237,9 @@ export default function ForEngineersPage() {
           <p className="text-xl text-purple-100 mb-8">
             Take the first step towards working with world-class companies and advancing your career.
           </p>
-          <button className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+          <a href="https://geria-2-hello3273.replit.app/candidate-portal?tab=signup" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
             Apply Now
-          </button>
+          </a>
         </div>
       </section>
     </div>
