@@ -27,8 +27,8 @@ const Footer = () => {
                 className="aspect-[2.35] object-contain object-center w-20 overflow-hidden max-w-full self-start"
               />
              <div className="text-white text-justify text-base leading-7 self-stretch mt-2.5 tracking-tighter">
-  Build great products with top-vetted remote developer teams
-  faster and cost-effectively.
+  Build great products with top-vetted remote developer<br />
+  teams faster and cost-effectively.
 </div>
 
               <div className="items-center flex justify-between gap-2.5 mt-8 self-start">
