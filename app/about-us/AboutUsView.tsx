@@ -234,10 +234,10 @@ const DevCard = (avatar: DeveloperAvatar) => (
 
 
     <div className="flex flex-col items-center bg-blue-50 self-stretch flex w-full flex-col items-center mt-10 pb-9 px-5 max-md:max-w-full max-md:mt-10">
-      <div className="text-black text-5xl font-semibold leading-[52.8px] self-stretch -mr-5 max-md:max-w-full max-md:text-4xl">
+      <div className="text-black text-5xl font-semibold leading-[52.8px] text-center max-md:max-w-full max-md:text-4xl">
                     Hire Vetted Tech Talent in Just Days
                   </div>
-                  <div className="self-stretch text-black text-xl leading-8 opacity-80 -mr-5 mt-6 max-md:max-w-full">
+                  <div className="text-black text-xl leading-8 opacity-80 text-center mt-6 max-md:max-w-full">
                     Discover top-tier professionals from our curated network — find the perfect fit for your team, fast.
                   </div>
 

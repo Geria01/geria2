@@ -13,7 +13,8 @@ export default function HireTalentPage() {
     'Mobile Developer',
     'SEO Expert',
     'UI/UX Designer',
-    'QA Engineer'
+    'QA Engineer',
+    'Software Architect'
   ];
 
   return (
@@ -170,6 +171,14 @@ export default function HireTalentPage() {
                       <li>• Selenium, Cypress, Playwright</li>
                       <li>• Test case management</li>
                       <li>• CI/CD test integration</li>
+                    </>
+                  )}
+                  {role === 'Software Architect' && (
+                    <>
+                      <li>• System design & architecture</li>
+                      <li>• Microservices & scalability</li>
+                      <li>• Technology strategy</li>
+                      <li>• Code review & best practices</li>
                     </>
                   )}
                 </ul>
