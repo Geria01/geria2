@@ -53,8 +53,12 @@ export default function ClientSignup() {
       const data = await response.json();
 
       if (response.ok) {
-        login(data.user);
-        router.push('/client-dashboard');
+        const success = await login(formData.email, formData.password);
+        if (success) {
+          router.push('/client-dashboard');
+        } else {
+          setError('Login failed after signup');
+        }
       } else {
         setError(data.message || 'Signup failed');
       }
