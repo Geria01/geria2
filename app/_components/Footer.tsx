@@ -127,22 +127,25 @@ const Footer = () => {
                             Site Map
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 mt-5">
+                          <Link href='/'>Home</Link>
+                          </div>
+                          <div className="text-slate-50 text-base font-medium leading-7 mt-2">
                           <Link href='/about-us'>About us</Link>
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 mt-2">
-                          <Link href='/pricing'>Pricing</Link>
+                          <Link href='/hire-talent'>Hire talent</Link>
+                          </div>
+                          <div className="text-slate-50 text-base font-medium leading-7 mt-2">
+                          <Link href='/web-development'>Web development</Link>
+                          </div>
+                          <div className="text-slate-50 text-base font-medium leading-7 mt-2">
+                          <Link href='/how-it-works'>How it works</Link>
+                          </div>
+                          <div className="text-slate-50 text-base font-medium leading-7 mt-2">
+                          <Link href='/for-engineers'>For Engineers</Link>
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 mt-2">
                           <Link href='/blog'>Blog</Link>
-                          </div>
-                          <div className="text-slate-50 text-base font-medium leading-7 mt-2">
-                          <Link href='/our-process'>Our Process</Link>
-                          </div>
-                          {/* <div className="text-slate-50 text-base font-medium leading-7 mt-2">
-                          <Link href='/jobs'>Apply For Jobs</Link>
-                          </div> */}
-                          <div className="text-slate-50 text-base font-medium leading-7 whitespace-nowrap mt-2">
-                            Web Development
                           </div>
                         </div>
                       </div>
