@@ -20,20 +20,24 @@ export default function HireTalentPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4">
+      <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Hire Top Remote <span className="text-blue-600">Developers</span>
+              <h1 className="text-5xl font-bold text-geria-dark mb-6">
+                Top Remote Talent. <span className="text-blue-600">One Global Team.</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                Global Talent. Handpicked. Delivered Fast.
-                We rigorously screen every developer so you don't have to. Get matched with proven pros in 48 hours.
+                Building the future? Get elite remote engineers or an end-to-end team — all with Geria
               </p>
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
-                Request Talent Now
-              </button>
+              <div className="flex gap-4">
+                <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
+                  Hire Talent Now
+                </button>
+                <button className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors">
+                  Let's build it
+                </button>
+              </div>
             </div>
             <div>
               <img 
@@ -49,7 +53,7 @@ export default function HireTalentPage() {
       {/* Vetting Process */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-4xl font-bold text-center text-geria-dark mb-16">
             Our Rigorous Vetting Process
           </h2>
           
@@ -58,7 +62,7 @@ export default function HireTalentPage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-blue-600 font-bold text-xl">1</span>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Application Review</h3>
+              <h3 className="text-lg font-semibold mb-2 text-geria-dark">Application Review</h3>
               <p className="text-gray-600 text-sm">Initial screening of experience and portfolio</p>
             </div>
             
@@ -66,7 +70,7 @@ export default function HireTalentPage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-blue-600 font-bold text-xl">2</span>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Technical Assessment</h3>
+              <h3 className="text-lg font-semibold mb-2 text-geria-dark">Technical Assessment</h3>
               <p className="text-gray-600 text-sm">Coding challenges and technical knowledge evaluation</p>
             </div>
             
@@ -74,7 +78,7 @@ export default function HireTalentPage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-blue-600 font-bold text-xl">3</span>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Live Coding</h3>
+              <h3 className="text-lg font-semibold mb-2 text-geria-dark">Live Coding</h3>
               <p className="text-gray-600 text-sm">Real-time problem solving and code quality assessment</p>
             </div>
             
@@ -82,7 +86,7 @@ export default function HireTalentPage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-blue-600 font-bold text-xl">4</span>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Soft Skills</h3>
+              <h3 className="text-lg font-semibold mb-2 text-geria-dark">Soft Skills</h3>
               <p className="text-gray-600 text-sm">Communication and collaboration abilities</p>
             </div>
             
@@ -90,7 +94,7 @@ export default function HireTalentPage() {
               <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-blue-600 font-bold text-xl">5</span>
               </div>
-              <h3 className="text-lg font-semibold mb-2">Final Interview</h3>
+              <h3 className="text-lg font-semibold mb-2 text-geria-dark">Final Interview</h3>
               <p className="text-gray-600 text-sm">Cultural fit and project-specific evaluation</p>
             </div>
           </div>
@@ -98,16 +102,16 @@ export default function HireTalentPage() {
       </section>
 
       {/* Supported Roles */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section className="py-20 px-4 bg-geria-light">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-4xl font-bold text-center text-geria-dark mb-16">
             Roles We Support
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {roles.map((role, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-xl font-semibold mb-4 text-gray-900">{role}</h3>
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-600">
+                <h3 className="text-xl font-semibold mb-4 text-geria-dark">{role}</h3>
                 <ul className="text-gray-600 space-y-2">
                   {role === 'Frontend Developer' && (
                     <>
@@ -191,7 +195,7 @@ export default function HireTalentPage() {
       {/* Contract Types */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-4xl font-bold text-center text-geria-dark mb-16">
             Flexible Engagement Models
           </h2>
           
@@ -202,7 +206,7 @@ export default function HireTalentPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Full-time</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-geria-dark">Full-time</h3>
               <p className="text-gray-600">Dedicated developers who become part of your team</p>
               <ul className="mt-4 text-sm text-gray-600">
                 <li>• 40 hours per week</li>
@@ -212,12 +216,12 @@ export default function HireTalentPage() {
             </div>
             
             <div className="text-center p-6">
-              <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Part-time</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-geria-dark">Part-time</h3>
               <p className="text-gray-600">Flexible hours for ongoing projects and maintenance</p>
               <ul className="mt-4 text-sm text-gray-600">
                 <li>• 20-30 hours per week</li>
@@ -227,12 +231,12 @@ export default function HireTalentPage() {
             </div>
             
             <div className="text-center p-6">
-              <div className="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Project-based</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-geria-dark">Project-based</h3>
               <p className="text-gray-600">Fixed-scope projects with defined deliverables</p>
               <ul className="mt-4 text-sm text-gray-600">
                 <li>• Clear milestones</li>
@@ -251,9 +255,14 @@ export default function HireTalentPage() {
           <p className="text-xl text-blue-100 mb-8">
             Tell us about your project and we'll match you with the ideal talent in 48 hours.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
-            Request Talent Now
-          </button>
+          <div className="flex gap-4 justify-center">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+              Hire Talent Now
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition-colors">
+              Let's build it
+            </button>
+          </div>
         </div>
       </section>
     </div>
