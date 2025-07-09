@@ -44,11 +44,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
       // Check for admin credentials
-      if (email === 'admin@geria.com' && password === 'admin123') {
+      if (email === 'john@geria.io' && password === 'admin123') {
         const adminUser: User = {
           id: 'admin-1',
           email: email,
-          name: 'Admin',
+          name: 'John',
           role: 'admin'
         };
         setUser(adminUser);
