@@ -30,16 +30,16 @@ export default function HomePage() {
       <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Top Remote Talent. <span className="text-blue-600">One Global Team.</span>
+            Top Remote Talent. <span className="text-red-600">One Global Team.</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Building the future? Get elite remote engineers or an end-to-end team — all with Geria
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/hire-talent" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+            <Link href="/hire-talent" className="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
               Hire Talent Now
             </Link>
-            <Link href="/for-engineers" className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+            <Link href="/for-engineers" className="border border-red-600 text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors">
               Let's build it
             </Link>
           </div>
@@ -65,19 +65,19 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-red-600 mb-2">500+</div>
               <div className="text-gray-600">Developers</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
+              <div className="text-3xl font-bold text-red-600 mb-2">98%</div>
               <div className="text-gray-600">Success Rate</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+              <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
               <div className="text-gray-600">Support</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">150+</div>
+              <div className="text-3xl font-bold text-red-600 mb-2">150+</div>
               <div className="text-gray-600">Projects</div>
             </div>
           </div>
@@ -176,11 +176,11 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-red-600 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
           <p className="text-xl mb-8">Get access to top-tier remote developers and scale your team today.</p>
-          <Link href="/hire-talent" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          <Link href="/hire-talent" className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
             Start Your Project
           </Link>
         </div>

@@ -196,7 +196,7 @@ const Footer = () => {
                 <div className="flex flex-col items-stretch w-[27%] ml-5 max-md:w-full max-md:ml-0">
                   <div className="items-stretch flex grow flex-col max-md:mt-10">
                     <div className="text-white text-xl font-semibold leading-7 whitespace-nowrap">
-                      Contacts
+                      Location
                     </div>
                     <div className="items-stretch flex flex-col mt-5">
                       <div className="text-slate-50  text-base leading-7 opacity-80">
