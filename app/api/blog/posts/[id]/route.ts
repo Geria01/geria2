@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: { id: string } }
 ) {
   try {
-    const postsModule = await import('../../../blog/data/posts.json');
+    const postsModule = await import('../../../../blog/data/posts.json');
     const { post1, posts } = postsModule.default;
     const allPosts = [post1, ...posts];
     
