@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from 'next/link';
 
@@ -27,8 +28,8 @@ export default function HomePage() {
           {/* Global Talent Visual */}
           <div className="relative">
             <img 
-              src="https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png"
-              alt="Global talent network"
+              src="/images/professional-woman-tablet.jpg"
+              alt="Professional woman with tablet representing global talent"
               className="w-full max-w-4xl mx-auto rounded-lg shadow-xl"
             />
           </div>
