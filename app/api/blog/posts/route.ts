@@ -5,7 +5,7 @@ export async function GET() {
   try {
     // In a real application, this would fetch from your CMS or database
     // For now, we'll return the local data
-    const postsModule = await import('../../blog/data/posts.json');
+    const postsModule = await import('../../../blog/data/posts.json');
     const { post1, posts } = postsModule.default;
     
     const allPosts = [post1, ...posts].map(post => ({
