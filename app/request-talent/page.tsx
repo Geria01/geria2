@@ -65,7 +65,7 @@ export default function RequestTalentPage() {
             {/* Stats Section */}
             <div className="grid grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-gray-900 mb-2">150K+</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">1.5K+</div>
                 <div className="text-sm text-gray-600">
                   Top rated,<br />
                   highly skilled<br />
@@ -167,7 +167,7 @@ export default function RequestTalentPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-teal-400 hover:bg-orange-500 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#D0021B] hover:bg-[#F5A623] text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <div className="flex items-center justify-center">
