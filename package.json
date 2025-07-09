@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@azure/communication-email": "^1.0.0",
-    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@svgr/webpack": "^8.1.0",
     "googleapis": "^140.0.1",
     "html-loader": "^5.0.0",

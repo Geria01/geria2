@@ -26,10 +26,6 @@ export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [filteredPosts, setFilteredPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
-  const [newsletterEmail, setNewsletterEmail] = useState<string>('');
-  const [gdprConsent, setGdprConsent] = useState<boolean>(false);
-  const [newsletterSubmitting, setNewsletterSubmitting] = useState<boolean>(false);
-  const [newsletterMessage, setNewsletterMessage] = useState<string>('');
 
   useEffect(() => {
     // Fetch posts from API or CMS
@@ -102,45 +98,6 @@ export default function BlogPage() {
       month: 'long',
       day: 'numeric'
     });
-  };
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!gdprConsent) {
-      setNewsletterMessage('Please consent to our privacy policy to subscribe.');
-      return;
-    }
-
-    setNewsletterSubmitting(true);
-    setNewsletterMessage('');
-
-    try {
-      const response = await fetch('/api/newsletter/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: newsletterEmail,
-          gdprConsent: gdprConsent,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setNewsletterMessage('Successfully subscribed! Please check your email to confirm.');
-        setNewsletterEmail('');
-        setGdprConsent(false);
-      } else {
-        setNewsletterMessage(data.error || 'Subscription failed. Please try again.');
-      }
-    } catch (error) {
-      setNewsletterMessage('Network error. Please try again.');
-    } finally {
-      setNewsletterSubmitting(false);
-    }
   };
 
   const featuredPost = filteredPosts.find(post => post.featured) || filteredPosts[0];
@@ -357,56 +314,16 @@ export default function BlogPage() {
           <p className="text-red-100 mb-6 max-w-2xl mx-auto">
             Get the latest insights on remote work, technology trends, and team building delivered straight to your inbox.
           </p>
-          <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
-              <input
-                type="email"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                placeholder="Enter your email address"
-                required
-                className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
-              />
-              <button 
-                type="submit"
-                disabled={newsletterSubmitting || !gdprConsent}
-                className="bg-white text-[#D0021B] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {newsletterSubmitting ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </div>
-            
-            {/* GDPR Compliance */}
-            <div className="text-sm text-left mb-4">
-              <label className="flex items-start gap-3 cursor-pointer">
-                <input
-                  type="checkbox"
-                  checked={gdprConsent}
-                  onChange={(e) => setGdprConsent(e.target.checked)}
-                  className="mt-1 h-4 w-4 text-white focus:ring-white border-white rounded bg-transparent"
-                  required
-                />
-                <span className="text-red-100 leading-relaxed">
-                  I consent to receiving marketing emails from Geria and understand that I can unsubscribe at any time. 
-                  I have read and agree to the{' '}
-                  <Link href="/privacy-policy" className="underline hover:text-white">
-                    Privacy Policy
-                  </Link>
-                  .
-                </span>
-              </label>
-            </div>
-            
-            {newsletterMessage && (
-              <div className={`text-sm p-3 rounded-lg ${
-                newsletterMessage.includes('successfully') 
-                  ? 'bg-green-500 bg-opacity-20 text-green-100' 
-                  : 'bg-red-500 bg-opacity-20 text-red-100'
-              }`}>
-                {newsletterMessage}
-              </div>
-            )}
-          </form>
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
+            />
+            <button className="bg-white text-[#D0021B] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              Subscribe
+            </button>
+          </div>
         </section>
       </main>
     </div>
