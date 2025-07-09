@@ -12,6 +12,10 @@ const config: Config = {
       center: true,
     },
     extend: {
+      fontFamily: {
+        'inter': ['Inter', 'Helvetica Neue', 'sans-serif'],
+        'sans': ['Inter', 'Helvetica Neue', 'sans-serif'],
+      },
       colors: {
         geria: {
           red: '#D0021B',
@@ -19,6 +23,8 @@ const config: Config = {
           dark: '#1C1C1C',
           light: '#F9F9F9',
         },
+        primary: '#D0021B',
+        accent: '#F5A623',
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

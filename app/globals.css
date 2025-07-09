@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700;900&family=Montserrat:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -49,12 +49,16 @@
   .bg-light {
     @apply bg-[#F9F9F9];
   }
+
+  .bg-white {
+    @apply bg-white;
+  }
 }
 
 :root {
   --foreground-rgb: 28, 28, 28;
-  --background-start-rgb: 249, 249, 249;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 249, 249, 249;
   --geria-red: #D0021B;
   --geria-orange: #F5A623;
   --geria-dark: #1C1C1C;
@@ -71,11 +75,11 @@
 
 body {
   flex-direction: column;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   height: 100%;
   color: #1C1C1C;
-  background-color: #F9F9F9;
+  background-color: #FFFFFF;
 }
 
 @layer utilities {
@@ -97,7 +101,7 @@ html {
 
 body {
   flex-direction: column;
-  font-family: 'Jost', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-weight: 400;
   height: 100%;
 }
@@ -121,7 +125,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
   font-weight: 700;
   line-height: 1.2;
   color: #1C1C1C;
@@ -134,7 +138,7 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F9F9F9;
+  background: #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {

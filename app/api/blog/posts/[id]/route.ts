@@ -1,4 +1,3 @@
-
 import { NextResponse } from 'next/server';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -13,9 +12,9 @@ export async function GET(
     const fileContents = readFileSync(filePath, 'utf8');
     const { post1, posts } = JSON.parse(fileContents);
     const allPosts = [post1, ...posts];
-    
+
     const post = allPosts.find(p => p.id === Number(params.id));
-    
+
     if (!post) {
       return NextResponse.json({ error: 'Post not found' }, { status: 404 });
     }

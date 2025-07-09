@@ -1,4 +1,3 @@
-
 import { NextResponse } from 'next/server';
 import { readFileSync } from 'fs';
 import { join } from 'path';
@@ -9,7 +8,7 @@ export async function GET() {
     const filePath = join(process.cwd(), 'app', 'blog', 'data', 'posts.json');
     const fileContents = readFileSync(filePath, 'utf8');
     const { post1, posts } = JSON.parse(fileContents);
-    
+
     const allPosts = [post1, ...posts].map(post => ({
       ...post,
       readTime: estimateReadTime(post.longText),
