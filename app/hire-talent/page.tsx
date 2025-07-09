@@ -25,7 +25,7 @@ export default function HireTalentPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Hire Top Remote <span className="text-blue-600">Developers</span>
+                Hire Top Remote <span className="text-[#D0021B]">Developers</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Global Talent. Handpicked. Delivered Fast.
@@ -55,40 +55,40 @@ export default function HireTalentPage() {
           
           <div className="grid md:grid-cols-5 gap-8">
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">1</span>
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-[#D0021B] font-bold text-xl">1</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Application Review</h3>
               <p className="text-gray-600 text-sm">Initial screening of experience and portfolio</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">2</span>
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-[#D0021B] font-bold text-xl">2</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Technical Assessment</h3>
               <p className="text-gray-600 text-sm">Coding challenges and technical knowledge evaluation</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">3</span>
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-[#D0021B] font-bold text-xl">3</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Live Coding</h3>
               <p className="text-gray-600 text-sm">Real-time problem solving and code quality assessment</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">4</span>
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-[#D0021B] font-bold text-xl">4</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Soft Skills</h3>
               <p className="text-gray-600 text-sm">Communication and collaboration abilities</p>
             </div>
             
             <div className="text-center">
-              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-blue-600 font-bold text-xl">5</span>
+              <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-[#D0021B] font-bold text-xl">5</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Final Interview</h3>
               <p className="text-gray-600 text-sm">Cultural fit and project-specific evaluation</p>
@@ -245,10 +245,10 @@ export default function HireTalentPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-blue-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-[#D0021B] to-[#F5A623] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Find Your Perfect Developer?</h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-red-100 mb-8">
             Tell us about your project and we'll match you with the ideal talent in 48 hours.
           </p>
           <button className="bg-white text-[#D0021B] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">

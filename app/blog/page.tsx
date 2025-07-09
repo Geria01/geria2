@@ -121,7 +121,7 @@ export default function BlogPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Geria <span className="text-[#D0021B]">Insights</span>
+              <span className="text-white">Geria</span> <span className="text-[#D0021B]">Insights</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
               Expert perspectives on remote work, technology trends, and building world-class distributed teams.

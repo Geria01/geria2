@@ -3715,6 +3715,10 @@ export default function ContactPage() {
                   your career.
                 </div>
                 <div className="items-stretch flex w-[321px] max-w-full gap-2.5 mt-5">
+                  <Link href="/for-engineers" className="bg-[#D0021B] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#F5A623] transition-colors">
+                    Apply Now
+                  </Link>
+                </div>
                 
 
                   <div className="text-white text-center text-sm font-bold leading-6  justify-center items-stretch bg-stone-900 grow px-5 py-2.5 rounded-lg max-md:px-px">

@@ -9,7 +9,7 @@ export default function HowItWorksPage() {
       <section className="relative bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            How Geria <span className="text-blue-600">Works</span>
+            How Geria <span className="text-[#D0021B]">Works</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Two simple paths to success: hire elite developers or get a complete development team
@@ -22,14 +22,14 @@ export default function HowItWorksPage() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 md:items-stretch">
             {/* Hire Developers Flow */}
-            <div className="bg-blue-50 p-8 rounded-lg flex flex-col">
-              <h2 className="text-3xl font-bold text-blue-900 mb-8 text-center">
+            <div className="bg-red-50 p-8 rounded-lg flex flex-col">
+              <h2 className="text-3xl font-bold text-[#D0021B] mb-8 text-center">
                 Hire Developers
               </h2>
               
               <div className="space-y-6 flex-grow">
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="bg-[#D0021B] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="font-bold">1</span>
                   </div>
                   <div>
@@ -39,7 +39,7 @@ export default function HowItWorksPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="bg-[#D0021B] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="font-bold">2</span>
                   </div>
                   <div>
@@ -49,7 +49,7 @@ export default function HowItWorksPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="bg-[#D0021B] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="font-bold">3</span>
                   </div>
                   <div>
@@ -59,7 +59,7 @@ export default function HowItWorksPage() {
                 </div>
                 
                 <div className="flex items-start">
-                  <div className="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
+                  <div className="bg-[#D0021B] text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 mt-1">
                     <span className="font-bold">4</span>
                   </div>
                   <div>
@@ -70,7 +70,7 @@ export default function HowItWorksPage() {
               </div>
               
               <div className="mt-8 text-center">
-                <Link href="/hire-talent" className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                <Link href="/hire-talent" className="bg-[#D0021B] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#F5A623] transition-colors">
                   Hire Developers
                 </Link>
               </div>

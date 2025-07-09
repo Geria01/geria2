@@ -198,7 +198,7 @@ export default function HomePage() {
           <p className="text-xl text-gray-300 mb-8">
             Let's discuss your project and find the perfect developers for your needs.
           </p>
-          <Link href="/contact" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors inline-block">
+          <Link href="/contact" className="bg-[#D0021B] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#F5A623] transition-colors inline-block">
             Book a Call
           </Link>
         </div>

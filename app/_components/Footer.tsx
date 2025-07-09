@@ -61,54 +61,50 @@ const Footer = () => {
                   +44 115 822 8222
                 </div>
               </div>
-              <div className="items-stretch self-stretch flex justify-between gap-5 mt-9 max-md:justify-center">
-              <Link href='https://web.facebook.com/www.geria.io' target='_blank' className='mr-5'>
+              <div className="items-stretch self-stretch flex justify-start gap-6 mt-9 max-md:justify-center">
+              <Link href='https://web.facebook.com/www.geria.io' target='_blank'>
                 <Image
                   alt='facebook logo'
                   loading="lazy"
-                  width={50}
-                  height={50}
-                  //style={{objectFit:"cover"}}
+                  width={40}
+                  height={40}
                   unoptimized
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/e4baf627-accc-4542-ba3b-733ec44698e3?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-                  className="aspect-square object-contain object-center w-[45px] overflow-hidden shrink-0 max-w-full"
+                  className="aspect-square object-contain object-center w-[40px] overflow-hidden shrink-0 max-w-full hover:opacity-80 transition-opacity"
                 />
                 </Link>
-                <Link href='https://twitter.com/geria_io' target='_blank' className='mr-5'>
+                <Link href='https://twitter.com/geria_io' target='_blank'>
                 <Image
                   alt='twitter logo'
                   loading="lazy"
-                  width={50}
-                  height={50}
-                  //style={{objectFit:"cover"}}
+                  width={40}
+                  height={40}
                   unoptimized
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c1d7950-50ac-4a0b-b389-a8c6dbe3831a?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-                  className="aspect-square object-contain object-center w-[45px] overflow-hidden shrink-0 max-w-full"
+                  className="aspect-square object-contain object-center w-[40px] overflow-hidden shrink-0 max-w-full hover:opacity-80 transition-opacity"
                 />
                 </Link>
 
-               <Link href='https://www.linkedin.com/company/geria-io/' target='_blank' className='mr-5'>
+               <Link href='https://www.linkedin.com/company/geria-io/' target='_blank'>
                 <Image
                   alt='linked in logo'
                   loading="lazy"
-                  width={50}
-                  height={50}
-                  //style={{objectFit:"cover"}}
+                  width={40}
+                  height={40}
                   unoptimized
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/9bee03ba-18f0-416e-aae2-02074cf93558?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-                  className="aspect-square object-contain object-center w-[45px] overflow-hidden shrink-0 max-w-full"
+                  className="aspect-square object-contain object-center w-[40px] overflow-hidden shrink-0 max-w-full hover:opacity-80 transition-opacity"
                 />
                 </Link>
-                <Link href='https://www.instagram.com/geria_io/' target='_blank' className='mr-5'>
+                <Link href='https://www.instagram.com/geria_io/' target='_blank'>
                 <Image
                   alt='instagram logo'
                   loading="lazy"
-                  width={50}
-                  height={50}
-                  //style={{objectFit:"cover"}}
+                  width={40}
+                  height={40}
                   unoptimized
                   src="https://cdn.builder.io/api/v1/image/assets/TEMP/7655f037-5ddc-43d5-bd22-faed6f861cd8?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-                  className="aspect-square object-contain object-center w-[45px] overflow-hidden shrink-0 max-w-full"
+                  className="aspect-square object-contain object-center w-[40px] overflow-hidden shrink-0 max-w-full hover:opacity-80 transition-opacity"
                 />
                 </Link>
               </div>
@@ -123,7 +119,7 @@ const Footer = () => {
                       <div className="flex flex-col items-stretch w-[29%] max-md:w-full max-md:ml-0">
                         <div className="items-stretch flex grow flex-col max-md:mt-10">
 
-                          <div className="text-white text-2xl font-semibold leading-7 whitespace-nowrap">
+                          <div className="text-white text-xl font-semibold leading-7 whitespace-nowrap">
                             Site Map
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 mt-5">
@@ -151,7 +147,7 @@ const Footer = () => {
                       </div>
                       <div className="flex flex-col items-stretch w-[32%] ml-5 max-md:w-full max-md:ml-0">
                         <div className="items-stretch flex flex-col max-md:mt-10">
-                          <div className="text-white text-2xl font-semibold leading-7 whitespace-nowrap">
+                          <div className="text-white text-xl font-semibold leading-7 whitespace-nowrap">
                             Positions
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 whitespace-nowrap mt-5">
@@ -177,7 +173,7 @@ const Footer = () => {
 
                       <div className="flex flex-col items-stretch w-[39%] ml-5 max-md:w-full max-md:ml-0">
                         <div className="items-stretch flex flex-col max-md:mt-10">
-                          <div className="text-white text-2xl font-semibold leading-7 whitespace-nowrap">
+                          <div className="text-white text-xl font-semibold leading-7 whitespace-nowrap">
                             Legal
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 whitespace-nowrap mt-5">
@@ -199,7 +195,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col items-stretch w-[27%] ml-5 max-md:w-full max-md:ml-0">
                   <div className="items-stretch flex grow flex-col max-md:mt-10">
-                    <div className="text-white text-2xl font-semibold leading-7 whitespace-nowrap">
+                    <div className="text-white text-xl font-semibold leading-7 whitespace-nowrap">
                       Contacts
                     </div>
                     <div className="items-stretch flex flex-col mt-5">
