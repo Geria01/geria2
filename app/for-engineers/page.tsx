@@ -22,7 +22,7 @@ export default function ForEngineersPage() {
             </div>
             <div>
               <img 
-                src="/images/for-engineers-hero.jpg"
+                src="/images/vetting-img.png"
                 alt="Remote engineers"
                 className="w-full rounded-lg shadow-xl"
               />

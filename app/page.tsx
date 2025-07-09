@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from 'next/link';
 
@@ -28,8 +27,8 @@ export default function HomePage() {
           {/* Global Talent Visual */}
           <div className="relative">
             <img 
-              src="/images/professional-woman-tablet.jpg"
-              alt="Professional woman with tablet representing global talent"
+              src="https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png"
+              alt="Global talent network"
               className="w-full max-w-4xl mx-auto rounded-lg shadow-xl"
             />
           </div>
@@ -82,18 +81,6 @@ export default function HomePage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Flexibility</h3>
               <p className="text-gray-600">Full-time, part-time, or project-based engagement models to fit your needs.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-[#D0021B] mb-2">1.5K+</div>
-              <div className="text-gray-600">Top rated, highly skilled global talent</div>
             </div>
           </div>
         </div>
