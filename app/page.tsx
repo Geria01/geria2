@@ -86,6 +86,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-4xl font-bold text-[#D0021B] mb-2">1.5K+</div>
+              <div className="text-gray-600">Top rated, highly skilled global talent</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Client Logos */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
