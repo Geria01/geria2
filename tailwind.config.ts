@@ -12,6 +12,14 @@ const config: Config = {
       center: true,
     },
     extend: {
+      colors: {
+        geria: {
+          red: '#D0021B',
+          orange: '#F5A623',
+          dark: '#1C1C1C',
+          light: '#F9F9F9',
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
