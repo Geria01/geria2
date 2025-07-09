@@ -7,7 +7,8 @@ import BlogCMS from '../../_components/BlogCMS';
 import AdminLogin from '../../_components/AdminLogin';
 
 export default function BlogAdminPage() {
-  const { isAuthenticated } = useAuth();
+  const { user } = useAuth();
+  const isAuthenticated = user?.role === 'admin';
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
