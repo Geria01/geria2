@@ -1,13 +1,17 @@
 
 import { NextResponse } from 'next/server';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export async function GET(
   request: Request,
   { params }: { params: { id: string } }
 ) {
   try {
-    const postsModule = await import('../../../../blog/data/posts.json');
-    const { post1, posts } = postsModule.default;
+    // Read the posts.json file from the file system
+    const filePath = join(process.cwd(), 'app', 'blog', 'data', 'posts.json');
+    const fileContents = readFileSync(filePath, 'utf8');
+    const { post1, posts } = JSON.parse(fileContents);
     const allPosts = [post1, ...posts];
     
     const post = allPosts.find(p => p.id === Number(params.id));
