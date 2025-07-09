@@ -38,7 +38,106 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            {/* Project 1 - E-commerce Platform */}
+            {/* Project 1 - Inna3D */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-purple-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold text-gray-800">3D Rendering</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Inna3D Project</h3>
+                <p className="text-gray-600 mb-4">
+                  Providing top-quality 3D rendering services to property developers, interior designers, yacht design studios, and architects across every continent.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Web Design</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Lead Generation</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Gallery</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-500">Architecture CGI</span>
+                  <a href="https://webdesign.geria.io/inna3d" target="_blank" className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                    View Case Study
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 2 - MCB Trees */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold text-gray-800">Tree Management</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-gray-900">MCB Trees Management</h3>
+                <p className="text-gray-600 mb-4">
+                  Professional tree surgeon business offering essential services such as tree removal, pruning, stump grinding, and emergency tree care.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Responsive Design</span>
+                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Service Pages</span>
+                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Quote System</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-500">Tree Services</span>
+                  <a href="https://webdesign.geria.io/mcbtrees" target="_blank" className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                    View Case Study
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 3 - Riddance App */}
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                    </div>
+                    <h3 className="font-semibold text-gray-800">Cleaning Management</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-3 text-gray-900">Riddance App</h3>
+                <p className="text-gray-600 mb-4">
+                  Automated system that brings all guest bookings together into one centralized dashboard for managing cleaning schedules with ease.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Web App</span>
+                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Automation</span>
+                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">Dashboard</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-gray-500">Vacation Rental</span>
+                  <a href="https://webdesign.geria.io/riddance" target="_blank" className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                    View Case Study
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Projects - Placeholder for future projects */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-video bg-gradient-to-br from-red-100 to-red-200 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -53,7 +152,7 @@ export default function ProjectsPage() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">Modern E-commerce Solution</h3>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">E-commerce Solution</h3>
                 <p className="text-gray-600 mb-4">
                   A full-featured e-commerce platform with payment integration, inventory management, and responsive design.
                 </p>
@@ -63,7 +162,7 @@ export default function ProjectsPage() {
                   <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">MongoDB</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">6 months</span>
+                  <span className="text-sm text-gray-500">Online Store</span>
                   <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                     View Case Study
                   </button>
@@ -71,106 +170,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* Project 2 - SaaS Dashboard */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="aspect-video bg-gradient-to-br from-blue-100 to-blue-200 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold text-gray-800">SaaS Dashboard</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">Analytics Dashboard</h3>
-                <p className="text-gray-600 mb-4">
-                  A comprehensive analytics dashboard with real-time data visualization and user management features.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Vue.js</span>
-                  <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">Laravel</span>
-                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">MySQL</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">4 months</span>
-                  <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                    View Case Study
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 3 - Corporate Website */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="aspect-video bg-gradient-to-br from-green-100 to-green-200 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-green-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9" />
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold text-gray-800">Corporate Website</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">Enterprise Website</h3>
-                <p className="text-gray-600 mb-4">
-                  A professional corporate website with CMS integration, multi-language support, and SEO optimization.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">Next.js</span>
-                  <span className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">Strapi</span>
-                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">3 months</span>
-                  <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                    View Case Study
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 4 - Mobile App */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-purple-600 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <h3 className="font-semibold text-gray-800">Mobile Application</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-gray-900">Cross-Platform Mobile App</h3>
-                <p className="text-gray-600 mb-4">
-                  A feature-rich mobile application with offline capabilities, push notifications, and seamless UX.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm">React Native</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Express.js</span>
-                  <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Firebase</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">5 months</span>
-                  <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
-                    View Case Study
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 5 - fintech Platform */}
+            {/* Additional Projects - Fintech */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-video bg-gradient-to-br from-yellow-100 to-yellow-200 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -195,7 +195,7 @@ export default function ProjectsPage() {
                   <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">SQL Server</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">8 months</span>
+                  <span className="text-sm text-gray-500">Banking</span>
                   <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                     View Case Study
                   </button>
@@ -203,7 +203,7 @@ export default function ProjectsPage() {
               </div>
             </div>
 
-            {/* Project 6 - Healthcare Platform */}
+            {/* Additional Projects - Healthcare */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-video bg-gradient-to-br from-teal-100 to-teal-200 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -228,7 +228,7 @@ export default function ProjectsPage() {
                   <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PostgreSQL</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">7 months</span>
+                  <span className="text-sm text-gray-500">Healthcare</span>
                   <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                     View Case Study
                   </button>
@@ -239,8 +239,41 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Featured Projects Section */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Featured <span className="text-red-600">Case Studies</span></h2>
+            <p className="text-xl text-gray-600">Detailed insights into our most successful projects</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Inna3D</h3>
+              <p className="text-gray-600 mb-4">CGI services platform with lead generation focus</p>
+              <div className="text-sm text-gray-500 mb-3">✓ Simplified website design<br/>✓ Enhanced lead generation<br/>✓ Easy render request system</div>
+              <a href="https://webdesign.geria.io/inna3d" target="_blank" className="text-red-600 hover:text-red-700 font-medium">View Full Case Study →</a>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">MCB Trees</h3>
+              <p className="text-gray-600 mb-4">Tree management services with modern design</p>
+              <div className="text-sm text-gray-500 mb-3">✓ Professional design<br/>✓ Intuitive navigation<br/>✓ Detailed service pages</div>
+              <a href="https://webdesign.geria.io/mcbtrees" target="_blank" className="text-red-600 hover:text-red-700 font-medium">View Full Case Study →</a>
+            </div>
+            
+            <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold mb-3 text-gray-900">Riddance App</h3>
+              <p className="text-gray-600 mb-4">Automated cleaning management system</p>
+              <div className="text-sm text-gray-500 mb-3">✓ Calendar synchronization<br/>✓ Centralized management<br/>✓ Real-time tracking</div>
+              <a href="https://webdesign.geria.io/riddance" target="_blank" className="text-red-600 hover:text-red-700 font-medium">View Full Case Study →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-gray-900">Project <span className="text-red-600">Statistics</span></h2>
@@ -248,19 +281,19 @@ export default function ProjectsPage() {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <div className="text-4xl font-bold text-red-600 mb-2">150+</div>
               <div className="text-gray-600">Projects Completed</div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <div className="text-4xl font-bold text-red-600 mb-2">98%</div>
               <div className="text-gray-600">Client Satisfaction</div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <div className="text-4xl font-bold text-red-600 mb-2">50+</div>
               <div className="text-gray-600">Industries Served</div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className="bg-gray-50 p-6 rounded-lg">
               <div className="text-4xl font-bold text-red-600 mb-2">24/7</div>
               <div className="text-gray-600">Support Available</div>
             </div>
