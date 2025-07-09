@@ -10,13 +10,13 @@ export default function ForEngineersPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Join the Global <span className="text-purple-600">Elite</span>
+                Join the Global <span className="text-[#D0021B]">Elite</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 Work with world-class companies, earn competitive rates, and grow your career 
                 in our remote-first talent network.
               </p>
-              <a href="https://geria-2-hello3273.replit.app/candidate-portal?tab=signup" className="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition-colors inline-block">
+              <a href="https://geria-2-hello3273.replit.app/candidate-portal?tab=signup" className="bg-[#D0021B] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#F5A623] transition-colors inline-block">
                 Apply Now
               </a>
             </div>
@@ -82,40 +82,40 @@ export default function ForEngineersPage() {
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="grid md:grid-cols-5 gap-6">
               <div className="text-center">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-purple-600 font-bold">1</span>
+                <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#D0021B] font-bold">1</span>
                 </div>
                 <h3 className="font-semibold mb-2">Application</h3>
                 <p className="text-sm text-gray-600">Submit your profile and portfolio</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-purple-600 font-bold">2</span>
+                <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#D0021B] font-bold">2</span>
                 </div>
                 <h3 className="font-semibold mb-2">Technical Test</h3>
                 <p className="text-sm text-gray-600">Complete coding challenges</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-purple-600 font-bold">3</span>
+                <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#D0021B] font-bold">3</span>
                 </div>
                 <h3 className="font-semibold mb-2">Live Coding</h3>
                 <p className="text-sm text-gray-600">Real-time problem solving</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-purple-600 font-bold">4</span>
+                <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#D0021B] font-bold">4</span>
                 </div>
                 <h3 className="font-semibold mb-2">Soft Skills</h3>
                 <p className="text-sm text-gray-600">Communication assessment</p>
               </div>
               
               <div className="text-center">
-                <div className="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-purple-600 font-bold">5</span>
+                <div className="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <span className="text-[#D0021B] font-bold">5</span>
                 </div>
                 <h3 className="font-semibold mb-2">Welcome</h3>
                 <p className="text-sm text-gray-600">Join our elite network</p>
@@ -125,7 +125,7 @@ export default function ForEngineersPage() {
           
           <div className="text-center mt-8">
             <p className="text-lg text-gray-600">
-              <span className="font-semibold text-purple-600">Only 3%</span> of applicants make it through our rigorous process
+              <span className="font-semibold text-[#D0021B]">Only 3%</span> of applicants make it through our rigorous process
             </p>
           </div>
         </div>
@@ -231,13 +231,13 @@ export default function ForEngineersPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-purple-600 text-white">
+      <section className="py-20 px-4 bg-[#D0021B] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Join Our Elite Network?</h2>
-          <p className="text-xl text-purple-100 mb-8">
+          <p className="text-xl text-red-100 mb-8">
             Take the first step towards working with world-class companies and advancing your career.
           </p>
-          <a href="https://geria-2-hello3273.replit.app/candidate-portal?tab=signup" className="bg-white text-purple-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
+          <a href="https://geria-2-hello3273.replit.app/candidate-portal?tab=signup" className="bg-white text-[#D0021B] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors inline-block">
             Apply Now
           </a>
         </div>

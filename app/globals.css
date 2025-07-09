@@ -49,10 +49,6 @@
   .bg-light {
     @apply bg-[#F9F9F9];
   }
-
-  .bg-white {
-    @apply bg-white;
-  }
 }
 
 :root {
