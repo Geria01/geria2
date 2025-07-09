@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
-export default function HomePage() {
+function HomePageComponent() {
 
   return (
     <>
@@ -170,4 +170,8 @@ export default function HomePage() {
       </section>
     </>
   )
+}
+
+export default function HomePage() {
+  return <HomePageComponent />;
 }
