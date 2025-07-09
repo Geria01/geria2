@@ -12,6 +12,7 @@ export default function GeriaNavbar() {
     { name: "About Us", href: "/about-us" },
     { name: "Hire Talent", href: "/hire-talent" },
     { name: "Web Development", href: "/web-development" },
+    { name: "Projects", href: "/projects" },
     { name: "How It Works", href: "/how-it-works" },
     { name: "For Engineers", href: "/for-engineers" },
     { name: "Blog", href: "/blog" },

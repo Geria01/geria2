@@ -34,16 +34,21 @@ const WebDevView = () => {
 
 
 
-                <button
-            className='text-white text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch bg-stone-900 w-[105px] max-w-full mt-2.5 px-5 py-2.5 rounded-lg max-md:px-px'
-            onClick={() => setOpen(true)}
-          >
-             Lets Talk
-          </button>
-          <CalendlyPopupWidget
-            open={open}
-            setOpen={setOpen}
-          />
+                <div className="flex gap-4 mt-2.5">
+                  <button
+                    className='text-white text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch bg-stone-900 px-5 py-2.5 rounded-lg hover:bg-stone-800 transition-colors'
+                    onClick={() => setOpen(true)}
+                  >
+                    Lets Talk
+                  </button>
+                  <Link href="/projects" className='text-red-600 text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch bg-white border-2 border-red-600 px-5 py-2.5 rounded-lg hover:bg-red-600 hover:text-white transition-colors'>
+                    View Our Projects
+                  </Link>
+                </div>
+                <CalendlyPopupWidget
+                  open={open}
+                  setOpen={setOpen}
+                />
 
 
 
