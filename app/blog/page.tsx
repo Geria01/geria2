@@ -117,11 +117,11 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Geria <span className="text-blue-400">Insights</span>
+              Geria <span className="text-[#D0021B]">Insights</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
               Expert perspectives on remote work, technology trends, and building world-class distributed teams.
@@ -136,7 +136,7 @@ export default function BlogPage() {
                   placeholder="Search articles, topics, or authors..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 text-gray-900 bg-white rounded-xl border-0 focus:ring-2 focus:ring-blue-500 focus:outline-none shadow-lg text-lg placeholder-gray-500"
+                  className="w-full pl-12 pr-4 py-4 text-gray-900 bg-white rounded-xl border-0 focus:ring-2 focus:ring-[#D0021B] focus:outline-none shadow-lg text-lg placeholder-gray-500"
                 />
               </div>
             </div>
@@ -154,8 +154,8 @@ export default function BlogPage() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-200 transform hover:scale-105 ${
                   activeCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-blue-100 hover:text-blue-700 border border-gray-300'
+                    ? 'bg-[#D0021B] text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-700 hover:bg-[#F5A623] hover:text-white border border-gray-300'
                 }`}
               >
                 {category === 'all' ? 'All Articles' : category}
@@ -183,7 +183,7 @@ export default function BlogPage() {
                         className="w-full h-64 lg:h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute top-4 left-4">
-                        <span className="bg-red-500 text-white text-sm font-semibold px-3 py-1 rounded-full">
+                        <span className="bg-[#D0021B] text-white text-sm font-semibold px-3 py-1 rounded-full">
                           Featured
                         </span>
                       </div>
@@ -192,7 +192,7 @@ export default function BlogPage() {
                 </div>
                 <div className="lg:w-1/2 p-8 lg:p-12">
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-[#D0021B] bg-opacity-10 text-[#D0021B] text-sm font-semibold px-3 py-1 rounded-full">
                       {featuredPost.category}
                     </span>
                     <div className="flex items-center text-gray-500 text-sm">
@@ -201,7 +201,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                   <Link href={`/blog/${featuredPost.id}`}>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4 hover:text-blue-600 transition-colors leading-tight">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4 hover:text-[#D0021B] transition-colors leading-tight">
                       {featuredPost.title}
                     </h2>
                   </Link>
@@ -278,7 +278,7 @@ export default function BlogPage() {
                       </div>
                     </div>
                     <Link href={`/blog/${post.id}`}>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2 leading-tight">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-[#D0021B] transition-colors line-clamp-2 leading-tight">
                         {post.title}
                       </h3>
                     </Link>
@@ -309,18 +309,18 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white text-center">
+        <section className="mt-16 bg-gradient-to-r from-[#D0021B] to-[#F5A623] rounded-2xl p-8 text-white text-center">
           <h3 className="text-2xl font-bold mb-4">Stay in the Loop</h3>
-          <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
+          <p className="text-red-100 mb-6 max-w-2xl mx-auto">
             Get the latest insights on remote work, technology trends, and team building delivered straight to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <input
               type="email"
               placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300 placeholder-gray-500"
+              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
             />
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-[#D0021B] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Subscribe
             </button>
           </div>
