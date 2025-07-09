@@ -48,10 +48,6 @@
   .bg-light {
     @apply bg-[#F9F9F9];
   }
-
-  .bg-white {
-    background-color: #ffffff;
-  }
 }
 
 :root {
