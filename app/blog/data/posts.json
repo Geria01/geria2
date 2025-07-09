@@ -77,6 +77,17 @@
       "authorName": "Maria Santos",
       "authorAvatarUrl": "/images/placholder_avatar1.jpg",
       "featured": true
+    },
+    {
+      "id": 8,
+      "category": "Your Category",
+      "title": "Your New Blog Post Title",
+      "image": "https://geriasa.blob.core.windows.net/assets/your-image.jpg",
+      "previewText": "Brief description of your new post that will appear in the blog list and social media previews.",
+      "longText": "<p>Your blog content goes here with HTML formatting.</p><h5>Use H5 for Subheadings</h5><p>Regular paragraphs for content.</p><ul><li>Bullet points for lists</li><li>Second point</li></ul><p>You can use <strong>bold</strong> and <a href='https://example.com'>links</a> too.</p>",
+      "date": "2025-01-10",
+      "authorName": "Your Name",
+      "authorAvatarUrl": "/images/placholder_avatar1.jpg"
     }
   ]
 }
