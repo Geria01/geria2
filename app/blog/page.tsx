@@ -6,6 +6,91 @@ import { useEffect, useState } from "react";
 import Image from 'next/image';
 import { Search, Calendar, Clock, User, Tag } from 'lucide-react';
 
+// Newsletter Signup Component
+function NewsletterSignup() {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!agreedToPrivacy) {
+      setMessage('Please agree to the privacy policy to subscribe.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setMessage('Thank you for subscribing! Please check your email to confirm.');
+        setEmail('');
+        setAgreedToPrivacy(false);
+      } else {
+        setMessage('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setMessage('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section className="mt-16 bg-gradient-to-r from-[#D0021B] to-[#F5A623] rounded-2xl p-8 text-white text-center">
+      <h3 className="text-2xl font-bold mb-4">Stay in the Loop</h3>
+      <p className="text-red-100 mb-6 max-w-2xl mx-auto">
+        Get the latest insights on remote work, technology trends, and team building delivered straight to your inbox.
+      </p>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+        <div className="flex flex-col sm:flex-row gap-4 mb-4">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email address"
+            required
+            className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
+          />
+          <button 
+            type="submit" 
+            disabled={isSubmitting}
+            className="bg-white text-[#D0021B] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors disabled:opacity-50"
+          >
+            {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+          </button>
+        </div>
+        <div className="flex items-start gap-2 text-sm text-red-100">
+          <input
+            type="checkbox"
+            id="privacy-consent"
+            checked={agreedToPrivacy}
+            onChange={(e) => setAgreedToPrivacy(e.target.checked)}
+            className="mt-1"
+          />
+          <label htmlFor="privacy-consent">
+            I agree to receive marketing emails and understand that I can unsubscribe at any time. 
+            Read our <Link href="/privacy-policy" className="underline hover:text-white">Privacy Policy</Link>.
+          </label>
+        </div>
+        {message && (
+          <p className={`mt-4 text-sm ${message.includes('Thank you') ? 'text-green-200' : 'text-yellow-200'}`}>
+            {message}
+          </p>
+        )}
+      </form>
+    </section>
+  );
+}
+
 interface BlogPost {
   id: number;
   category: string;
@@ -309,22 +394,7 @@ export default function BlogPage() {
         </section>
 
         {/* Newsletter Signup */}
-        <section className="mt-16 bg-gradient-to-r from-[#D0021B] to-[#F5A623] rounded-2xl p-8 text-white text-center">
-          <h3 className="text-2xl font-bold mb-4">Stay in the Loop</h3>
-          <p className="text-red-100 mb-6 max-w-2xl mx-auto">
-            Get the latest insights on remote work, technology trends, and team building delivered straight to your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
-            />
-            <button className="bg-white text-[#D0021B] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </section>
+        <NewsletterSignup />
       </main>
     </div>
   );
