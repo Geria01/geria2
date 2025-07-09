@@ -8,7 +8,7 @@ export default function HomePage() {
       <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            Top Remote Talent. <span className="text-blue-600">One Global Team.</span>
+            Top Remote Talent. <span className="text-[#D0021B]">One Global Team.</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Building the future? Get elite remote engineers or an end-to-end team — all with Geria
@@ -16,10 +16,10 @@ export default function HomePage() {
 
           {/* Dual CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Link href="/hire-talent" className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
+            <Link href="/hire-talent" className="bg-[#D0021B] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#F5A623] transition-colors">
               Hire Talent Now
             </Link>
-            <Link href="/web-development" className="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition-colors">
+            <Link href="/web-development" className="bg-white text-[#D0021B] border-2 border-[#D0021B] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#D0021B] hover:text-white transition-colors">
               Let's build it
             </Link>
           </div>

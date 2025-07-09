@@ -31,7 +31,7 @@ export default function HireTalentPage() {
                 Global Talent. Handpicked. Delivered Fast.
                 We rigorously screen every developer so you don't have to. Get matched with proven pros in 48 hours.
               </p>
-              <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-colors">
+              <button className="bg-[#D0021B] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#F5A623] transition-colors">
                 Request Talent Now
               </button>
             </div>
@@ -251,7 +251,7 @@ export default function HireTalentPage() {
           <p className="text-xl text-blue-100 mb-8">
             Tell us about your project and we'll match you with the ideal talent in 48 hours.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
+          <button className="bg-white text-[#D0021B] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors">
             Request Talent Now
           </button>
         </div>
