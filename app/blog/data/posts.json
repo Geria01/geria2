@@ -1,93 +1,82 @@
-
 {
   "post1": {
-    "id": 7,
-    "category": "Hiring",
-    "title": "Outsourcing vs Outstaffing, which is right for you?",
-    "image": "https://geriasa.blob.core.windows.net/assets/yes_55e2aeb830.jpg",
-    "previewText": "The growing wave of digitization and digitalization has resulted in a critical talent gap in the UK. If not addressed, much of the potential of digitalization could go unrealized. According to Consultancy.uk, the UK stands the risk of forgoing more than £140 billion if the status quo remains.",
-    "longText": "<p>The growing wave of digitization and digitalization has resulted in a critical talent gap in the UK. If not addressed, much of the potential of digitalization could go unrealized.</p><p>According to <a href=\"https://www.consultancy.uk/\" target=\"_blank\" style=\"color: blue;\">Consultancy.uk</a>, the UK stands the risk of forgoing more than £140 billion if the status quo remains.</p><p>Let's start with the definition of these terms.</p><br><h5>Outsourcing</h5><p>In the simplest form, outsourcing happens when a company hires another company to carry out planned or existing business activity. In the technology space, this often takes the form of software development. Here, your vendor bears the responsibility of delivering the project and manages the end-to-end project flow. When finished, the product is delivered to you, tested and approved.</p><br><h5>Outstaffing</h5><p>Here, you hire an individual or a team of professionals to work as embedded members of your team under your supervision. In most cases, they work remotely. You have full control here and determine the work flow direction. The outstaffing vendor takes the critical role of finding, hiring, and handling all administrative duties. While the employee's payroll and taxes are handled by your vendor, the employee works directly with you.</p><br><h5>Cost</h5><p>Smart organizations often look for ways of remaining competitive, especially in periods of uncertainty and instability, like the imminent recession is about to plunge us into. Organizations are increasingly turning to these models to utilize available resources optimally and reduce cost.</p><br><h5>Remote mindset</h5><p>The global pandemic has accelerated our transition to remote work. Research studies show a positive correlation between remote work and productivity, indicating that organizations are likely to maintain the remote culture after the global lockdown due to the inherent advantages.</p><br><h5>Benefits of outsourcing and Outstaffing</h5><p><strong>Cost savings</strong></p><p>Outsourcing to a country with lower cost of living translates to significant cost savings. Lower salaries, production, infrastructure, and operational costs mean the vendor will charge much less than another vendor in high-cost markets.</p><p><strong>Time savings</strong></p><p>With an outsourcing partner, you don't waste time in hiring, onboarding, and training new staff members. You simply hire the vendor, who uses his existing, often experienced team to deliver your project. As you know, time is money.</p><p><strong>Scaling fast</strong></p><p>When you outsource some or all elements of your development, you free up time to focus on acquiring new clients and entering new markets, without scaling your internal operation.</p><p><strong>Access to global talent pool</strong></p><p>With the increasing shortage in tech talents in the UK, outsourcing and outstaffing models are a strategy to access the hard-to-find and expensive skills set in the local market. In addition, employing the outsourcing model increases your organization's diversity quotient.</p><br><h5>Concerns of outsourcing</h5><p><strong>Time difference</strong></p><p>This can be a major challenge if you are not in similar time zones with your outsourcing vendor. There could be a significant dent in the communication flow which could affect the overall success of the project.</p><p><strong>Language barrier</strong></p><p>Communication flow could be hampered significantly if your partner vendor struggles with your major language of communication. This often leads to wasted time and misinterpretation of the project requirements.</p><p><strong>Culture and work habits</strong></p><p>Different environments elicit different cultural norms and work habits. For example, for some hierarchical cultures, reports often do the bidding of the superiors, with no questions asked. Training and retraining go a long way in filling the missing gaps here.</p><p><strong>Privacy and security concerns</strong></p><p>From afar, this may look like a huge concern. On a close look, one discovers that the challenges can easily be mitigated. With the outstaffing model, the contracting company has total control on the access granted to the embedded staff just as other staff members. Also, engagements on the outsourcing model typically come with intellectual property protection.</p><br><h5>What option do I go for?</h5><p>Outstaffing model is ideal in situations where you have the required expertise in-house but lack the development capacity. You may have a CTO, who is responsible for your development strategy and is particular about the architectural consistency of your software component but needs some additional hands. To overcome the capacity challenge, you could either go for an embedded team member or a team extension — depending on the capacity gap.</p><p>Outsourcing is better suited for situations where you do not have the in-house expertise and are not able to build your IT team yet either due to a constrained budget or other reasons. In this case, you could have a measurable part or your entire project built out by the outsourced vendor.</p><p>If you are looking for a partner that understands how to recruit and onboard overseas talents for full-time or part-time positions, hit us up at Geria. We take care of all the recruitment and overhead responsibilities and ensure the right candidate is embedded into your team while you focus on building that awesome product!</p><p>Photo credit: skydiv</p>",
-    "date": "Tue. 28th Nov. 2023.",
+    "id": 1,
+    "category": "Remote Work",
+    "title": "The Future of Remote Development Teams",
+    "image": "https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png",
+    "previewText": "Explore how remote development teams are shaping the future of software development and what it means for businesses worldwide.",
+    "longText": "<p>The landscape of software development has fundamentally changed. Remote development teams are no longer just a trend—they're the future of how we build technology.</p><p>Companies worldwide are discovering that distributed teams offer unparalleled access to global talent, increased productivity, and significant cost savings. But success requires the right approach.</p><h3>Key Benefits of Remote Teams</h3><ul><li>Access to global talent pool</li><li>Reduced operational costs</li><li>Increased productivity and flexibility</li><li>Better work-life balance for developers</li></ul><p>At Geria, we've helped hundreds of companies build successful remote development teams. The key is having the right processes, tools, and most importantly, the right people.</p>",
+    "date": "2024-12-15",
     "authorName": "Sophie Wood",
-    "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp"
+    "authorAvatarUrl": "/images/placholder_avatar1.jpg"
   },
   "posts": [
     {
-      "id": 1,
-      "category": "Build",
-      "title": "How to improve the learning culture within your team",
-      "image": "https://geriasa.blob.core.windows.net/assets/How_to_improve_the_learning_culture_within_your_team_1_min_4a5403b310.jpg",
-      "previewText": "As the saying goes, \"teamwork makes the dream work\". And one of the essential aspects of effective teamwork is a healthy learning culture within the team.",
-      "longText": "<p>As the saying goes, \"teamwork makes the dream work\". And one of the essential aspects of effective teamwork is a healthy learning culture within the team. A learning culture is a set of values, behaviors, and practices that encourage individuals and teams to continuously learn and develop.</p><br><h5>Encourage Continuous Learning</h5><p>Encouraging continuous learning is the first step towards building a culture of learning within your team. Encourage your team members to attend conferences, workshops, or training sessions that align with their job roles.</p><br><h5>Promote Knowledge Sharing</h5><p>Creating a knowledge-sharing culture is crucial to improve the learning culture within your team. Encourage your team members to share their knowledge, expertise, and experiences with each other.</p>",
-      "date": "Tue. 7th Oct. 2023.",
-      "authorName": "Sophie Wood",
-      "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp"
-    },
-    {
       "id": 2,
-      "category": "Remote Work",
-      "title": "A Guide To Remote Workforce Management",
-      "image": "https://geriasa.blob.core.windows.net/assets/A_Guide_To_Remote_Workforce_Management_1_min_8f08fe2d95.jpg",
-      "previewText": "Everyone wants to work remotely. It's a millennial-driven trend and a growing movement. Remote work is fast becoming a new normal.",
-      "longText": "<p>Everyone wants to work remotely. It's a millennial-driven trend and a growing movement. Remote work is fast becoming a new normal, driven by greater adoption of virtual collaboration tools and mobile devices.</p><br><h5>What is remote workforce management?</h5><p>Remote workforce management can be a smooth and productive experience that makes your company more efficient, lowers costs, and creates happier employees.</p>",
-      "date": "Wed. 8th Oct. 2023.",
-      "authorName": "Sophie Wood",
-      "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp"
+      "category": "Development",
+      "title": "Vertical vs Horizontal Development: Which Approach Works Best?",
+      "image": "https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png",
+      "previewText": "Understanding the difference between vertical and horizontal development approaches and when to use each for maximum efficiency.",
+      "longText": "<p>When building software, development teams often face a crucial decision: should they develop features vertically or horizontally? This choice can significantly impact project timelines, user feedback, and overall success.</p><h3>What is Vertical Development?</h3><p>Vertical development means building a complete feature from top to bottom in a single sprint. This approach focuses on delivering working functionality that users can immediately interact with and provide feedback on.</p><h3>Benefits of Vertical Development</h3><ul><li>Faster time to market</li><li>Better integration of tech stack layers</li><li>Improved customer feedback loops</li><li>Early validation of features</li></ul><p>The key is to maximize the work not done while delivering real value to users quickly.</p>",
+      "date": "2024-12-10",
+      "authorName": "Michael Chen",
+      "authorAvatarUrl": "/images/placholder_avatar2.jpg"
     },
     {
       "id": 3,
-      "category": "Hiring",
-      "title": "Clearing the channel of communication within your team",
-      "image": "https://geriasa.blob.core.windows.net/assets/5_reasons_you_should_look_to_a_recruiter_for_your_next_job_1_min_341949e233.jpg",
-      "previewText": "Effective communication is the foundation of any successful team. Whether you're working on a project or managing a team, it's essential to have open channels of communication.",
-      "longText": "<p>Effective communication is the foundation of any successful team. Whether you're working on a project or managing a team, it's essential to have open channels of communication that allow for collaboration, feedback, and problem-solving.</p><br><h5>Create a communication plan</h5><p>The first step in clearing the channel of communication is to create a communication plan. This plan should outline the team's communication expectations.</p>",
-      "date": "Thur. 9th Oct. 2023.",
-      "authorName": "Sophie Wood",
-      "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp"
+      "category": "Outsourcing",
+      "title": "Outsourcing vs Outstaffing: Making the Right Choice for Your Business",
+      "image": "https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png",
+      "previewText": "A comprehensive guide to understanding the differences between outsourcing and outstaffing models and which one suits your needs.",
+      "longText": "<p>When scaling your development team, you'll likely encounter two primary engagement models: outsourcing and outstaffing. Understanding the differences is crucial for making the right choice.</p><h3>Outsourcing Model</h3><p>With outsourcing, you delegate entire projects or specific parts to external vendors who manage the development process independently.</p><h3>Outstaffing Model</h3><p>Outstaffing involves hiring remote developers who become part of your existing team, working under your direct management and following your processes.</p><h3>Key Considerations</h3><ul><li>Project complexity and requirements</li><li>Available in-house expertise</li><li>Budget constraints</li><li>Timeline requirements</li><li>Communication preferences</li></ul><p>At Geria, we specialize in the outstaffing model, providing you with dedicated developers who integrate seamlessly into your existing workflows.</p>",
+      "date": "2024-12-05",
+      "authorName": "Emily Rodriguez",
+      "authorAvatarUrl": "/images/placholder_avatar3.jpg"
     },
     {
       "id": 4,
-      "category": "Remote Work",
-      "title": "The future of work",
-      "image": "https://geriasa.blob.core.windows.net/assets/The_Future_of_Work_min_f1b576cae6.jpg",
-      "previewText": "The question of what the future work holds remains a complex one. But, as technology evolves, the future of work practices, workplaces, and workers is experiencing a radical shift.",
-      "longText": "<p>The question of what the future work holds remains a complex one. But, as technology evolves, the future of work practices, workplaces, and workers is experiencing a radical shift.</p><br><h5>Remote working; the future of work</h5><p>Following the unprecedented Covid-19 outbreak, which halted all physical activities, contact, business, and education all over the world. The way work was done altered dramatically, resulting in a digital transformation.</p>",
-      "date": "Fri. 10th Oct. 2023.",
-      "authorName": "Sophie Wood",
-      "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp"
+      "category": "Technology",
+      "title": "Essential Tech Stack Considerations for Modern Web Development",
+      "image": "https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png",
+      "previewText": "Choosing the right technology stack is crucial for project success. Learn about the most popular and effective combinations.",
+      "longText": "<p>Selecting the right technology stack can make or break your development project. With so many options available, it's important to understand the trade-offs and benefits of different approaches.</p><h3>Frontend Technologies</h3><ul><li>React - Component-based, large ecosystem</li><li>Vue.js - Progressive framework, easy learning curve</li><li>Angular - Enterprise-grade, TypeScript-first</li><li>Next.js - React-based with SSR capabilities</li></ul><h3>Backend Technologies</h3><ul><li>Node.js - JavaScript everywhere, fast development</li><li>Python/Django - Rapid development, clean code</li><li>Java/Spring - Enterprise solutions, scalability</li><li>Go - Performance-focused, simple syntax</li></ul><p>The key is choosing technologies that align with your team's expertise, project requirements, and long-term maintenance goals.</p>",
+      "date": "2024-11-28",
+      "authorName": "David Kim",
+      "authorAvatarUrl": "/images/avatar4.png"
     },
     {
       "id": 5,
       "category": "Remote Work",
-      "title": "Negotiating a salary – 5 tips for candidates",
-      "image": "https://geriasa.blob.core.windows.net/assets/Negotiating_a_salary_5_tips_for_candidates_min_1ec5737a0e.jpg",
-      "previewText": "Negotiating a salary can be a tricky business. However, armed with the right information and approach, you can increase your chances of getting the salary you deserve.",
-      "longText": "<p>Negotiating a salary can be a tricky business. However, armed with the right information and approach, you can increase your chances of getting the salary you deserve.</p><br><h5>1. Do your research</h5><p>Before entering into negotiations, it is important to have a good understanding of the market value for your skills and experience, and know what the market rate is for your position.</p>",
-      "date": "Fri. 17th Nov. 2023.",
-      "authorName": "Sophie Wood",
-      "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp"
+      "title": "Building Effective Communication in Distributed Teams",
+      "image": "https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png",
+      "previewText": "Communication is the backbone of successful remote teams. Discover strategies and tools that make distributed collaboration seamless.",
+      "longText": "<p>Effective communication is the cornerstone of successful remote development teams. Without the luxury of face-to-face interactions, distributed teams must be intentional about how they share information and collaborate.</p><h3>Key Communication Strategies</h3><ul><li>Establish clear communication protocols</li><li>Use asynchronous communication effectively</li><li>Implement regular check-ins and standups</li><li>Document decisions and processes</li><li>Foster informal communication channels</li></ul><h3>Essential Tools</h3><ul><li>Slack or Microsoft Teams for instant messaging</li><li>Zoom or Google Meet for video conferences</li><li>Confluence or Notion for documentation</li><li>Jira or Linear for project management</li></ul><p>Remember, over-communication is often better than under-communication in remote settings.</p>",
+      "date": "2024-11-20",
+      "authorName": "Sarah Johnson",
+      "authorAvatarUrl": "/images/avatar5.png"
     },
     {
       "id": 6,
-      "category": "Technology",
-      "title": "What you should know as an immigrant tech",
-      "image": "https://geriasa.blob.core.windows.net/assets/What_you_should_know_as_an_immigrant_tech_in_the_UK_min_ca001a0646.png",
-      "previewText": "As an immigrant in the UK seeking a tech job, you may face challenges in such a competitive job market. Nevertheless, by utilising the correct strategies and a focused approach, you can further your chances.",
-      "longText": "<p>As an immigrant in the UK seeking a tech job, you may face challenges in such a competitive job market. Nevertheless, by utilising the correct strategies and a focused approach, you can further your chances of attaining a fantastic position.</p><br><h5>Research the UK tech industry</h5><p>Before you dive into your job search, dedicate time to carefully research the UK tech industry. It's beneficial to understand information such as the current trends, the in-demand skills that employers want, and new technologies.</p>",
-      "date": "Mon. 20th Nov. 2023.",
-      "authorName": "Sophie Wood",
-      "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/female_avatar_ca3d045095.webp"
+      "category": "Development",
+      "title": "Code Quality Best Practices for Remote Teams",
+      "image": "https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png",
+      "previewText": "Maintaining high code quality in distributed teams requires specific practices and tools. Learn the essentials for success.",
+      "longText": "<p>Code quality becomes even more critical when working with distributed teams. Without direct oversight, teams must rely on processes and tools to maintain standards.</p><h3>Essential Practices</h3><ul><li>Implement comprehensive code review processes</li><li>Use automated testing and CI/CD pipelines</li><li>Establish coding standards and style guides</li><li>Regular refactoring and technical debt management</li><li>Pair programming sessions via screen sharing</li></ul><h3>Quality Assurance Tools</h3><ul><li>ESLint/Prettier for code formatting</li><li>SonarQube for code quality analysis</li><li>Jest/Cypress for testing</li><li>GitHub Actions for CI/CD</li></ul><p>Quality code is not just about following best practices—it's about creating a sustainable codebase that the entire team can work with effectively.</p>",
+      "date": "2024-11-15",
+      "authorName": "Alex Thompson",
+      "authorAvatarUrl": "/images/avatar6.png"
     },
     {
-      "id": 8,
-      "category": "Hiring",
-      "title": "How to Build Effectively",
-      "image": "https://geriasa.blob.core.windows.net/assets/blueprint.jpg",
-      "previewText": "In this blog we are going to discuss two approaches to feature development. Horizontal delivery and vertical delivery.",
-      "date": "Fri. 14th Feb. 2025.",
-      "authorName": "Amy Hanuma",
-      "authorAvatarUrl": "https://geriasa.blob.core.windows.net/assets/portrait1.jpg",
-      "longText": "<div><h2>Ask yourself these questions:</h2><p>Is your team always busy but your users aren't seeing any new features?</p><p>Have you ever worked hard on a feature only to be disappointed when you learn your users aren't using it?</p><br><h2>Topic and purpose of this blog</h2><p>Today I want to help evaluate how we tackle our work when implementing features for your project.</p><p>In this blog we are going to discuss two approaches to feature development. Horizontal delivery and vertical delivery.</p><p><b>Vertical Delivery:</b> This approach focuses on delivering complete, functional slices of a product that cut across all necessary layers—UI, backend, and database. Each increment provides real user value and can be tested end-to-end. This method aligns well with agile principles, allowing for faster feedback and iteration.</p><p><b>Horizontal Delivery:</b> This method builds software layer by layer, such as developing the entire database schema first, then the backend, and finally the UI. While it might seem organized, it often leads to delayed integration, increased rework, and a lack of early user feedback.</p><br><h3>A Short Story</h3><p>Say we are building a travel app, and you have a vision for how this app should look like. You might want the following features:</p><ul><li>A map to see taxis nearby</li><li>A list of reviews for restaurants nearby</li></ul><p>When your development team picks up these features, they realized that the location/tracking functionality in the Api and Database can be shared across both features. So, your first sprint towards this goal is aimed at implementing this functionality in your service and database layer. By the end of the sprint, you have integration test cases that look a bit like:</p><ul><li>Find all taxis method should return all taxis within specified area</li><li>Find all restaurants method should return all restaurants within specified area</li></ul><p>You start to feel good because it feels like you're accomplishing something. As you worked on multiple features this sprint there simply wasn't enough time to focus on the UI, so you will have to tackle it in the next sprint.</p><br><h5>The problem</h5><p>By focusing on how to develop all the features efficiently, we have broken some important agile principles! Agile principle no. 1: Our highest priority is to satisfy the customer through early and continuous delivery of valuable software. In the first sprint we didn't deliver anything a user could use and therefore our clients received no value. From a business perspective, it could mean we convert fewer clients. Agile principle no. 10: Simplicity--the art of maximizing the amount of work not done--is essential. By delaying instant feedback from the client. We become less confident that what we are building is of real value. That feedback is important because it can allow us to stop wasting time on irrelevant features and pivot towards more valuable ones.</p><br><h3>Introducing Vertical Delivery (The Solution)</h3><p>Vertically delivery is developing a feature that a customer can use in a single sprint. The work being done must only focus on the feature and nothing else. There can be no scope creep. Remember the 10th Agile principle. You are trying to maximize the work not done. In practice this will mean the development of the feature may touch multiple layers of an application, that maybe the database, the API & the UI etc. Because you are integrating between the layers early on, you can address any integration issues immediately. With vertical delivery it could be weeks before you realize your UI and API don't integrate well, further delaying your feature. The feature may or may not require more features be truly useful. However, this a piece of the system that can work on its own and importantly give value and receive feedback straight away.</p><br><h3>In summary you can expect:</h3><ul><li>Faster time to market</li><li>Better integration of tech stack layers</li><li>Improved customer feedback loops</li></ul></div>"
+      "id": 7,
+      "category": "Business",
+      "title": "The ROI of Hiring Remote Developers: A Complete Guide",
+      "image": "https://geriasa.blob.core.windows.net/assets/b6d6ae87_a73b_4dd7_900e_be988d21df76_1_60f041b27b.png",
+      "previewText": "Understanding the true return on investment when hiring remote developers, including cost savings, productivity gains, and potential challenges.",
+      "longText": "<p>The shift to remote development teams isn't just about flexibility—it's about measurable business value. Companies are discovering significant ROI when they approach remote hiring strategically.</p><h3>Cost Savings</h3><ul><li>Reduced office space and infrastructure costs</li><li>Lower salary expectations in global markets</li><li>Decreased employee turnover and recruitment costs</li><li>Minimal relocation and visa expenses</li></ul><h3>Productivity Gains</h3><ul><li>Access to specialized talent worldwide</li><li>Reduced commute time increases working hours</li><li>Developers in their optimal environment</li><li>24/7 development cycles with global teams</li></ul><h3>Measuring Success</h3><p>Track metrics like development velocity, code quality, team satisfaction, and project delivery times to quantify your remote team's impact.</p><p>The key is finding the right partners who understand how to build and manage remote teams effectively.</p>",
+      "date": "2024-11-10",
+      "authorName": "Maria Santos",
+      "authorAvatarUrl": "/images/placholder_avatar1.jpg",
+      "featured": true
     }
   ]
 }
