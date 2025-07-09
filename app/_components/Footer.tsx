@@ -43,7 +43,7 @@ const Footer = () => {
                   className="aspect-square object-contain object-center w-[30px] overflow-hidden shrink-0 max-w-full my-auto"
                 />
                 <div className="text-white text-base leading-7 opacity-80 self-stretch whitespace-nowrap">
-                  hello@geria.com
+                  hello@geria.io
                 </div>
               </div>
               <div className="items-center flex justify-between gap-2.5 mt-1 self-start">
@@ -120,7 +120,7 @@ const Footer = () => {
                         <div className="items-stretch flex grow flex-col max-md:mt-10">
 
                           <div className="text-white text-xl font-semibold leading-7 whitespace-nowrap">
-                            Site Map
+                            Navigation
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 mt-5">
                           <Link href='/'>Home</Link>

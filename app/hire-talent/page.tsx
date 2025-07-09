@@ -1,4 +1,3 @@
-
 'use client';
 import React, { useState } from 'react';
 
@@ -52,7 +51,7 @@ export default function HireTalentPage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Our Rigorous Vetting Process
           </h2>
-          
+
           <div className="grid md:grid-cols-5 gap-8">
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -61,7 +60,7 @@ export default function HireTalentPage() {
               <h3 className="text-lg font-semibold mb-2">Application Review</h3>
               <p className="text-gray-600 text-sm">Initial screening of experience and portfolio</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-[#D0021B] font-bold text-xl">2</span>
@@ -69,7 +68,7 @@ export default function HireTalentPage() {
               <h3 className="text-lg font-semibold mb-2">Technical Assessment</h3>
               <p className="text-gray-600 text-sm">Coding challenges and technical knowledge evaluation</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-[#D0021B] font-bold text-xl">3</span>
@@ -77,7 +76,7 @@ export default function HireTalentPage() {
               <h3 className="text-lg font-semibold mb-2">Live Coding</h3>
               <p className="text-gray-600 text-sm">Real-time problem solving and code quality assessment</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-[#D0021B] font-bold text-xl">4</span>
@@ -85,7 +84,7 @@ export default function HireTalentPage() {
               <h3 className="text-lg font-semibold mb-2">Soft Skills</h3>
               <p className="text-gray-600 text-sm">Communication and collaboration abilities</p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-[#D0021B] font-bold text-xl">5</span>
@@ -103,7 +102,7 @@ export default function HireTalentPage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Roles We Support
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             {roles.map((role, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
@@ -194,7 +193,7 @@ export default function HireTalentPage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             Flexible Engagement Models
           </h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -210,7 +209,7 @@ export default function HireTalentPage() {
                 <li>• Team integration</li>
               </ul>
             </div>
-            
+
             <div className="text-center p-6">
               <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,7 +224,7 @@ export default function HireTalentPage() {
                 <li>• Cost-effective</li>
               </ul>
             </div>
-            
+
             <div className="text-center p-6">
               <div className="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-10 h-10 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
