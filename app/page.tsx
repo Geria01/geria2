@@ -6,23 +6,6 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function HomePage() {
-  const [showCookiePopup, setShowCookiePopup] = useState(false);
-
-  useEffect(() => {
-    // Check if the 'cookieConsent' cookie is set
-    const hasConsent = document.cookie.split(';').some((item) => item.trim().startsWith('cookieConsent=true'));
-
-    // If not set, show the cookie popup
-    setShowCookiePopup(!hasConsent);
-  }, [])
-
-  const handleAgreeAndClose = () => {
-    // Set the 'cookieConsent' cookie to 'true'
-    document.cookie = 'cookieConsent=true; path=/; max-age=' + 365 * 24 * 60 * 60;
-
-    // Hide the cookie popup
-    setShowCookiePopup(false);
-  };
 
   return (
     <>
@@ -185,36 +168,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
-      {/* Cookie Popup */}
-      {showCookiePopup && (
-        <div className="fixed bottom-0 left-0 right-0 p-4 sm:w-full md:w-full lg:w-100">
-          <div className="bg-stone-900 flex flex-col pl-8 pr-8 rounded-xl max-md:pl-5 lg:w-100">
-            <div className="self-stretch flex items-center gap-5 mt-3.5 max-md:max-w-full max-md:flex-wrap">
-              <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/98d70e37-7a67-4af2-be71-b7ddc84bb456?apiKey=994d997208b34a26ad9d13da5074bcdd&"
-                className="aspect-[2.29] object-contain object-center w-16 overflow-hidden shrink-0 max-w-full my-auto"
-                alt="Geria Logo"
-              />
-            </div>
-            <div className="text-white text-sm font-bold pt-2 leading-6 max-md:max-w-full">
-              With your agreement, we and our partners use cookies or similar technologies to store, access, and process personal data like your visit on this website. You can withdraw your consent or object to data processing based on legitimate interest at any time by clicking on "Learn More" or in our Privacy Policy on this website.
-              We and our partners do the following data processing based on your consent and/or our legitimate interest: Personalised ads and content, ad and content measurement, audience insights and product development, Precise geolocation data, and identification through device scanning, Store and/or access information on a device
-            </div>
-            <div className="items-stretch justify-end items-end ml-90 flex w-[250px] max-w-full gap-2.5 mt-2 mb-6 max-md:mb-2.5">
-              <div className="justify-end text-white text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch border border-[color:var(--brands-tertiary,#FECC00)] grow px-2.5 py-1.5 rounded-lg border-solid max-md:px-px">
-                <a href="/cookies-policy" target="_blank" rel="noopener noreferrer">
-                  Learn More
-                </a>
-              </div>
-              <div className="hover:cursor-pointer justify-end text-stone-900 text-center text-sm font-bold leading-6 whitespace-nowrap justify-center items-stretch bg-white grow px-2.5 py-1.5 rounded-lg ml-auto max-md:px-px" onClick={handleAgreeAndClose}>
-                Agree & Close
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   )
 }
