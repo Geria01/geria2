@@ -120,7 +120,7 @@ const Footer = () => {
                         <div className="items-stretch flex grow flex-col max-md:mt-10">
 
                           <div className="text-white text-xl font-semibold leading-7 whitespace-nowrap">
-                            Site Map
+                            Navigation
                           </div>
                           <div className="text-slate-50 text-base font-medium leading-7 mt-5">
                           <Link href='/'>Home</Link>
