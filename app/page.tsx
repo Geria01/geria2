@@ -98,10 +98,14 @@ export default function HomePage() {
   };
 
   if (!mounted) {
-    return null;
+    return (
+      <div>
+        <FullPageLoader />
+      </div>
+    );
   }
 
-  if (data === null || typeof data !== 'object') {
+  if (!data || typeof data !== 'object' || !data.attributes) {
     return (
       <div>
         <FullPageLoader />

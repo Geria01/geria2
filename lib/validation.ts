@@ -22,7 +22,26 @@ export const emailSchema = z.object({
 });
 
 export const contactSchema = z.object({
-  name: z.string().min(1).max(100),
+  name: z.string().min(1).max(100).regex(/^[a-zA-Z\s'-]+$/, 'Invalid name format'),
   email: z.string().email(),
   message: z.string().min(1).max(2000),
 });
+
+// Rate limiting helper
+export class RateLimiter {
+  private attempts = new Map<string, number[]>();
+  
+  isRateLimited(key: string, windowMs: number = 60000, maxAttempts: number = 5): boolean {
+    const now = Date.now();
+    const userAttempts = this.attempts.get(key) || [];
+    const validAttempts = userAttempts.filter(time => now - time < windowMs);
+    
+    if (validAttempts.length >= maxAttempts) {
+      return true;
+    }
+    
+    validAttempts.push(now);
+    this.attempts.set(key, validAttempts);
+    return false;
+  }
+}
