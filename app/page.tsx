@@ -105,7 +105,7 @@ export default function HomePage() {
     );
   }
 
-  if (!data || typeof data !== 'object' || !data.attributes) {
+  if (!data || typeof data !== 'object' || !data.attributes || !data.attributes.hero || !data.attributes.steps) {
     return (
       <div>
         <FullPageLoader />
@@ -116,10 +116,13 @@ export default function HomePage() {
 
 
   const generateDevCards = (devs: DeveloperAvatar[]) => {
+    if (!devs || !Array.isArray(devs)) {
+      return [];
+    }
     return devs.map((dev: DeveloperAvatar, idx: number) => (
       <TalentCard
-        key={idx}
-        dev= {dev}
+        key={dev.id || idx}
+        dev={dev}
       />
     ));
   }
@@ -398,7 +401,7 @@ export default function HomePage() {
         <div className='container max-w-screen-xl px-5'>
           <h2 className='text-center text-fluid-3xl mb-8 md:mb-16'>Vetted. Proven. Ready to Build.</h2>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5'>
-            {generateDevCards(DUMMY_DEVS)}
+            {mounted ? generateDevCards(DUMMY_DEVS) : null}
           </div>
         </div>
       </div>

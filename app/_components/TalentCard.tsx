@@ -2,6 +2,56 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { DeveloperAvatar } from '../_models/developerAvatar.model';
 
+interface TalentCardProps {
+  dev: DeveloperAvatar;
+}
+
+export default function TalentCard({ dev }: TalentCardProps) {
+  if (!dev) {
+    return null;
+  }
+
+  const skills = Array.isArray(dev.skills) ? dev.skills : [];
+  
+  return (
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+      <div className="flex items-center mb-4">
+        <div className="w-16 h-16 bg-gray-200 rounded-full mr-4">
+          {dev.avatarUrl && (
+            <Image
+              src={dev.avatarUrl}
+              alt={dev.name || 'Developer'}
+              width={64}
+              height={64}
+              className="rounded-full"
+            />
+          )}
+        </div>
+        <div>
+          <h3 className="font-semibold text-gray-900">{dev.name || 'Developer'}</h3>
+          <p className="text-sm text-gray-500">{dev.location || 'Remote'}</p>
+        </div>
+      </div>
+      
+      <div className="mb-4">
+        <p className="text-sm text-gray-600">{dev.experience || 'Experienced Developer'}</p>
+        <p className="text-xs text-gray-500">{dev.timeZone || 'Flexible timezone'}</p>
+      </div>
+      
+      <div className="flex flex-wrap gap-2">
+        {skills.map((skill, index) => (
+          <span
+            key={index}
+            className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 const TalentCard = ( { dev }: { dev: DeveloperAvatar }) => {
 
   const {

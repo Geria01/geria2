@@ -90,7 +90,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <AuthProvider>
           <div id="_root" className="flex flex-col h-full">
             <GeriaNavbar />
