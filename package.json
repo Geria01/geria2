@@ -6,7 +6,7 @@
     "node": "18.20.5"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 3000",
     "turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
