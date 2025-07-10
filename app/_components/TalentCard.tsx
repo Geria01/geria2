@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { DeveloperAvatar } from '../_models/developerAvatar.model';
