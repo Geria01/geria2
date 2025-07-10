@@ -105,14 +105,6 @@ export default function HomePage() {
     );
   }
 
-  if (!data || typeof data !== 'object' || !data.attributes || !data.attributes.hero || !data.attributes.steps) {
-    return (
-      <div>
-        <FullPageLoader />
-      </div>
-    );
-  }
-
 
 
   const generateDevCards = (devs: DeveloperAvatar[]) => {
