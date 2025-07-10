@@ -13,6 +13,19 @@ export default async function PrivacyPolicyPage() {
               <li className="text-justify"><span className="font-semibold">Technical information</span>, including a truncated and anonymised version of your Internet protocol (IP) address, browser type and version, operating system and platform.</li>
               <li className="text-justify"><span className="font-semibold">Information about your visit</span>, including what pages you visit, how long you are on the site, how you got to the site (including date and time); page response times, length of visit, what you click on, documents downloaded and download errors.</li>
             </ul>
+            <h3 className="text-fluid-md mb-fluid-3">Your Rights Under GDPR</h3>
+            <p className="text-justify mb-fluid-3">If you are a resident of the European Union (EU) or European Economic Area (EEA), you have certain data protection rights under the General Data Protection Regulation (GDPR). These include:</p>
+            <ul className="list-disc list-outside mb-fluid-3 ml-5">
+              <li className="text-justify"><span className="font-semibold">Right to access</span> - You can request copies of your personal data.</li>
+              <li className="text-justify"><span className="font-semibold">Right to rectification</span> - You can request that we correct any information you believe is inaccurate or incomplete.</li>
+              <li className="text-justify"><span className="font-semibold">Right to erasure</span> - You can request that we erase your personal data, under certain conditions.</li>
+              <li className="text-justify"><span className="font-semibold">Right to restrict processing</span> - You can request that we restrict the processing of your personal data, under certain conditions.</li>
+              <li className="text-justify"><span className="font-semibold">Right to data portability</span> - You can request that we transfer the data we have collected to another organization, or directly to you, under certain conditions.</li>
+              <li className="text-justify"><span className="font-semibold">Right to object</span> - You can object to our processing of your personal data, under certain conditions.</li>
+            </ul>
+            <p className="text-justify mb-fluid-3">To exercise any of these rights, please contact us at privacy@geria.io. We will respond to your request within 30 days.</p>
+            <h3 className="text-fluid-md mb-fluid-3">Data Retention</h3>
+            <p className="text-justify mb-fluid-3">We will only retain your personal data for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. When we no longer need your personal data, we will securely delete or anonymize it.</p>
             <h3 className="text-fluid-md mb-fluid-3">Cookies</h3>
             <p className="text-justify mb-fluid-3">Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. For detailed information on the cookies we use and the purposes for which we use them see our Cookie Policy.</p>
             <h3 className="text-fluid-md mb-fluid-3"><span className="font-semibold">How we may use the information we collect</span></h3>

@@ -43,22 +43,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      // Check for admin credentials
-      if (email === 'john@geria.io' && password === 'admin123') {
-        const adminUser: User = {
-          id: 'admin-1',
-          email: email,
-          name: 'John',
-          role: 'admin'
-        };
-        setUser(adminUser);
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('user', JSON.stringify(adminUser));
-        }
-        return true;
-      }
-      
-      // For other users, call the API
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: {
