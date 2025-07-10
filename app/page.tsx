@@ -379,8 +379,8 @@ export default function HomePage() {
 
       {/* Process Steps Section */}
       <div className='container max-w-screen-xl py-8 lg:py-fluid-8'>
-        <h3 className='mx-auto text-fluid-xl max-w-[1200px] px-fluid-2 text-center font-semibold mb-fluid-2'>Skip the fruitless back-and-forth search for tech talents and get well-vetted talents in days</h3>
-        <p className='text-fluid-md text-center mb-fluid-5'>We&#39;ve streamlined our process into 3 easy steps for you.</p>
+        <h3 className='mx-auto text-fluid-xl max-w-[1200px] px-fluid-2 text-center font-semibold mb-fluid-2'>Skip the Talent Hunt. Start Building Fast.</h3>
+        <p className='text-fluid-md text-center mb-fluid-5'>Why waste weeks searching? Get fully vetted engineers in days — through a hiring process we&#39;ve simplified into just 3 easy steps.</p>
         <div className='grid grid-cols-1 md:grid-cols-3'>
           <div className='px-fluid-5 py-[40px] border border-x-transparent border-y-slate-200'>
             <span className='font-bold block text-[32px] text-red-600'>01</span>
