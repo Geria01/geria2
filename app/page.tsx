@@ -384,18 +384,18 @@ export default function HomePage() {
         <div className='grid grid-cols-1 md:grid-cols-3'>
           <div className='px-fluid-5 py-[40px] border border-x-transparent border-y-slate-200'>
             <span className='font-bold block text-[32px] text-red-600'>01</span>
-            <h6 className='font-bold block my-3 text-[20px]'>{steps.title_1}</h6>
-            <span className='block'>{steps.description_1}</span>
+            <h6 className='font-bold block my-3 text-[20px]'>Tell Us What You're Building</h6>
+            <span className='block'>Share your goals in minutes. We'll handle the rest.</span>
           </div>
           <div className='px-fluid-5 py-[40px] border border-x-transparent md:border-slate-200'>
             <span className='font-bold block text-[32px] text-red-600'>02</span>
-            <h6 className='font-bold block my-3 text-[20px]'>{steps.title_2}</h6>
-            <span className='block'>{steps.description_2}</span>
+            <h6 className='font-bold block my-3 text-[20px]'>Meet Your Top Matches</h6>
+            <span className='block'>We handpick vetted engineers tailored to your needs. You choose who joins your team.</span>
           </div>
           <div className='px-fluid-5 py-[40px] border border-x-transparent border-y-slate-200'>
             <span className='font-bold block text-[32px] text-red-600'>03</span>
-            <h6 className='font-bold block my-3 text-[20px]'>{steps.title_3}</h6>
-            <span className='block'>{steps.description_3}</span>
+            <h6 className='font-bold block my-3 text-[20px]'>Launch Without the Lag</h6>
+            <span className='block'>Your team is onboarded and ready to build — fast. We handle contracts, compliance, and admin.</span>
           </div>
         </div>
       </div>
