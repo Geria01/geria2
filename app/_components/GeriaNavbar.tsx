@@ -8,7 +8,6 @@ export default function GeriaNavbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "/" },
     { name: "About Us", href: "/about-us" },
     { name: "Hire Talent", href: "/hire-talent" },
     { name: "Web Development", href: "/web-development" },
