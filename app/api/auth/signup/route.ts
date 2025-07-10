@@ -1,14 +1,21 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import bcrypt from 'bcrypt';
 
 const signupSchema = z.object({
-  email: z.string().email('Invalid email format').min(1, 'Email is required'),
-  password: z.string().min(8, 'Password must be at least 8 characters'),
-  firstName: z.string().min(1, 'First name is required').max(50, 'First name too long'),
-  lastName: z.string().min(1, 'Last name is required').max(50, 'Last name too long'),
+  email: z.string().email('Invalid email format').min(1, 'Email is required').max(254),
+  password: z.string()
+    .min(8, 'Password must be at least 8 characters')
+    .max(128, 'Password too long')
+    .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/, 
+           'Password must contain uppercase, lowercase, number and special character'),
+  firstName: z.string().min(1, 'First name is required').max(50, 'First name too long')
+    .regex(/^[a-zA-Z\s-']+$/, 'Invalid characters in first name'),
+  lastName: z.string().min(1, 'Last name is required').max(50, 'Last name too long')
+    .regex(/^[a-zA-Z\s-']+$/, 'Invalid characters in last name'),
   company: z.string().max(100, 'Company name too long').optional(),
-  phoneNumber: z.string().regex(/^\+?[\d\s\-\(\)]+$/, 'Invalid phone number format').optional(),
+  phoneNumber: z.string().regex(/^\+?[\d\s\-\(\)]+$/, 'Invalid phone number format').max(20).optional(),
   userType: z.enum(['candidate', 'client']).default('candidate')
 });
 
@@ -23,8 +30,9 @@ export async function POST(request: Request) {
     // Check for existing user (mock implementation)
     // TODO: Implement proper database check
     
-    // Hash password before storing (mock implementation)
-    // TODO: Implement proper password hashing with bcrypt
+    // Hash password before storing
+    const saltRounds = 12;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
     
     const user = {
       id: Date.now().toString(),

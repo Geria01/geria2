@@ -1,21 +1,49 @@
-
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 
 const subscribeSchema = z.object({
-  email: z.string().email('Invalid email format').min(1, 'Email is required'),
+  email: z.string().email('Invalid email format').min(1, 'Email is required').max(254),
+  firstName: z.string().min(1, 'First name is required').max(50, 'First name too long')
+    .regex(/^[a-zA-Z\s-']+$/, 'Invalid characters in first name').optional(),
+  lastName: z.string().min(1, 'Last name is required').max(50, 'Last name too long')
+    .regex(/^[a-zA-Z\s-']+$/, 'Invalid characters in last name').optional(),
 });
+
+// Simple rate limiting for newsletter subscriptions
+const subscribeAttempts = new Map();
+
+function isSubscribeRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const attempts = subscribeAttempts.get(ip) || [];
+  const recentAttempts = attempts.filter((time: number) => now - time < 60 * 1000); // 1 minute
+
+  if (recentAttempts.length >= 3) {
+    return true;
+  }
+
+  recentAttempts.push(now);
+  subscribeAttempts.set(ip, recentAttempts);
+  return false;
+}
 
 export async function POST(request: NextRequest) {
   try {
+    const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown';
+
+    // Rate limiting
+    if (isSubscribeRateLimited(ip)) {
+      return NextResponse.json({ 
+        message: 'Too many subscription attempts. Please try again later.' 
+      }, { status: 429 });
+    }
+
     const body = await request.json();
-    
+
     // Validate input
     const validatedData = subscribeSchema.parse(body);
-    const { email } = validatedData;
+    const { email, firstName, lastName } = validatedData;
 
     // Basic rate limiting check (in production, use Redis or similar)
-    const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown';
     console.log(`Newsletter subscription from IP: ${ip}, Email: ${email}`);
 
     // Check for environment variables
@@ -52,13 +80,13 @@ export async function POST(request: NextRequest) {
     } else {
       const error = await response.json();
       console.error('Mailchimp error:', error);
-      
+
       if (error.title === 'Member Exists') {
         return NextResponse.json({ 
           message: 'This email is already subscribed to our newsletter.' 
         }, { status: 400 });
       }
-      
+
       return NextResponse.json({ 
         message: 'Failed to subscribe. Please try again later.' 
       }, { status: 500 });
@@ -70,7 +98,7 @@ export async function POST(request: NextRequest) {
         errors: error.errors 
       }, { status: 400 });
     }
-    
+
     console.error('Newsletter subscription error:', error);
     return NextResponse.json({ 
       message: 'Server error. Please try again later.' 

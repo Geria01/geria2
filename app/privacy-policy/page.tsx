@@ -1,66 +1,105 @@
-export default async function PrivacyPolicyPage() {
-    return (
-        <div className='container max-w-screen-xl px-fluid-4'>
-          <div className='pt-fluid-8 pb-fluid-5'>
-            <h1 className='text-fluid-xl leading-0 mb-fluid-4'>Privacy Policy</h1>
-            <p className="text-justify mb-fluid-3">This website is operated by Geria Limited (&ldquo;We&rdquo;). We are committed to protecting and preserving the privacy of our visitors when visiting our site or communicating electronically with us.</p>
-            <p className="text-justify mb-fluid-3">This policy sets out how we process any personal data we collect from you or that you provide to us through our website. We confirm that we will keep your information secure and that we will comply fully with all applicable UK Data Protection legislation and regulations. Please read the following carefully to understand what happens to personal data that you choose to provide to us, or that we collect from you when you visit this site. By visiting <a className="underline underline-offset-8" href="https://geria.io">https://geria.io</a> (our website) you are accepting and consenting to the practices described in this policy.</p>
-            <h3 className="text-fluid-md mb-fluid-3">Types of information we may collect from you</h3>
-            <p className="text-justify mb-fluid-3">We may collect, store and use the following kinds of personal information about individuals who visit and use our website:</p>
-            <p className="text-justify mb-fluid-3"><span className="font-semibold">Information you supply to us</span>. You may supply us with information about you by filling in forms on our website. This includes information you provide when you submit a contact/enquiry form. The information you give us may include your name, address, e-mail address and phone number.</p>
-            <p className="text-justify mb-fluid-3"><span className="font-semibold">Information our website automatically collects about you</span>. With regard to each of your visits to our website we may automatically collect information including the following:</p>
-            <ul className="list-disc list-outside mb-fluid-3 ml-5">
-              <li className="text-justify"><span className="font-semibold">Technical information</span>, including a truncated and anonymised version of your Internet protocol (IP) address, browser type and version, operating system and platform.</li>
-              <li className="text-justify"><span className="font-semibold">Information about your visit</span>, including what pages you visit, how long you are on the site, how you got to the site (including date and time); page response times, length of visit, what you click on, documents downloaded and download errors.</li>
-            </ul>
-            <h3 className="text-fluid-md mb-fluid-3">Your Rights Under GDPR</h3>
-            <p className="text-justify mb-fluid-3">If you are a resident of the European Union (EU) or European Economic Area (EEA), you have certain data protection rights under the General Data Protection Regulation (GDPR). These include:</p>
-            <ul className="list-disc list-outside mb-fluid-3 ml-5">
-              <li className="text-justify"><span className="font-semibold">Right to access</span> - You can request copies of your personal data.</li>
-              <li className="text-justify"><span className="font-semibold">Right to rectification</span> - You can request that we correct any information you believe is inaccurate or incomplete.</li>
-              <li className="text-justify"><span className="font-semibold">Right to erasure</span> - You can request that we erase your personal data, under certain conditions.</li>
-              <li className="text-justify"><span className="font-semibold">Right to restrict processing</span> - You can request that we restrict the processing of your personal data, under certain conditions.</li>
-              <li className="text-justify"><span className="font-semibold">Right to data portability</span> - You can request that we transfer the data we have collected to another organization, or directly to you, under certain conditions.</li>
-              <li className="text-justify"><span className="font-semibold">Right to object</span> - You can object to our processing of your personal data, under certain conditions.</li>
-            </ul>
-            <p className="text-justify mb-fluid-3">To exercise any of these rights, please contact us at privacy@geria.io. We will respond to your request within 30 days.</p>
-            <h3 className="text-fluid-md mb-fluid-3">Data Retention</h3>
-            <p className="text-justify mb-fluid-3">We will only retain your personal data for as long as necessary to fulfill the purposes for which it was collected, including for the purposes of satisfying any legal, accounting, or reporting requirements. When we no longer need your personal data, we will securely delete or anonymize it.</p>
-            <h3 className="text-fluid-md mb-fluid-3">Cookies</h3>
-            <p className="text-justify mb-fluid-3">Our website uses cookies to distinguish you from other users of our website. This helps us to provide you with a good experience when you browse our website and also allows us to improve our site. For detailed information on the cookies we use and the purposes for which we use them see our Cookie Policy.</p>
-            <h3 className="text-fluid-md mb-fluid-3"><span className="font-semibold">How we may use the information we collect</span></h3>
-            <p className="text-justify mb-fluid-3">We use the information in the following ways:</p>
-            <p className="text-justify mb-fluid-3"><span className="font-semibold">Information you supply to us</span>. We will use this information:</p>
-            <ul className="list-disc list-outside mb-fluid-3 ml-5">
-              <li className="text-justify">To provide you with information and/or services that you request from us.</li>
-            </ul>
-            <p className="text-justify mb-fluid-3"><span className="font-semibold">Information we automatically collect about you</span>. We will use this information:</p>
-            <ul>
-              <li className="text-justify">To administer our site including troubleshooting and statistical purposes.</li>
-              <li className="text-justify">To improve our site to ensure that content is presented in the most effective manner for you and for your computer.</li>
-              <li className="text-justify">Security and debugging as part of our efforts to keep our site safe and secure.</li>
-            </ul>
-            <p className="text-justify mb-fluid-3">This information is collected anonymously and is not linked to information that identifies you as an individual. We use Google Analytics to track this information. Find out how Google uses your data at <a className="!underline underline-offset-8" href="https://support.google.com/analytics/answer/6004245">https://support.google.com/analytics/answer/6004245</a>.</p>
-            <h3 className="text-fluid-md mb-fluid-3">Disclosure of your information</h3>
-            <p className="text-justify mb-fluid-3">Any information you provide to us will either be emailed directly to us or may be stored on a secure server located near England in the United Kingdom. We use a trusted third party website and hosting provider Namecheap to facilitate the running and management of this website. Namecheap meets high data protection and security standards and are bound by contract to keep any information they process on our behalf confidential. Any data that may be collected through this website that Namecheap processes, is kept secure and only processed in the manner we instruct them to. Namecheap cannot access, provide, rectify or delete any data that they store on our behalf without permission.</p>
-            <p className="text-justify mb-fluid-3">We do not rent, sell or share personal information about you with other people or non-affiliated companies.</p>
-            <p className="text-justify mb-fluid-3">We will use all reasonable efforts to ensure that your personal data is not disclosed to regional/national institutions and authorities, unless required by law or other regulations.</p>
-            <p className="text-justify mb-fluid-3">Unfortunately, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal data, we cannot guarantee the security of your data transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures and security features to try to prevent unauthorised access.</p>
-            <h4 className="text-fluid-base mb-fluid-3">Third party links</h4>
-            <p className="text-justify mb-fluid-3">Our site may, from time to time, contain links to and from the third party websites. If you follow a link to any of these websites, please note that these websites have their own privacy policies and that we do not accept any responsibility or liability for these policies. Please check these policies before you submit any personal data to these websites.</p>
-            <h4 className="text-fluid-base mb-fluid-3">Your rights – access to your personal data</h4>
-            <p className="text-justify mb-fluid-3">You have the right to ensure that your personal data is being processed lawfully (“Subject Access Right”). Your subject access right can be exercised in accordance with data protection laws and regulations. Any subject access request must be made in writing to privacy@geria.io. We will provide your personal data to you within the statutory time frames. To enable us to trace any of your personal data that we may be holding, we may need to request further information from you. If you have a complaint about how we have used your information, you have the right to complain to the Information Commissioner’s Office (ICO).</p>
-            <h4 className="text-fluid-base mb-fluid-3">Changes to our privacy policy</h4>
-            <p className="text-justify mb-fluid-3">Any changes we may make to our privacy policy in the future will be posted on this page and, where appropriate, notified to you by email. Please check back frequently to see any updates or changes to our privacy policy.</p>
-            <h4 className="text-fluid-base mb-fluid-3">Contact</h4>
-            <p className="text-justify mb-fluid-3">We welcome feedback from all our users and if you have any question regarding our privacy policy or the use of your information please contact us. You can email our privacy officer at <span className="underline underline-offset-8">privacy@geria.io</span> or you can send mail to us at:</p>
-            <p className="mb-fluid-3">16c Ingenuity Centre,<br />
-              The University Of Nottingham,<br />
-              Triumph Road, Nottingham,<br />
-              United Kingdom, NG7 2TU.<br />
-              hello@geria.io
-            </p>
-          </div>
-        </div>
-      )
-  }
+export default function PrivacyPolicy() {
+  return (
+    <div className="container mx-auto px-4 py-8 max-w-4xl">
+      <h1 className="text-3xl font-bold mb-6">Privacy Policy</h1>
+
+      <div className="prose max-w-none space-y-6">
+        <p className="text-sm text-gray-600">Last updated: January 2025</p>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">1. Information We Collect</h2>
+          <h3 className="text-xl font-medium mb-2">Personal Information</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Name, email address, phone number</li>
+            <li>Professional information (company, job title, skills)</li>
+            <li>Resume/CV and portfolio information</li>
+            <li>Communication preferences</li>
+          </ul>
+
+          <h3 className="text-xl font-medium mb-2 mt-4">Technical Information</h3>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>IP address, browser type, device information</li>
+            <li>Usage data and analytics</li>
+            <li>Cookies and similar tracking technologies</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">2. How We Use Your Information</h2>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>To provide and improve our recruitment services</li>
+            <li>To match candidates with suitable opportunities</li>
+            <li>To communicate about services and opportunities</li>
+            <li>To comply with legal obligations</li>
+            <li>For analytics and service improvement</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">3. Legal Basis for Processing (GDPR)</h2>
+          <p>We process your personal data based on:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Consent:</strong> For marketing communications and non-essential cookies</li>
+            <li><strong>Contract:</strong> To provide recruitment services</li>
+            <li><strong>Legitimate Interest:</strong> For business operations and improvement</li>
+            <li><strong>Legal Obligation:</strong> For compliance with applicable laws</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">4. Your Rights Under GDPR</h2>
+          <p>You have the right to:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Access:</strong> Request copies of your personal data</li>
+            <li><strong>Rectification:</strong> Correct inaccurate personal data</li>
+            <li><strong>Erasure:</strong> Request deletion of your personal data</li>
+            <li><strong>Restrict Processing:</strong> Limit how we use your data</li>
+            <li><strong>Data Portability:</strong> Receive your data in a structured format</li>
+            <li><strong>Object:</strong> Object to processing based on legitimate interests</li>
+            <li><strong>Withdraw Consent:</strong> Withdraw consent at any time</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">5. Data Retention</h2>
+          <p>We retain personal data for as long as necessary to fulfill the purposes outlined in this policy, typically:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Active candidates: Until you request deletion or withdraw consent</li>
+            <li>Client data: For the duration of our business relationship</li>
+            <li>Analytics data: Anonymized and retained for up to 2 years</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">6. Data Security</h2>
+          <p>We implement appropriate technical and organizational measures including:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Encryption of data in transit and at rest</li>
+            <li>Access controls and authentication</li>
+            <li>Regular security assessments</li>
+            <li>Staff training on data protection</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">7. International Transfers</h2>
+          <p>Your data may be transferred to and processed in countries outside the EEA. We ensure adequate protection through:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li>Standard Contractual Clauses</li>
+            <li>Adequacy decisions by the European Commission</li>
+            <li>Other appropriate safeguards</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-semibold mb-4">8. Contact Us</h2>
+          <p>For any privacy-related questions or to exercise your rights, contact us at:</p>
+          <p><strong>Email:</strong> privacy@geria.io</p>
+          <p><strong>Address:</strong> [Your Business Address]</p>
+
+          <p className="mt-4">You also have the right to lodge a complaint with your local data protection authority.</p>
+        </section>
+      </div>
+    </div>
+  );
+}
