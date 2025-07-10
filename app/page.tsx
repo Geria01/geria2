@@ -393,7 +393,7 @@ export default function HomePage() {
       {/* Meet Our Talents Section */}
       <div className='bg-[#F9FAFB] py-10 md:py-28'>
         <div className='container max-w-screen-xl px-5'>
-          <h2 className='text-center text-fluid-3xl mb-8 md:mb-16'>Meet some of our Talents</h2>
+          <h2 className='text-center text-fluid-3xl mb-8 md:mb-16'>Vetted. Proven. Ready to Build.</h2>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-5'>
             {generateDevCards(DUMMY_DEVS)}
           </div>
