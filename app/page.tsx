@@ -1,174 +1,168 @@
-
 'use client'
 
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function HomePage() {
+  const [email, setEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscriptionMessage, setSubscriptionMessage] = useState('');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubscribing(true);
+    setSubscriptionMessage('');
+
+    try {
+      const response = await fetch('/api/newsletter/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscriptionMessage('Successfully subscribed!');
+        setEmail('');
+      } else {
+        setSubscriptionMessage(data.message || 'Subscription failed');
+      }
+    } catch (error) {
+      setSubscriptionMessage('Something went wrong. Please try again.');
+    } finally {
+      setIsSubscribing(false);
+    }
+  };
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Your Long-Term <span className="text-red-600">Technical Partner</span>
-          </h1>
-          <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
-            Build Smarter. Scale Faster.
+      <section className="relative bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+              <div className="sm:text-center lg:text-left">
+                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                  <span className="block xl:inline">Your Long-Term</span>{' '}
+                  <span className="block text-red-600 xl:inline">Technical Partner</span>
+                </h1>
+                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                  Build Smarter. Scale Faster.
+                </p>
+                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                  From top-tier vetted remote engineers to full-stack product teams — Geria fuels your next leap.
+                </p>
+                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                  <div className="rounded-md shadow">
+                    <Link
+                      href="/hire-talent"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 md:py-4 md:text-lg md:px-10"
+                    >
+                      Get Started
+                    </Link>
+                  </div>
+                  <div className="mt-3 sm:mt-0 sm:ml-3">
+                    <Link
+                      href="/our-process"
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 md:py-4 md:text-lg md:px-10"
+                    >
+                      Learn More
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+          <img
+            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+            src="https://geriasa.blob.core.windows.net/assets/hero_img_1_1a5c4b3ae8.jpg"
+            alt="Remote team collaboration"
+          />
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center">
+            <h2 className="text-base text-red-600 font-semibold tracking-wide uppercase">Services</h2>
+            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+              Everything you need to scale your team
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                  </svg>
+                </div>
+                <p className="ml-16 text-lg leading-6 font-medium text-gray-900">Hire Remote Talent</p>
+                <div className="mt-2 ml-16 text-base text-gray-500">
+                  Access pre-vetted, top-tier remote engineers ready to integrate with your team.
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-red-500 text-white">
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <p className="ml-16 text-lg leading-6 font-medium text-gray-900">Full-Stack Teams</p>
+                <div className="mt-2 ml-16 text-base text-gray-500">
+                  Complete product development teams with project managers, designers, and developers.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="bg-red-600">
+        <div className="max-w-2xl mx-auto text-center py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">
+            <span className="block">Stay updated with</span>
+            <span className="block">remote work insights</span>
+          </h2>
+          <p className="mt-4 text-lg leading-6 text-red-100">
+            Get the latest tips on building and managing remote teams.
           </p>
-          <p className="text-lg text-gray-500 mb-8 max-w-3xl mx-auto">
-            From top-tier vetted remote engineers to full-stack product teams — Geria fuels your next leap.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/hire-talent" className="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
-              Hire Talent Now
-            </Link>
-            <Link href="/for-engineers" className="border border-red-600 text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors">
-              Let's build it
-            </Link>
-          </div>
-        </div>
-
-        {/* Hero Image/Video Placeholder */}
-        <div className="max-w-4xl mx-auto mt-16">
-          <div className="bg-yellow-100 rounded-lg aspect-video flex items-center justify-center">
-            <div className="text-center text-gray-600">
-              <div className="w-16 h-16 bg-yellow-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-              <p>Video Preview</p>
+          <form onSubmit={handleNewsletterSubmit} className="mt-8 sm:flex sm:justify-center">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="block w-full rounded-md border-gray-300 py-3 text-base placeholder-gray-500 shadow-sm focus:border-white focus:ring-white sm:max-w-xs sm:flex-1"
+              placeholder="Enter your email"
+              required
+            />
+            <div className="mt-3 sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+              <button
+                type="submit"
+                disabled={isSubscribing}
+                className="block w-full rounded-md border border-transparent bg-red-500 px-4 py-3 font-medium text-white shadow hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-white sm:px-10 disabled:opacity-50"
+              >
+                {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+              </button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">500+</div>
-              <div className="text-gray-600">Developers</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">98%</div>
-              <div className="text-gray-600">Success Rate</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">24/7</div>
-              <div className="text-gray-600">Support</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-red-600 mb-2">150+</div>
-              <div className="text-gray-600">Projects</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What Our Clients Say */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">What Our Clients Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
-                <div>
-                  <div className="font-semibold">Sarah Johnson</div>
-                  <div className="text-sm text-gray-600">CTO, TechStart</div>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                "Geria helped us scale our development team quickly with top-tier talent. The developers they provided were exceptional and integrated seamlessly with our existing team."
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
-                <div>
-                  <div className="font-semibold">Michael Chen</div>
-                  <div className="text-sm text-gray-600">Founder, GrowthCo</div>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                "We needed a complete web development overhaul. Geria's team delivered a stunning, high-performance website that increased our conversions by 40%."
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
-                <div>
-                  <div className="font-semibold">Emily Rodriguez</div>
-                  <div className="text-sm text-gray-600">VP Engineering, ScaleUp</div>
-                </div>
-              </div>
-              <p className="text-gray-700">
-                "The quality of developers from Geria is unmatched. They understand modern development practices and deliver clean, maintainable code."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Behind the Build: Our Developers */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">Behind the Build: Our Developers</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold mb-2">Maria Santos</h3>
-              <p className="text-gray-600 mb-4">Full-Stack Developer</p>
-              <div className="flex justify-center gap-2 mb-4">
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">React</span>
-                <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">Node.js</span>
-                <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">Python</span>
-              </div>
-              <p className="text-sm text-gray-600">5+ years building scalable web applications for fintech and e-commerce companies.</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold mb-2">Michael Eze</h3>
-              <p className="text-gray-600 mb-4">Mobile Developer</p>
-              <div className="flex justify-center gap-2 mb-4">
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">React Native</span>
-                <span className="bg-cyan-100 text-cyan-800 px-2 py-1 rounded text-sm">Flutter</span>
-                <span className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm">iOS</span>
-              </div>
-              <p className="text-sm text-gray-600">Expert in cross-platform mobile development with 50+ apps published to app stores.</p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold mb-2">David Kim</h3>
-              <p className="text-gray-600 mb-4">DevOps Engineer</p>
-              <div className="flex justify-center gap-2 mb-4">
-                <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm">AWS</span>
-                <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Docker</span>
-                <span className="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">Kubernetes</span>
-              </div>
-              <p className="text-sm text-gray-600">Specialized in cloud infrastructure and CI/CD pipelines for high-traffic applications.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-red-600 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
-          <p className="text-xl mb-8">Get access to top-tier remote developers and scale your team today.</p>
-          <Link href="/hire-talent" className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Start Your Project
-          </Link>
+          </form>
+          {subscriptionMessage && (
+            <p className={`mt-4 text-sm ${subscriptionMessage.includes('Success') ? 'text-green-200' : 'text-red-200'}`}>
+              {subscriptionMessage}
+            </p>
+          )}
         </div>
       </section>
     </>
