@@ -16,13 +16,10 @@ function HomePageComponent() {
             Your Long-Term <span className="text-red-600">Technical Partner</span>
           </h1>
           <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
-            Building the future?
-          </p>
-          <p className="text-xl text-gray-600 mb-4 max-w-2xl mx-auto">
-            Get elite remote engineers or a full-stack product team — all with Geria.
+            Build Smarter. Scale Faster.
           </p>
           <p className="text-lg text-gray-500 mb-8 max-w-3xl mx-auto">
-            Whether you're scaling fast or starting from scratch, we help you move with speed, skill, and certainty.
+            From top-tier vetted remote engineers to full-stack product teams — Geria fuels your next leap.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/hire-talent" className="bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors">
