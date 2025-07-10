@@ -6,10 +6,6 @@ const nextConfig = {
             allowedOrigins: ['localhost:3000', '*.replit.dev', '*.replit.app']
         }
     },
-    server: {
-        host: '0.0.0.0',
-        port: 3000
-    },
     eslint: {
         ignoreDuringBuilds: true,
     },
