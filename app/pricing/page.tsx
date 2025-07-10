@@ -78,9 +78,8 @@ export default function ContactPage() {
 
 
   return (
-    <div className=''>
-      
- <div className="bg-white flex flex-col flex-col justify-end items-center pt-10 overflow-hidden self-center relative flex min-h-[246px] w-full  rounded-3xl max-md:max-w-full max-md:mt-10">
+    <div className="">
+      <div className="bg-white flex flex-col justify-end items-center pt-10 overflow-hidden self-center relative min-h-[246px] w-full rounded-3xl max-md:max-w-full max-md:mt-10">
  <div className="text-zinc-800 text-center font-semibold pl-5 pr-5 leading-[52.8px] self-center  mt-24 max-md:max-w-full text-5xl max-md:text-4xl max-md:mt-10">
   Great Value for much Less
 </div>
@@ -3749,14 +3748,8 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </div>
- 
-
-
-
-
-
       </div>
+    </div>
       <div className='py-[100px] px-10 py-10'>
         <div className='md:mx-auto md:max-w-[830px]'>
           <h2 className='font-bold text-[48px] mb-[24px]'>Not Sure What You Need?</h2>
