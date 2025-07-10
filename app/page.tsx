@@ -2,16 +2,21 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function HomePage() {
   const [email, setEmail] = useState('');
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscriptionMessage, setSubscriptionMessage] = useState('');
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || !email.trim()) return;
 
     setIsSubscribing(true);
     setSubscriptionMessage('');
@@ -22,7 +27,7 @@ export default function HomePage() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: email.trim() }),
       });
 
       const data = await response.json();
@@ -34,11 +39,16 @@ export default function HomePage() {
         setSubscriptionMessage(data.message || 'Subscription failed');
       }
     } catch (error) {
+      console.error('Newsletter subscription error:', error);
       setSubscriptionMessage('Something went wrong. Please try again.');
     } finally {
       setIsSubscribing(false);
     }
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>
@@ -140,19 +150,27 @@ export default function HomePage() {
             Get the latest tips on building and managing remote teams.
           </p>
           <form onSubmit={handleNewsletterSubmit} className="mt-8 sm:flex sm:justify-center">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="block w-full rounded-md border-gray-300 py-3 text-base placeholder-gray-500 shadow-sm focus:border-white focus:ring-white sm:max-w-xs sm:flex-1"
-              placeholder="Enter your email"
-              required
-            />
+            <div className="w-full sm:max-w-xs sm:flex-1">
+              <label htmlFor="newsletter-email" className="sr-only">
+                Email address
+              </label>
+              <input
+                id="newsletter-email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="block w-full rounded-md border-gray-300 py-3 text-base placeholder-gray-500 shadow-sm focus:border-white focus:ring-white"
+                placeholder="Enter your email"
+                required
+                disabled={isSubscribing}
+                autoComplete="email"
+              />
+            </div>
             <div className="mt-3 sm:mt-0 sm:ml-3 sm:flex-shrink-0">
               <button
                 type="submit"
-                disabled={isSubscribing}
-                className="block w-full rounded-md border border-transparent bg-red-500 px-4 py-3 font-medium text-white shadow hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-white sm:px-10 disabled:opacity-50"
+                disabled={isSubscribing || !email.trim()}
+                className="block w-full rounded-md border border-transparent bg-red-500 px-4 py-3 font-medium text-white shadow hover:bg-red-400 focus:outline-none focus:ring-2 focus:ring-white sm:px-10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 {isSubscribing ? 'Subscribing...' : 'Subscribe'}
               </button>

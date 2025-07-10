@@ -12,6 +12,11 @@ function NewsletterSignup() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,29 +25,43 @@ function NewsletterSignup() {
       return;
     }
 
+    if (!email || !email.trim()) {
+      setMessage('Please enter a valid email address.');
+      return;
+    }
+
     setIsSubmitting(true);
+    setMessage('');
+    
     try {
       const response = await fetch('/api/newsletter/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: email.trim() }),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setMessage('Thank you for subscribing! Please check your email to confirm.');
         setEmail('');
         setAgreedToPrivacy(false);
       } else {
-        setMessage('Something went wrong. Please try again.');
+        setMessage(data.message || 'Something went wrong. Please try again.');
       }
     } catch (error) {
+      console.error('Newsletter subscription error:', error);
       setMessage('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  if (!mounted) {
+    return <div className="min-h-[200px]" />;
+  }
 
   return (
     <section className="mt-16 bg-gradient-to-r from-[#D0021B] to-[#F5A623] rounded-2xl p-8 text-white text-center">
