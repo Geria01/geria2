@@ -14,7 +14,7 @@ export default function RootLayout({
   useEffect(() => {
     const initCookieConsent = async () => {
       const { run } = await import('vanilla-cookieconsent');
-      
+
       run({
         guiOptions: {
           consentModal: {
