@@ -1,4 +1,3 @@
-
 'use client'
 
 import React from 'react';
@@ -110,7 +109,7 @@ export default function HomePage() {
     );
   }
 
-  
+
 
   const generateDevCards = (devs: DeveloperAvatar[]) => {
     return devs.map((dev: DeveloperAvatar, idx: number) => (
@@ -389,7 +388,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      
+
       {/* Meet Our Talents Section */}
       <div className='bg-[#F9FAFB] py-10 md:py-28'>
         <div className='container max-w-screen-xl px-5'>
@@ -450,14 +449,15 @@ export default function HomePage() {
         <div className='h-auto md:h-[650px] flex bg-[#1C1B17] justify-center items-center px-4 md:px-8 lg:px-0 py-16 md:py-0'>
           <div className='max-w-[450px]'>
             <h2 className='text-fluid-3xl text-white mb-6'>Looking For Top Talents?</h2>
-            <p className='text-white mb-20'>Jump to the front of the queue and get vetted tech talents in days, not months. We&#39;ve got the hands you need to build the product you want.</p>
+            <p className='text-white mb-20'>
+              Why Wait Months? Get Top Tech Talent in Days.<br />We&#39;ve got the hands — you bring the vision.</p>
             <Link className='btn-primary' href={'/hire-talent'}>Hire Now!</Link>
           </div>
         </div>
         <div className='h-[352px] md:h-full w-full bg-[url("/images/img_2.jpg")] bg-no-repeat bg-cover'></div>
       </div>
 
-      
+
     </>
   )
 }
